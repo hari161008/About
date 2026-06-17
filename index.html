@@ -184,17 +184,24 @@ body::after{
 /* ── NAV ── */
 nav{
   position:fixed;bottom:20px;
-  left:0;right:0;margin:0 auto;
+  left:50%;
+  transform:translateX(-50%);
   width:fit-content;
+  max-width:calc(100vw - 32px);
   z-index:200;
   background:rgba(10,10,10,.92);
   border:1px solid rgba(204,180,59,.15);
   border-radius:var(--r-pill);
   padding:9px 8px 9px 18px;
   display:flex;align-items:center;gap:2px;
-  animation:navIn .9s var(--ease) both
+  animation:navIn .9s var(--ease) both;
+  -webkit-transform:translateX(-50%);
+  will-change:transform;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden
 }
-@keyframes navIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes navIn{from{opacity:0;transform:translateX(-50%) translateY(18px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+
 .nav-brand{
   font-family:'Space Grotesk',sans-serif;
   font-weight:700;font-size:15px;color:var(--gold);
@@ -543,6 +550,7 @@ footer span{color:var(--gold)}
   .projects-grid{grid-template-columns:1fr}
   .contact-card{padding:32px 18px}
   nav a{padding:5px 9px;font-size:12px}
+  nav{bottom:max(16px,env(safe-area-inset-bottom,16px));padding:7px 6px 7px 14px}
   .section{padding:44px 0}
 }
 </style>
@@ -987,14 +995,25 @@ window.addEventListener('scroll',()=>{
 
 // 3D tilt on project cards
 document.querySelectorAll('.proj,.about-wrap').forEach(c=>{
+  let rafId=null;
+  let isHovered=false;
+  c.addEventListener('mouseenter',()=>{
+    isHovered=true;
+    c.style.transition='transform .15s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease)';
+  });
   c.addEventListener('mousemove',e=>{
-    const r=c.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-.5;
-    const y=(e.clientY-r.top)/r.height-.5;
-    c.style.transition='none';
-    c.style.transform=`perspective(900px) rotateY(${x*7}deg) rotateX(${-y*5}deg) translateY(-7px)`;
+    if(!isHovered)return;
+    if(rafId)cancelAnimationFrame(rafId);
+    rafId=requestAnimationFrame(()=>{
+      const r=c.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      c.style.transform=`perspective(900px) rotateY(${x*7}deg) rotateX(${-y*5}deg) translateY(-7px)`;
+    });
   });
   c.addEventListener('mouseleave',()=>{
+    isHovered=false;
+    if(rafId){cancelAnimationFrame(rafId);rafId=null;}
     c.style.transition='all .5s cubic-bezier(.2,0,0,1)';
     c.style.transform='';
   });
