@@ -532,39 +532,6 @@ footer span{color:var(--gold)}
 .rv-right.in{opacity:1;transform:translateX(0)}
 .rv-scale{opacity:0;transform:scale(.88);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .rv-scale.in{opacity:1;transform:scale(1)}
-/* ── APP MARQUEE ── */
-.marquee-section{
-  width:100%;overflow:hidden;position:relative;
-  padding:36px 0;
-}
-.marquee-section::before,.marquee-section::after{
-  content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none;
-}
-.marquee-section::before{left:0;background:linear-gradient(to right,var(--bg) 0%,transparent 100%)}
-.marquee-section::after{right:0;background:linear-gradient(to left,var(--bg) 0%,transparent 100%)}
-.marquee-track{
-  display:flex;gap:20px;
-  width:max-content;
-  animation:marqueeScroll 28s linear infinite;
-}
-.marquee-track:hover{animation-play-state:paused}
-@keyframes marqueeScroll{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
-.mq-app{
-  display:flex;align-items:center;gap:10px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(204,180,59,.1);
-  border-radius:40px;
-  padding:10px 18px 10px 10px;
-  white-space:nowrap;flex-shrink:0;
-  transition:border-color .25s,background .25s;
-}
-.mq-app:hover{background:rgba(204,180,59,.08);border-color:rgba(204,180,59,.3)}
-.mq-app img{width:36px;height:36px;border-radius:10px;object-fit:cover}
-.mq-app-name{font-size:13px;font-weight:700;color:var(--text)}
-
 .d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}
 .d4{transition-delay:.24s}.d5{transition-delay:.3s}.d6{transition-delay:.36s}
 .d7{transition-delay:.44s}.d8{transition-delay:.52s}
@@ -922,30 +889,6 @@ footer span{color:var(--gold)}
     </div>
   </div>
 </section>
-
-<!-- APP MARQUEE -->
-<div class="marquee-section">
-  <div class="marquee-track">
-    <!-- set 1 -->
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Everlasting%20Android%20Tweak/Assets/Everlasting%20Android%20Tweak%20Pirate.png" alt=""/><span class="mq-app-name">Everlasting Android Tweak</span></div>
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Dialer/Assets/Banner%20and%20Icon/Ever%20Dialer%20icon.png" alt=""/><span class="mq-app-name">Ever Dialer</span></div>
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Call%20Recorder/Assets/Ever%20Call%20Recorder%20icon.png" alt=""/><span class="mq-app-name">Ever Call Recorder</span></div>
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Haptics/Assets/Ever%20Haptics%20Icon.png" alt=""/><span class="mq-app-name">Ever Haptics</span></div>
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Everlasting%20Android%20Tweak/Assets/Everlasting%20Android%20Tweak%20Pirate.png" alt=""/><span class="mq-app-name">Everlasting Android Tweak</span></div>
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Dialer/Assets/Banner%20and%20Icon/Ever%20Dialer%20icon.png" alt=""/><span class="mq-app-name">Ever Dialer</span></div>
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Call%20Recorder/Assets/Ever%20Call%20Recorder%20icon.png" alt=""/><span class="mq-app-name">Ever Call Recorder</span></div>
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Haptics/Assets/Ever%20Haptics%20Icon.png" alt=""/><span class="mq-app-name">Ever Haptics</span></div>
-    <!-- set 2 (duplicate for seamless loop) -->
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Everlasting%20Android%20Tweak/Assets/Everlasting%20Android%20Tweak%20Pirate.png" alt=""/><span class="mq-app-name">Everlasting Android Tweak</span></div>
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Dialer/Assets/Banner%20and%20Icon/Ever%20Dialer%20icon.png" alt=""/><span class="mq-app-name">Ever Dialer</span></div>
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Call%20Recorder/Assets/Ever%20Call%20Recorder%20icon.png" alt=""/><span class="mq-app-name">Ever Call Recorder</span></div>
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Haptics/Assets/Ever%20Haptics%20Icon.png" alt=""/><span class="mq-app-name">Ever Haptics</span></div>
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Everlasting%20Android%20Tweak/Assets/Everlasting%20Android%20Tweak%20Pirate.png" alt=""/><span class="mq-app-name">Everlasting Android Tweak</span></div>
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Dialer/Assets/Banner%20and%20Icon/Ever%20Dialer%20icon.png" alt=""/><span class="mq-app-name">Ever Dialer</span></div>
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Call%20Recorder/Assets/Ever%20Call%20Recorder%20icon.png" alt=""/><span class="mq-app-name">Ever Call Recorder</span></div>
-    <div class="mq-app"><img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Haptics/Assets/Ever%20Haptics%20Icon.png" alt=""/><span class="mq-app-name">Ever Haptics</span></div>
-  </div>
-</div>
 
 <!-- SKILLS -->
 <section class="section" id="skills" style="padding-top:0">
