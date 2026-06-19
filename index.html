@@ -47,9 +47,14 @@
       <circle cx="12" cy="12" r="10" fill="#FF6E40"/>
       <path fill="white" d="M8 8h8v2H8zm0 3h8v2H8zm0 3h5v2H8z"/>
     </symbol>
-    <!-- Open Source / Git -->
+    <!-- Open Source / Git Branch -->
     <symbol id="ico-opensource" viewBox="0 0 24 24">
-      <path fill="#FF6B35" d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.087-.791-.166-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.852 0 1.266.64 1.266 1.408 0 .858-.546 2.141-.828 3.329-.236.995.499 1.806 1.48 1.806 1.773 0 3.141-1.87 3.141-4.57 0-2.389-1.717-4.061-4.169-4.061-2.84 0-4.507 2.13-4.507 4.332 0 .857.33 1.776.741 2.279a.3.3 0 0 1 .069.284l-.276 1.126c-.044.18-.146.218-.336.131-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446C17.523 22 22 17.523 22 12S17.523 2 12 2z"/>
+      <g fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="6" y1="3" x2="6" y2="15"/>
+        <circle cx="18" cy="6" r="3"/>
+        <circle cx="6" cy="18" r="3"/>
+        <path d="M18 9a9 9 0 0 1-9 9"/>
+      </g>
     </symbol>
     <!-- Coroutines / Lightning -->
     <symbol id="ico-coroutines" viewBox="0 0 24 24">
@@ -66,8 +71,11 @@
     </symbol>
     <!-- WebView / Globe -->
     <symbol id="ico-webview" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10" fill="none" stroke="#00BCD4" stroke-width="1.5"/>
-      <path fill="none" stroke="#00BCD4" stroke-width="1.5" d="M2 12h20M12 2c-4 3-6.5 6.5-6.5 10S8 19 12 22M12 2c4 3 6.5 6.5 6.5 10S16 19 12 22"/>
+      <g fill="none" stroke="#00BCD4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </g>
     </symbol>
     <!-- Koin -->
     <symbol id="ico-koin" viewBox="0 0 24 24">
@@ -134,6 +142,24 @@
       <path d="M6 8l4 4-4 4" fill="none" stroke="#FF6E40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       <line x1="12" y1="16" x2="18" y2="16" stroke="#FF6E40" stroke-width="2" stroke-linecap="round"/>
     </symbol>
+    <!-- Sun (light theme) -->
+    <symbol id="ico-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4.6" fill="currentColor"/>
+      <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <line x1="12" y1="1.5" x2="12" y2="4.2"/>
+        <line x1="12" y1="19.8" x2="12" y2="22.5"/>
+        <line x1="1.5" y1="12" x2="4.2" y2="12"/>
+        <line x1="19.8" y1="12" x2="22.5" y2="12"/>
+        <line x1="4.5" y1="4.5" x2="6.5" y2="6.5"/>
+        <line x1="17.5" y1="17.5" x2="19.5" y2="19.5"/>
+        <line x1="4.5" y1="19.5" x2="6.5" y2="17.5"/>
+        <line x1="17.5" y1="6.5" x2="19.5" y2="4.5"/>
+      </g>
+    </symbol>
+    <!-- Moon (dark theme) -->
+    <symbol id="ico-moon" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M20.742 13.045a8.088 8.088 0 0 1-2.077.273c-4.508 0-8.165-3.655-8.165-8.163 0-1.04.194-2.033.547-2.95a.5.5 0 0 0-.622-.66A9.998 9.998 0 0 0 4 11c0 5.523 4.477 10 10 10a9.998 9.998 0 0 0 9.455-6.715.5.5 0 0 0-.713-.24z"/>
+    </symbol>
   </defs>
 </svg>
 
@@ -152,11 +178,82 @@
   --text:#f2efe6;
   --text2:rgba(242,239,230,.58);
   --text3:rgba(242,239,230,.32);
+  --bd-06:rgba(255,255,255,.06);
+  --bd-05:rgba(255,255,255,.05);
+  --bd-04:rgba(255,255,255,.04);
+  --bd-03:rgba(255,255,255,.03);
+  --sh-5:rgba(0,0,0,.5);
+  --sh-6:rgba(0,0,0,.6);
+  --sh-75:rgba(0,0,0,.75);
+  --sh-8:rgba(0,0,0,.8);
+  --nav-bg:#0a0a0a;
+  --pfp-blur-filter:blur(36px) brightness(.28) saturate(.4);
+  --pfp-blur-op:1;
+  --hap-card-bg:rgba(255,255,255,.04);
   --r-card:26px;
   --r-pill:999px;
   --spring:cubic-bezier(.34,1.56,.64,1);
   --ease:cubic-bezier(.2,0,0,1);
 }
+
+/* ── LIGHT THEME (auto via system + explicit override) ── */
+@media(prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --gold:#c2a82e;
+    --gold-dark:#957f1d;
+    --gold-dim:rgba(194,168,46,.12);
+    --gold-mid:rgba(194,168,46,.18);
+    --gold-glow:rgba(194,168,46,.32);
+    --bg:#faf8f1;
+    --s1:#ffffff;
+    --s2:#f4f1e7;
+    --s3:#ece7d8;
+    --s4:#e2dcc7;
+    --text:#1c1a12;
+    --text2:rgba(28,26,18,.62);
+    --text3:rgba(28,26,18,.4);
+    --bd-06:rgba(0,0,0,.09);
+    --bd-05:rgba(0,0,0,.08);
+    --bd-04:rgba(0,0,0,.07);
+    --bd-03:rgba(0,0,0,.05);
+    --sh-5:rgba(0,0,0,.07);
+    --sh-6:rgba(0,0,0,.09);
+    --sh-75:rgba(0,0,0,.11);
+    --sh-8:rgba(0,0,0,.13);
+    --nav-bg:#ffffff;
+    --pfp-blur-filter:blur(36px) brightness(1.3) saturate(.5);
+    --pfp-blur-op:0;
+    --hap-card-bg:rgba(0,0,0,.035);
+  }
+}
+:root[data-theme="light"]{
+  --gold:#c2a82e;
+  --gold-dark:#957f1d;
+  --gold-dim:rgba(194,168,46,.12);
+  --gold-mid:rgba(194,168,46,.18);
+  --gold-glow:rgba(194,168,46,.32);
+  --bg:#faf8f1;
+  --s1:#ffffff;
+  --s2:#f4f1e7;
+  --s3:#ece7d8;
+  --s4:#e2dcc7;
+  --text:#1c1a12;
+  --text2:rgba(28,26,18,.62);
+  --text3:rgba(28,26,18,.4);
+  --bd-06:rgba(0,0,0,.09);
+  --bd-05:rgba(0,0,0,.08);
+  --bd-04:rgba(0,0,0,.07);
+  --bd-03:rgba(0,0,0,.05);
+  --sh-5:rgba(0,0,0,.07);
+  --sh-6:rgba(0,0,0,.09);
+  --sh-75:rgba(0,0,0,.11);
+  --sh-8:rgba(0,0,0,.13);
+  --nav-bg:#ffffff;
+  --pfp-blur-filter:blur(36px) brightness(1.3) saturate(.5);
+  --pfp-blur-op:0;
+  --hap-card-bg:rgba(0,0,0,.035);
+}
+:root,body{transition:background-color .35s var(--ease),color .35s var(--ease)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px;overscroll-behavior-y:none}
 body{background:var(--bg);color:var(--text);font-family:'Nunito','Segoe UI',sans-serif;overflow-x:hidden;line-height:1.6;overscroll-behavior-y:none;padding-bottom:max(110px,calc(90px + env(safe-area-inset-bottom,0px)))}
@@ -182,6 +279,35 @@ body::after{
 /* ── CURSOR ── */
 #cg{display:none}
 
+/* ── THEME TOGGLE ── */
+#theme-toggle{
+  position:fixed;
+  top:max(18px,env(safe-area-inset-top,18px));
+  right:max(18px,env(safe-area-inset-right,18px));
+  z-index:300;
+  width:42px;height:42px;
+  border-radius:50%;
+  background:var(--nav-bg);
+  border:1px solid rgba(204,180,59,.18);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  color:var(--gold);
+  transition:border-color .3s var(--ease),background .3s var(--ease),transform .25s var(--spring),color .3s var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+#theme-toggle svg.icon{transition:filter .3s var(--ease),color .3s var(--ease)}
+#theme-toggle.is-light{color:#e8c94a}
+#theme-toggle.is-light svg.icon{filter:drop-shadow(0 0 7px rgba(232,201,74,.85)) drop-shadow(0 0 2px rgba(255,238,180,.9))}
+#theme-toggle.is-dark{color:#7c7c7c}
+#theme-toggle.is-dark svg.icon{filter:none}
+#theme-toggle:hover{border-color:rgba(204,180,59,.4);transform:scale(1.08)}
+#theme-toggle:active{transform:scale(.94)}
+#theme-toggle svg.icon{width:19px;height:19px}
+@media(max-width:760px){
+  #theme-toggle{width:38px;height:38px;top:max(14px,env(safe-area-inset-top,14px));right:max(14px,env(safe-area-inset-right,14px))}
+  #theme-toggle svg.icon{width:17px;height:17px}
+}
+
 /* ── NAV ── */
 #nav-shell{
   position:fixed;
@@ -195,7 +321,7 @@ body::after{
 }
 nav{
   pointer-events:auto;
-  background:rgba(10,10,10,.92);
+  background:var(--nav-bg);
   border:1px solid rgba(204,180,59,.15);
   border-radius:var(--r-pill);
   padding:9px 8px 9px 18px;
@@ -265,7 +391,8 @@ nav a:hover,nav a.active{color:var(--gold);background:var(--gold-dim)}
   background-image:url('https://raw.githubusercontent.com/hari161008/About/main/Assets/Profile%20Picture.jpg');
   background-size:cover;
   background-position:center;
-  filter:blur(36px) brightness(.28) saturate(.4);
+  filter:var(--pfp-blur-filter);
+  opacity:var(--pfp-blur-op);
   z-index:0
 }
 .hero-glow-ring{
@@ -327,7 +454,7 @@ nav a:hover,nav a.active{color:var(--gold);background:var(--gold-dim)}
   display:inline-flex;align-items:center;gap:8px;
   padding:7px 16px 7px 8px;
   background:var(--s2);
-  border:1px solid rgba(255,255,255,.06);
+  border:1px solid var(--bd-06);
   border-radius:var(--r-pill);
   font-size:12px;font-weight:700;color:var(--text2);
   transition:all .3s var(--ease);cursor:default
@@ -380,21 +507,21 @@ nav a:hover,nav a.active{color:var(--gold);background:var(--gold-dim)}
 /* ── ABOUT ── */
 .about-wrap{
   display:grid;grid-template-columns:240px 1fr;gap:0;
-  background:var(--s1);border:1px solid rgba(255,255,255,.05);
+  background:var(--s1);border:1px solid var(--bd-05);
   border-radius:var(--r-card);overflow:hidden;
   transition:box-shadow .4s var(--ease)
 }
-.about-wrap:hover{box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 1px rgba(204,180,59,.12)}
+.about-wrap:hover{box-shadow:0 30px 80px var(--sh-8),0 0 0 1px rgba(204,180,59,.12)}
 .about-left{
   background:var(--s2);
   display:flex;flex-direction:column;align-items:center;
   padding:44px 32px;gap:18px;
-  border-right:1px solid rgba(255,255,255,.04)
+  border-right:1px solid var(--bd-04)
 }
 .about-avatar{
   width:120px;height:120px;border-radius:24px;
   object-fit:cover;
-  box-shadow:0 8px 32px rgba(0,0,0,.6);
+  box-shadow:0 8px 32px var(--sh-6);
   border:2px solid rgba(204,180,59,.18)
 }
 .about-name{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;letter-spacing:-.02em;text-align:center}
@@ -406,7 +533,7 @@ nav a:hover,nav a.active{color:var(--gold);background:var(--gold-dim)}
 .about-social{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 .social-btn{
   width:38px;height:38px;border-radius:50%;
-  background:var(--s3);border:1px solid rgba(255,255,255,.06);
+  background:var(--s3);border:1px solid var(--bd-06);
   display:flex;align-items:center;justify-content:center;
   text-decoration:none;transition:all .3s var(--spring)
 }
@@ -423,7 +550,7 @@ nav a:hover,nav a.active{color:var(--gold);background:var(--gold-dim)}
 .projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .proj{
   background:var(--s1);
-  border:1px solid rgba(255,255,255,.04);
+  border:1px solid var(--bd-04);
   border-radius:var(--r-card);overflow:hidden;
   display:flex;flex-direction:column;
   text-decoration:none;color:inherit;
@@ -434,16 +561,16 @@ nav a:hover,nav a.active{color:var(--gold);background:var(--gold-dim)}
   background:linear-gradient(135deg,rgba(204,180,59,.04) 0%,transparent 60%);
   opacity:0;transition:opacity .4s;pointer-events:none;z-index:1;border-radius:inherit
 }
-.proj:hover{transform:translateY(-7px);border-color:rgba(204,180,59,.2);box-shadow:0 28px 70px rgba(0,0,0,.75),0 0 0 1px rgba(204,180,59,.13)}
+.proj:hover{transform:translateY(-7px);border-color:rgba(204,180,59,.2);box-shadow:0 28px 70px var(--sh-75),0 0 0 1px rgba(204,180,59,.13)}
 .proj:hover::before{opacity:1}
 .proj:hover .proj-banner{transform:scale(1.05)}
 .proj:hover .proj-arr{background:var(--gold);color:#000;transform:translate(2px,-2px)}
 .banner-wrap{height:195px;overflow:hidden;position:relative;background:var(--s3)}
 .proj-banner{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s var(--ease)}
-.banner-fade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,transparent 55%)}
+.banner-fade{position:absolute;inset:0;background:linear-gradient(to top,var(--sh-75) 0%,transparent 55%)}
 .proj-body{padding:20px 24px 24px;display:flex;flex-direction:column;gap:12px;flex:1;position:relative;z-index:2}
 .proj-head{display:flex;align-items:center;gap:14px}
-.proj-ico{width:50px;height:50px;border-radius:14px;overflow:hidden;flex-shrink:0;background:var(--s3);box-shadow:0 4px 16px rgba(0,0,0,.5)}
+.proj-ico{width:50px;height:50px;border-radius:14px;overflow:hidden;flex-shrink:0;background:var(--s3);box-shadow:0 4px 16px var(--sh-5)}
 .proj-ico img{width:100%;height:100%;object-fit:cover;display:block}
 .proj-title{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:-.02em;line-height:1.2;flex:1}
 .proj-desc{font-size:13.5px;color:var(--text2);line-height:1.72;flex:1}
@@ -466,13 +593,13 @@ nav a:hover,nav a.active{color:var(--gold);background:var(--gold-dim)}
 /* ── SKILLS ── */
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px;padding-bottom:8px}
 .skill{
-  background:var(--s1);border:1px solid rgba(255,255,255,.04);
+  background:var(--s1);border:1px solid var(--bd-04);
   border-radius:22px;padding:24px 16px;
   text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;
   transition:all .38s var(--spring);cursor:default;
   position:relative;z-index:1
 }
-.skill:hover{transform:translateY(-6px) scale(1.04);border-color:rgba(204,180,59,.22);background:var(--s2);box-shadow:0 16px 40px rgba(0,0,0,.6)}
+.skill:hover{transform:translateY(-6px) scale(1.04);border-color:rgba(204,180,59,.22);background:var(--s2);box-shadow:0 16px 40px var(--sh-6)}
 .skill:hover .sk-ico{transform:scale(1.18) rotate(-6deg)}
 .sk-ico{
   width:56px;height:56px;border-radius:50%;
@@ -503,12 +630,12 @@ nav a:hover,nav a.active{color:var(--gold);background:var(--gold-dim)}
 .contact-methods{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
 .cm{
   display:flex;align-items:center;gap:16px;
-  background:var(--s2);border:1px solid rgba(255,255,255,.05);
+  background:var(--s2);border:1px solid var(--bd-05);
   border-radius:20px;padding:18px 26px;
   text-decoration:none;color:var(--text);
   min-width:210px;transition:all .35s var(--ease)
 }
-.cm:hover{border-color:rgba(204,180,59,.3);transform:translateY(-5px);box-shadow:0 14px 40px rgba(0,0,0,.6);background:rgba(204,180,59,.05)}
+.cm:hover{border-color:rgba(204,180,59,.3);transform:translateY(-5px);box-shadow:0 14px 40px var(--sh-6);background:rgba(204,180,59,.05)}
 .cm-ico{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .cm-ico svg.icon{width:22px;height:22px}
 .cm-info{text-align:left}
@@ -519,7 +646,7 @@ nav a:hover,nav a.active{color:var(--gold);background:var(--gold-dim)}
 footer{
   position:relative;z-index:1;text-align:center;
   padding:28px;font-size:12px;color:var(--text3);
-  border-top:1px solid rgba(255,255,255,.03)
+  border-top:1px solid var(--bd-03)
 }
 footer span{color:var(--gold)}
 
@@ -568,7 +695,7 @@ footer span{color:var(--gold)}
 }
 .hap-card{
   display:flex;align-items:center;gap:10px;
-  background:rgba(255,255,255,.04);
+  background:var(--hap-card-bg);
   border:1.5px solid rgba(204,180,59,.12);
   border-radius:14px;
   padding:10px 14px;
@@ -606,7 +733,7 @@ footer span{color:var(--gold)}
   .chips{justify-content:center}
   .ctas{justify-content:center}
   .about-wrap{grid-template-columns:1fr}
-  .about-left{border-right:none;border-bottom:1px solid rgba(255,255,255,.04);padding:28px 20px}
+  .about-left{border-right:none;border-bottom:1px solid var(--bd-04);padding:28px 20px}
   .about-right{padding:24px 20px}
   .projects-grid{grid-template-columns:1fr}
   .contact-card{padding:32px 18px}
@@ -619,6 +746,9 @@ footer span{color:var(--gold)}
 </style>
 </head>
 <body>
+<button id="theme-toggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">
+  <svg class="icon"><use href="#ico-sun"/></svg>
+</button>
 <div class="amb amb-a"></div>
 <div class="amb amb-b"></div>
 <div id="cg"></div>
@@ -1136,6 +1266,39 @@ document.querySelectorAll('.hap-card').forEach(card=>{
     }
   });
 });
+
+// Theme toggle: defaults to system (auto) via CSS prefers-color-scheme.
+// Clicking forces an explicit light/dark override for the session.
+(function(){
+  const root=document.documentElement;
+  const btn=document.getElementById('theme-toggle');
+  const icon=btn.querySelector('use');
+  const sysLight=window.matchMedia('(prefers-color-scheme: light)');
+
+  function effectiveTheme(){
+    const explicit=root.getAttribute('data-theme');
+    if(explicit==='light'||explicit==='dark')return explicit;
+    return sysLight.matches?'light':'dark';
+  }
+  function paintIcon(){
+    const t=effectiveTheme();
+    icon.setAttribute('href', '#ico-sun');
+    btn.classList.toggle('is-light', t==='light');
+    btn.classList.toggle('is-dark', t==='dark');
+    btn.setAttribute('aria-label', t==='light' ? 'Switch to dark theme' : 'Switch to light theme');
+  }
+  btn.addEventListener('click',function(){
+    const next = effectiveTheme()==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    paintIcon();
+  });
+  if(sysLight.addEventListener){
+    sysLight.addEventListener('change',function(){
+      if(!root.getAttribute('data-theme'))paintIcon();
+    });
+  }
+  paintIcon();
+})();
 
 </script>
 </body>
