@@ -1,2 +1,2 @@
 # About
-[About Me](https://hariprabhu.vercel.app/)
+[About Me](https://hariprabhu.com)
