@@ -2550,7 +2550,7 @@ footer span{color:var(--gold)}
     border-radius:18px;
   }
 
-  /* ── MOBILE BACKDROP: CLEAN MINIMAL SCENERY (MOUNT FUJI WITH SMOKE, FEW CLOUDS, FEW STARS, FALLING STARS, SUN & MOON ALONE) ── */
+  /* ── MOBILE BACKDROP: AIRY, EXPANSIVE SCENERY (MOUNT FUJI, DRIFTING CLOUDS, CELESTIAL SKY & METEORS) ── */
   .amb,
   .amb-a,
   .amb-b,
@@ -2565,49 +2565,76 @@ footer span{color:var(--gold)}
     display: none !important;
   }
 
-  /* Fuji volcano smoke plumes active on mobile */
+  /* Mount Fuji mountain backdrop framing: spacious natural elevation without horizontal squishing */
+  .mountain-layers-wrap{
+    height:clamp(280px, 38vh, 380px);
+    bottom:0;
+    overflow:hidden;
+  }
+  .mountain-layers-svg{
+    width:100%;
+    height:100%;
+    display:block;
+  }
+  .mtn-layer-far{ stroke-width:1.5px; }
+  .mtn-layer-mid{ stroke-width:1.7px; }
+  .mtn-layer-fore{ stroke-width:2px; }
+  .mtn-fuji-snow{ stroke-width:1.4px; }
+  .mtn-crest-line{ stroke-width:1.2px; }
+
+  /* Fuji volcano smoke plumes: accurately anchored above the scaled Mount Fuji crater */
   .fuji-smoke-container{
     display:block !important;
-    bottom:clamp(215px, 29vh, 260px);
-    left:calc(64.4% - 15px);
+    left:calc(50% + clamp(280px, 38vh, 380px) * 0.4423 - 24px);
+    bottom:calc(clamp(280px, 38vh, 380px) * 0.9538 - 14px);
     transform:scale(0.85);
   }
   .fuji-smoke-right{
-    display:block !important;
-    bottom:clamp(185px, 25vh, 225px);
-    left:calc(97.2% - 12px);
-    transform:scale(0.7);
+    display:none !important;
   }
 
-  /* Show only few clouds (keep cloud-1 & cloud-2, hide cloud-3, cloud-4, cloud-5) */
+  /* Balanced, breezy clouds with proportional mobile sizing */
   .sky-clouds-wrap{
-    height:38vh;
+    height:48vh;
+    overflow:hidden;
   }
-  .sky-clouds-wrap .cloud-3,
+  .sky-cloud{
+    width:clamp(110px, 30vw, 150px) !important;
+    opacity:.35;
+  }
+  .sky-clouds-wrap .cloud-1{
+    display:block !important;
+  }
+  .sky-clouds-wrap .cloud-2{
+    display:block !important;
+  }
+  .sky-clouds-wrap .cloud-3{
+    display:block !important;
+    opacity:.22;
+  }
   .sky-clouds-wrap .cloud-4,
   .sky-clouds-wrap .cloud-5{
     display:none !important;
   }
 
-  /* Show only few stars (keep star-1, star-2, star-3, hide star-4, star-5, star-6) */
-  .sky-stars-wrap .star-4,
-  .sky-stars-wrap .star-5,
-  .sky-stars-wrap .star-6{
-    display:none !important;
+  /* Well-distributed, twinkling stars across vertical night sky */
+  .sky-stars-wrap{
+    display:block !important;
+    height:55vh;
   }
+  .sky-stars-wrap .star-1{ display:block !important; top:7%; left:12%; font-size:11px; }
+  .sky-stars-wrap .star-2{ display:block !important; top:15%; left:38%; font-size:13px; }
+  .sky-stars-wrap .star-3{ display:block !important; top:6%; left:68%; font-size:10px; }
+  .sky-stars-wrap .star-4{ display:block !important; top:23%; left:82%; font-size:11px; }
+  .sky-stars-wrap .star-5{ display:block !important; top:31%; left:18%; font-size:10px; }
+  .sky-stars-wrap .star-6{ display:block !important; top:37%; left:74%; font-size:12px; }
 
   /* Celestial Sun & Moon positioning on mobile */
   .sky-celestial{
-    width:66px;
-    height:66px;
+    width:clamp(58px, 15vw, 72px);
+    height:clamp(58px, 15vw, 72px);
     top:max(16px, env(safe-area-inset-top, 16px));
-    right:max(62px, calc(env(safe-area-inset-right, 0px) + 62px));
-  }
-
-  /* Mount Fuji mountain backdrop framing */
-  .mountain-layers-wrap{
-    height:clamp(220px, 32vh, 270px);
-    bottom:0;
+    right:max(66px, calc(env(safe-area-inset-right, 0px) + 66px));
   }
 
   nav{
@@ -2938,7 +2965,7 @@ footer span{color:var(--gold)}
   </div>
 
   <div class="mountain-layers-wrap" id="mountain-layers-container">
-    <svg class="mountain-layers-svg" viewBox="0 0 1600 520" preserveAspectRatio="none">
+    <svg class="mountain-layers-svg" viewBox="0 0 1600 520" preserveAspectRatio="xMidYMax slice">
       <!-- FAR MOUNTAIN LAYER GROUP (Majestic Skyline, Grand & Small Fuji Peaks, Snowcaps & Ridge Lines) -->
       <g class="mtn-group mtn-group-far">
         <!-- Mountain base silhouette occluding sky & falling stars behind mountains -->
@@ -3835,7 +3862,7 @@ footer span{color:var(--gold)}
         </a>
       </div>
       <div class="footer-copy">
-        &copy; 2025 Hari Prabhu. Built with 💛 and pure HTML.
+        &copy; 2026 Hari Prabhu.
       </div>
     </div>
   </div>
