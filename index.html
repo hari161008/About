@@ -804,10 +804,22 @@ nav a:hover,nav a.active{
   width:34px;height:34px;border-radius:50%;flex-shrink:0;
   background:var(--s3);border:none;
   display:flex;align-items:center;justify-content:center;
-  transition:all .3s var(--spring);color:var(--gold);
+  transition:transform .3s var(--spring),background-color .25s var(--ease),color .25s var(--ease),box-shadow .25s var(--ease);color:var(--gold);
   box-shadow:0 4px 12px var(--sh-5);
 }
 .proj-arr svg.icon{width:14px;height:14px}
+:root[data-theme="light"] .proj:hover .proj-arr{
+  background:#faeec2;
+  color:#1c1700;
+  box-shadow:0 4px 14px rgba(180,140,0,.25);
+}
+@media(prefers-color-scheme:light){
+  :root:not([data-theme="dark"]) .proj:hover .proj-arr{
+    background:#faeec2;
+    color:#1c1700;
+    box-shadow:0 4px 14px rgba(180,140,0,.25);
+  }
+}
 
 /* ── SKILLS / TOOLS OF THE TRADE ── */
 .skills-filter{
@@ -857,6 +869,34 @@ nav a:hover,nav a.active{
 .sk-filter-btn.active .sk-count{
   background:rgba(0,0,0,.2);
   color:#000;
+}
+:root[data-theme="light"] .sk-filter-btn:hover{
+  background:#faeec2;
+  color:#1c1700;
+}
+:root[data-theme="light"] .sk-filter-btn.active{
+  background:#faeec2;
+  color:#1c1700;
+  box-shadow:0 4px 16px rgba(180,140,0,.25);
+}
+:root[data-theme="light"] .sk-filter-btn.active .sk-count{
+  background:rgba(0,0,0,.08);
+  color:#1c1700;
+}
+@media(prefers-color-scheme:light){
+  :root:not([data-theme="dark"]) .sk-filter-btn:hover{
+    background:#faeec2;
+    color:#1c1700;
+  }
+  :root:not([data-theme="dark"]) .sk-filter-btn.active{
+    background:#faeec2;
+    color:#1c1700;
+    box-shadow:0 4px 16px rgba(180,140,0,.25);
+  }
+  :root:not([data-theme="dark"]) .sk-filter-btn.active .sk-count{
+    background:rgba(0,0,0,.08);
+    color:#1c1700;
+  }
 }
 
 .skills-grid{
@@ -941,7 +981,7 @@ nav a:hover,nav a.active{
   align-items:center;
   justify-content:center;
   color:var(--text3);
-  transition:all .3s var(--spring);
+  transition:transform .3s var(--spring),background-color .25s var(--ease),color .25s var(--ease),box-shadow .25s var(--ease);
   flex-shrink:0;
   box-shadow:0 2px 8px var(--sh-5);
 }
@@ -949,6 +989,18 @@ nav a:hover,nav a.active{
   background:var(--gold);
   color:#000;
   transform:translate(2px,-2px) scale(1.08);
+}
+:root[data-theme="light"] .skill-card:hover .sk-ext-badge{
+  background:#faeec2;
+  color:#1c1700;
+  box-shadow:0 4px 12px rgba(180,140,0,.25);
+}
+@media(prefers-color-scheme:light){
+  :root:not([data-theme="dark"]) .skill-card:hover .sk-ext-badge{
+    background:#faeec2;
+    color:#1c1700;
+    box-shadow:0 4px 12px rgba(180,140,0,.25);
+  }
 }
 .sk-ext-badge svg.icon{
   width:13px;
@@ -1384,7 +1436,7 @@ footer span{color:var(--gold)}
 .sky-clouds-wrap{
   position:absolute;
   top:0;left:0;right:0;
-  height:65vh;
+  height:100vh;
   pointer-events:none;
   overflow:hidden;
   z-index:2;
@@ -1396,6 +1448,7 @@ footer span{color:var(--gold)}
   will-change:transform;
   transform:translateZ(0);
   opacity:.92;
+  overflow:visible !important;
 }
 .cloud-body{
   fill:var(--s1);
@@ -2098,8 +2151,28 @@ footer span{color:var(--gold)}
   transform:translateZ(0);
   will-change:transform;
 }
+.app-showcase-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at bottom right,var(--gold-glow) 0%,transparent 60%);
+  opacity:0;
+  transition:opacity .4s var(--ease);
+  pointer-events:none;
+  z-index:0;
+  border-radius:inherit;
+}
 .app-showcase-card:hover{
   box-shadow:0 24px 60px var(--sh-8),0 0 30px var(--gold-glow);
+}
+.app-showcase-card:hover::before{
+  opacity:0.35;
+}
+:root[data-theme="light"] .app-showcase-card::before{
+  background:radial-gradient(circle at bottom right,rgba(212,167,19,.28) 0%,transparent 60%);
+}
+:root[data-theme="light"] .app-showcase-card:hover::before{
+  opacity:0.4;
 }
 
 .app-sc-header{
@@ -2243,7 +2316,7 @@ footer span{color:var(--gold)}
   font-size:12.5px;
   font-weight:800;
   white-space:nowrap;
-  transition:all .3s var(--spring);
+  transition:transform .3s var(--spring),background-color .25s var(--ease),color .25s var(--ease),box-shadow .25s var(--ease);
   flex-shrink:0;
   letter-spacing:.02em;
 }
@@ -2251,7 +2324,7 @@ footer span{color:var(--gold)}
   background:var(--gold);
   color:#000;
   transform:scale(1.06);
-  box-shadow:0 8px 24px var(--gold-glow);
+  box-shadow:0 0 22px var(--gold-glow), 0 2px 10px rgba(0,0,0,.18);
 }
 .app-sc-cta-btn svg.icon{
   width:12px;height:12px;
@@ -2259,6 +2332,28 @@ footer span{color:var(--gold)}
 }
 .app-showcase-card:hover .app-sc-cta-btn svg.icon{
   transform:translate(2px,-2px);
+}
+:root[data-theme="light"] .app-sc-cta-btn{
+  background:rgba(110,93,0,.1);
+  color:#6e5d00;
+}
+:root[data-theme="light"] .app-showcase-card:hover .app-sc-cta-btn,
+:root[data-theme="light"] .app-sc-cta-btn:hover{
+  background:#faeec2;
+  color:#1c1700;
+  box-shadow:0 0 20px rgba(212,167,19,.45), 0 2px 8px rgba(0,0,0,.06);
+}
+@media(prefers-color-scheme:light){
+  :root:not([data-theme="dark"]) .app-sc-cta-btn{
+    background:rgba(110,93,0,.1);
+    color:#6e5d00;
+  }
+  :root:not([data-theme="dark"]) .app-showcase-card:hover .app-sc-cta-btn,
+  :root:not([data-theme="dark"]) .app-sc-cta-btn:hover{
+    background:#faeec2;
+    color:#1c1700;
+    box-shadow:0 0 20px rgba(212,167,19,.45), 0 2px 8px rgba(0,0,0,.06);
+  }
 }
 
 /* ── MATERIAL YOU RIPPLE ── */
@@ -2993,27 +3088,27 @@ footer span{color:var(--gold)}
 
   <!-- SOLID MATERIAL YOU CLOUDS (NO GRADIENTS) -->
   <div class="sky-clouds-wrap" id="sky-clouds-container">
-    <svg class="sky-cloud cloud-1" data-speed="0.38" data-base-y="6" viewBox="0 0 200 90">
+    <svg class="sky-cloud cloud-1" data-speed="0.38" data-base-y="6" viewBox="0 0 215 90">
       <path class="cloud-body" d="M30,72 Q10,72 10,50 Q10,34 28,34 Q34,14 58,14 Q74,14 86,26 Q98,10 128,10 Q156,10 166,28 Q188,24 196,44 Q204,60 188,72 Z"/>
       <path class="cloud-inner-puff" d="M36,68 Q18,68 18,52 Q18,40 32,40 Q38,24 58,24 Q72,24 82,34"/>
       <path class="cloud-arc-line" d="M60,20 Q74,20 84,30 Q98,16 126,16 Q148,16 158,32"/>
     </svg>
-    <svg class="sky-cloud cloud-2" data-speed="0.52" data-base-y="18" viewBox="0 0 240 100">
+    <svg class="sky-cloud cloud-2" data-speed="0.52" data-base-y="18" viewBox="0 0 250 100">
       <path class="cloud-body" d="M35,82 Q10,82 10,58 Q10,38 32,38 Q38,16 66,16 Q85,16 98,30 Q112,12 148,12 Q180,12 192,32 Q218,28 228,50 Q238,68 220,82 Z"/>
       <path class="cloud-inner-puff" d="M42,78 Q20,78 20,60 Q20,44 38,44 Q44,24 68,24 Q84,24 94,36"/>
       <path class="cloud-arc-line" d="M68,22 Q84,22 96,34 Q112,18 146,18 Q172,18 184,36"/>
     </svg>
-    <svg class="sky-cloud cloud-3" data-speed="0.28" data-base-y="28" viewBox="0 0 170 80">
+    <svg class="sky-cloud cloud-3" data-speed="0.28" data-base-y="28" viewBox="0 0 185 85">
       <path class="cloud-body" d="M25,64 Q8,64 8,44 Q8,28 24,28 Q30,12 50,12 Q64,12 74,22 Q86,8 112,8 Q134,8 142,24 Q160,20 166,36 Q172,50 158,64 Z"/>
       <path class="cloud-inner-puff" d="M30,60 Q16,60 16,46 Q16,34 28,34 Q34,20 50,20 Q62,20 70,30"/>
       <path class="cloud-arc-line" d="M52,16 Q64,16 72,26 Q84,12 110,12 Q128,12 136,26"/>
     </svg>
-    <svg class="sky-cloud cloud-4" data-speed="0.44" data-base-y="10" viewBox="0 0 210 90">
+    <svg class="sky-cloud cloud-4" data-speed="0.44" data-base-y="10" viewBox="0 0 225 90">
       <path class="cloud-body" d="M30,74 Q10,74 10,52 Q10,34 30,34 Q36,14 62,14 Q80,14 92,26 Q106,10 138,10 Q166,10 176,28 Q200,24 208,46 Q216,62 198,74 Z"/>
       <path class="cloud-inner-puff" d="M36,70 Q18,70 18,54 Q18,40 34,40 Q40,22 62,22 Q76,22 88,32"/>
       <path class="cloud-arc-line" d="M64,18 Q80,18 90,30 Q104,14 136,14 Q160,14 170,30"/>
     </svg>
-    <svg class="sky-cloud cloud-5" data-speed="0.32" data-base-y="22" viewBox="0 0 180 80">
+    <svg class="sky-cloud cloud-5" data-speed="0.32" data-base-y="22" viewBox="0 0 195 85">
       <path class="cloud-body" d="M26,66 Q8,66 8,46 Q8,30 26,30 Q32,14 54,14 Q70,14 80,24 Q94,10 120,10 Q144,10 152,26 Q172,22 178,40 Q184,54 168,66 Z"/>
       <path class="cloud-inner-puff" d="M32,62 Q16,62 16,48 Q16,36 30,36 Q36,22 54,22 Q66,22 76,32"/>
       <path class="cloud-arc-line" d="M56,18 Q68,18 78,28 Q92,14 118,14 Q138,14 146,28"/>
@@ -3584,27 +3679,8 @@ footer span{color:var(--gold)}
     </div>
     <div class="projects-grid">
 
-      <!-- Everlasting Android Tweak -->
-      <a href="https://hariprabhu.com/Everlasting-Android-Tweak" target="_blank" class="proj rv-left d1" data-app="eat">
-        <div class="banner-wrap">
-          <img class="proj-banner" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Everlasting%20Android%20Tweak/Assets/Everlasting%20Android%20Tweak%20Banner.png" alt="Banner"/>
-          <div class="banner-fade"></div>
-        </div>
-        <div class="proj-body">
-          <p class="proj-desc">The true heart of Android — a powerful toolkit to unlock your device's full potential. Advanced gestures, system controls, customization, and smart utilities all in one.</p>
-          <div class="proj-foot">
-            <div class="tags">
-              <span class="tag">Kotlin</span>
-              <span class="tag">Shizuku</span>
-              <span class="tag">Compose</span>
-            </div>
-            <div class="proj-arr"><svg class="icon"><use href="#ico-arrow-ne"/></svg></div>
-          </div>
-        </div>
-      </a>
-
       <!-- Ever Dialer -->
-      <a href="https://hariprabhu.com/Ever-Dialer" target="_blank" class="proj rv-right d2" data-app="dialer">
+      <a href="https://hariprabhu.com/Ever-Dialer" target="_blank" class="proj rv-left d1" data-app="dialer">
         <div class="banner-wrap">
           <img class="proj-banner" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Dialer/Assets/Banner%20and%20Icon/Ever%20Dialer%20Banner.png" alt="Banner"/>
           <div class="banner-fade"></div>
@@ -3623,7 +3699,7 @@ footer span{color:var(--gold)}
       </a>
 
       <!-- Ever Call Recorder -->
-      <a href="https://hariprabhu.com/Ever-Call-Recorder" target="_blank" class="proj rv-left d3" data-app="recorder">
+      <a href="https://hariprabhu.com/Ever-Call-Recorder" target="_blank" class="proj rv-right d2" data-app="recorder">
         <div class="banner-wrap">
           <img class="proj-banner" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Call%20Recorder/Assets/Ever%20Call%20Recorder%20Banner.png" alt="Banner"/>
           <div class="banner-fade"></div>
@@ -3642,7 +3718,7 @@ footer span{color:var(--gold)}
       </a>
 
       <!-- Ever Haptics -->
-      <a href="https://hariprabhu.com/Ever-Haptics" target="_blank" class="proj rv-right d4" data-app="haptics">
+      <a href="https://hariprabhu.com/Ever-Haptics" target="_blank" class="proj rv-left d3" data-app="haptics">
         <div class="banner-wrap">
           <img class="proj-banner" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Haptics/Assets/Ever%20Haptics%20Banner.png" alt="Banner"/>
           <div class="banner-fade"></div>
@@ -3661,7 +3737,7 @@ footer span{color:var(--gold)}
       </a>
 
       <!-- Ever Wall -->
-      <a href="https://hariprabhu.com/Ever-Wall/" target="_blank" class="proj rv-left d5" data-app="wall">
+      <a href="https://hariprabhu.com/Ever-Wall/" target="_blank" class="proj rv-right d4" data-app="wall">
         <div class="banner-wrap">
           <img class="proj-banner" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Wall/Assets/Ever%20Wall%20Banner.png" alt="Banner"/>
           <div class="banner-fade"></div>
@@ -3673,6 +3749,25 @@ footer span{color:var(--gold)}
               <span class="tag">Wallpapers</span>
               <span class="tag">Depth Effect</span>
               <span class="tag">Customization</span>
+            </div>
+            <div class="proj-arr"><svg class="icon"><use href="#ico-arrow-ne"/></svg></div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Everlasting Android Tweak -->
+      <a href="https://hariprabhu.com/Everlasting-Android-Tweak" target="_blank" class="proj rv-left d5" data-app="eat">
+        <div class="banner-wrap">
+          <img class="proj-banner" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Everlasting%20Android%20Tweak/Assets/Everlasting%20Android%20Tweak%20Banner.png" alt="Banner"/>
+          <div class="banner-fade"></div>
+        </div>
+        <div class="proj-body">
+          <p class="proj-desc">The true heart of Android — a powerful toolkit to unlock your device's full potential. Advanced gestures, system controls, customization, and smart utilities all in one.</p>
+          <div class="proj-foot">
+            <div class="tags">
+              <span class="tag">Kotlin</span>
+              <span class="tag">Shizuku</span>
+              <span class="tag">Compose</span>
             </div>
             <div class="proj-arr"><svg class="icon"><use href="#ico-arrow-ne"/></svg></div>
           </div>
