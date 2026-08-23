@@ -4,6 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>SVHP — Hari Prabhu · Android Developer</title>
+<link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/hari161008/About/main/Assets/GitHub%20Logo.jpeg"/>
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/hari161008/About/main/Assets/GitHub%20Logo.jpeg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -1862,6 +1864,148 @@ footer span{color:var(--gold)}
   stroke:rgba(180,140,0,.6);
 }
 
+/* ── CAMPFIRE & HUT SCENIC AMBIENCE ── */
+.landscape-hut{
+  transition:all .3s ease;
+}
+.hut-roof{
+  fill:var(--s3);
+  stroke:rgba(234,196,53,.85);
+  stroke-width:1.8;
+  stroke-linejoin:round;
+}
+.hut-overhang{
+  stroke:rgba(234,196,53,.6);
+  stroke-width:1.4;
+}
+.hut-body{
+  fill:var(--s2);
+  stroke:rgba(234,196,53,.8);
+  stroke-width:1.6;
+}
+.hut-plank{
+  stroke:rgba(234,196,53,.35);
+  stroke-width:1;
+}
+.hut-door{
+  fill:var(--s4);
+  stroke:rgba(234,196,53,.6);
+  stroke-width:1.2;
+}
+.hut-chimney{
+  fill:var(--s3);
+  stroke:rgba(234,196,53,.7);
+  stroke-width:1.3;
+}
+.hut-window{
+  fill:#ffe066;
+  opacity:.9;
+  filter:drop-shadow(0 0 8px rgba(234,196,53,.85));
+  animation:windowGlow 4s ease-in-out infinite alternate;
+}
+.hut-smoke-puff{
+  fill:rgba(234,196,53,.4);
+  transform-box:fill-box;
+  transform-origin:center bottom;
+  animation:chimneySmoke 3s ease-out infinite;
+}
+.hut-smoke-puff.p2{ animation-delay:1.5s; }
+
+@keyframes windowGlow{
+  0%{ opacity:.75; filter:drop-shadow(0 0 5px rgba(234,196,53,.6)); }
+  50%{ opacity:.95; filter:drop-shadow(0 0 10px rgba(234,196,53,.95)); }
+  100%{ opacity:.8; filter:drop-shadow(0 0 6px rgba(234,196,53,.7)); }
+}
+
+@keyframes chimneySmoke{
+  0%{ opacity:0; transform:translate3d(0, 0, 0) scale(0.4); }
+  30%{ opacity:0.6; }
+  100%{ opacity:0; transform:translate3d(10px, -22px, 0) scale(1.4); }
+}
+
+/* Campfire Refined */
+.landscape-campfire{
+  pointer-events:none;
+}
+.fire-glow-aura{
+  transform-box:fill-box;
+  transform-origin:center center;
+  animation:fireAuraPulse 2.2s ease-in-out infinite alternate;
+}
+.fire-stone{
+  fill:var(--s3);
+  stroke:rgba(234,196,53,.55);
+  stroke-width:1.2;
+}
+.fire-coal{
+  fill:#ff3d00;
+  filter:drop-shadow(0 0 4px #ff6d00);
+}
+.fire-log-bar{
+  fill:var(--s4);
+  stroke:rgba(234,196,53,.85);
+  stroke-width:1.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.fire-flame-group{
+  transform-box:fill-box;
+  transform-origin:50% 100%;
+  animation:fireFlameBreathe 1.6s ease-in-out infinite alternate;
+}
+.flame-layer-outer{
+  fill:#ff6d00;
+}
+.flame-layer-mid{
+  fill:#ffb300;
+}
+.flame-layer-core{
+  fill:#fff9c4;
+}
+.fire-ember-spark{
+  fill:#ffd54f;
+  transform-box:fill-box;
+  transform-origin:center center;
+  animation:sparkFloat 2.6s cubic-bezier(0.25, 0.9, 0.45, 1) infinite;
+}
+.fire-ember-spark.s2{ animation-delay:0.8s; animation-duration:2.1s; }
+.fire-ember-spark.s3{ animation-delay:1.7s; animation-duration:2.9s; }
+
+@keyframes fireFlameBreathe{
+  0%{
+    transform:scale(1, 1);
+    opacity:0.94;
+  }
+  50%{
+    transform:scale(0.96, 1.08) skewX(1deg);
+    opacity:1;
+  }
+  100%{
+    transform:scale(1.04, 0.96) skewX(-1deg);
+    opacity:0.96;
+  }
+}
+
+@keyframes fireAuraPulse{
+  0%{ opacity:0.6; transform:scale(0.95); }
+  50%{ opacity:0.9; transform:scale(1.08); }
+  100%{ opacity:0.65; transform:scale(0.98); }
+}
+
+@keyframes sparkFloat{
+  0%{ opacity:0; transform:translate3d(0, 0, 0) scale(0.5); }
+  25%{ opacity:0.9; }
+  80%{ opacity:0.6; transform:translate3d(6px, -18px, 0) scale(1); }
+  100%{ opacity:0; transform:translate3d(12px, -30px, 0) scale(0.3); }
+}
+
+:root[data-theme="light"] .hut-roof{ fill:#eae6dc; stroke:#826400; }
+:root[data-theme="light"] .hut-body{ fill:#f4f1e8; stroke:#826400; }
+:root[data-theme="light"] .hut-door{ fill:#dfdbcf; stroke:#826400; }
+:root[data-theme="light"] .hut-window{ fill:#f2c724; }
+:root[data-theme="light"] .fire-stone{ fill:#eae6dc; stroke:#826400; }
+:root[data-theme="light"] .fire-log-bar{ fill:#dfdbcf; stroke:#826400; }
+
 /* ── PURE FLOATING DEVELOPER CODE GLYPHS (NO BACKGROUND) ── */
 .m3-bg-floaters{
   position:fixed;
@@ -2966,6 +3110,14 @@ footer span{color:var(--gold)}
 
   <div class="mountain-layers-wrap" id="mountain-layers-container">
     <svg class="mountain-layers-svg" viewBox="0 0 1600 520" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <radialGradient id="fire-ambient-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ff7a00" stop-opacity="0.45"/>
+          <stop offset="50%" stop-color="#ff9900" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="#ff7a00" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
       <!-- FAR MOUNTAIN LAYER GROUP (Majestic Skyline, Grand & Small Fuji Peaks, Snowcaps & Ridge Lines) -->
       <g class="mtn-group mtn-group-far">
         <!-- Mountain base silhouette occluding sky & falling stars behind mountains -->
@@ -3023,6 +3175,67 @@ footer span{color:var(--gold)}
             <path class="turbine-blade" d="M0,-70 L-2,-74 L-1.3,-110 Q0,-116 1.3,-110 L2,-74 Z" transform="rotate(240, 0, -70)"/>
             <circle cx="0" cy="-70" r="1.8" fill="var(--bg,#0c0b08)"/>
           </g>
+        </g>
+
+        <!-- Cozy Alpine Hut / Cabin (Nestled on the rolling hill slope at x: 615, y: 362) -->
+        <g class="landscape-hut" transform="translate(615, 362)">
+          <!-- Chimney & Animated Smoke -->
+          <rect x="36" y="-18" width="7" height="20" rx="1" class="hut-chimney"/>
+          <polygon points="34,-18 45,-18 43,-21 36,-21" class="hut-chimney"/>
+          <circle cx="39" cy="-24" r="2" class="hut-smoke-puff"/>
+          <circle cx="41" cy="-30" r="3" class="hut-smoke-puff p2"/>
+          <!-- Cabin Main Structure -->
+          <rect x="6" y="6" width="46" height="32" rx="2" class="hut-body"/>
+          <!-- Horizontal Wooden Log Planks -->
+          <line x1="6" y1="14" x2="52" y2="14" class="hut-plank"/>
+          <line x1="6" y1="22" x2="52" y2="22" class="hut-plank"/>
+          <line x1="6" y1="30" x2="52" y2="30" class="hut-plank"/>
+          <!-- Cozy Wooden Door -->
+          <rect x="12" y="16" width="12" height="22" rx="1.5" class="hut-door"/>
+          <circle cx="21" cy="28" r="1" fill="var(--gold)"/>
+          <!-- Warm Glowing Window with Cross Pane -->
+          <rect x="32" y="14" width="14" height="14" rx="1.5" class="hut-window"/>
+          <line x1="39" y1="14" x2="39" y2="28" stroke="var(--s2)" stroke-width="1.2"/>
+          <line x1="32" y1="21" x2="46" y2="21" stroke="var(--s2)" stroke-width="1.2"/>
+          <!-- Cabin Gable Roof -->
+          <polygon points="29,-14 58,8 0,8" class="hut-roof"/>
+          <line x1="29" y1="-14" x2="29" y2="8" class="hut-overhang"/>
+        </g>
+
+        <!-- Crackling Redesigned Campfire (Positioned with ample clearance at x: 735, y: 412) -->
+        <g class="landscape-campfire" transform="translate(735, 412)">
+          <!-- Ambient Seamless Glow Gradient Aura (Zero hard circular edges) -->
+          <circle cx="0" cy="-10" r="32" fill="url(#fire-ambient-glow)" class="fire-glow-aura"/>
+          
+          <!-- Campfire Stone Hearth Base -->
+          <ellipse cx="-16" cy="3" rx="4" ry="2.6" class="fire-stone"/>
+          <ellipse cx="-9" cy="5" rx="4.5" ry="2.8" class="fire-stone"/>
+          <ellipse cx="0" cy="6" rx="5" ry="3" class="fire-stone"/>
+          <ellipse cx="9" cy="5" rx="4.5" ry="2.8" class="fire-stone"/>
+          <ellipse cx="16" cy="3" rx="4" ry="2.6" class="fire-stone"/>
+          
+          <!-- Hot Glowing Coal Bed Beneath Logs -->
+          <ellipse cx="0" cy="1" rx="10" ry="3.5" class="fire-coal"/>
+          
+          <!-- Criss-Crossed Campfire Wood Logs -->
+          <polygon points="-16,4 -13,6 14,-3 12,-5" class="fire-log-bar"/>
+          <polygon points="16,4 13,6 -14,-3 -12,-5" class="fire-log-bar"/>
+          <polygon points="-11,5 -9,7 11,5 13,3" class="fire-log-bar"/>
+
+          <!-- Multi-Layered Stylized Animated Fire Flames -->
+          <g class="fire-flame-group">
+            <!-- Outer Amber Flame -->
+            <path class="flame-layer-outer" d="M0,-28 Q-7,-14 -9,-3 Q-9,2 0,2 Q9,2 9,-3 Q7,-14 0,-28 Z"/>
+            <!-- Mid Golden Flame -->
+            <path class="flame-layer-mid" d="M0,-21 Q-5,-10 -6,-2 Q-6,1 0,1 Q6,1 6,-2 Q5,-10 0,-21 Z"/>
+            <!-- Core Brilliant Flame -->
+            <path class="flame-layer-core" d="M0,-13 Q-3,-5 -3,-1 Q-3,0 0,0 Q3,0 3,-1 Q3,-5 0,-13 Z"/>
+          </g>
+
+          <!-- Floating Cozy Ember Sparks -->
+          <circle cx="2" cy="-16" r="1.2" class="fire-ember-spark"/>
+          <circle cx="-4" cy="-22" r="1.4" class="fire-ember-spark s2"/>
+          <circle cx="5" cy="-28" r="1.1" class="fire-ember-spark s3"/>
         </g>
 
         <!-- Plains Cactus Plants (Iconic Desert & Plains Saguaro Silhouettes) -->
@@ -3264,14 +3477,14 @@ footer span{color:var(--gold)}
       </div>
     </a>
 
-    <!-- 4. Everlasting Android Tweak -->
-    <a class="app-showcase-card rv-right d4 scroll-fx" href="https://hariprabhu.com/Everlasting-Android-Tweak" target="_blank" rel="noopener noreferrer">
+    <!-- 4. Ever Wall -->
+    <a class="app-showcase-card rv-right d4 scroll-fx" href="https://hariprabhu.com/Ever-Wall/" target="_blank" rel="noopener noreferrer">
       <div class="app-sc-header">
         <div class="app-sc-title-group">
-          <img class="app-sc-icon" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Everlasting%20Android%20Tweak/Assets/Everlasting%20Android%20Tweak%20Pirate.png" alt="Everlasting Android Tweak"/>
+          <img class="app-sc-icon" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Wall/Assets/Ever%20Wall%20App%20Icon.png" alt="Ever Wall"/>
           <div>
-            <div class="app-sc-name">Everlasting Android Tweak</div>
-            <div class="app-sc-subtitle">Ultimate Rootless Customization Suite</div>
+            <div class="app-sc-name">Ever Wall</div>
+            <div class="app-sc-subtitle">Depth Wallpaper &amp; Screen Customizer</div>
           </div>
         </div>
         <div class="app-sc-badge-col">
@@ -3279,19 +3492,19 @@ footer span{color:var(--gold)}
         </div>
       </div>
       <div class="app-mini-chips">
-        <span class="app-mini-chip">System Supercharger</span>
-        <span class="app-mini-chip">Gesture Engine</span>
-        <span class="app-mini-chip">Rootless Tweaks</span>
+        <span class="app-mini-chip">Depth Wallpaper</span>
+        <span class="app-mini-chip">Music Wallpapers</span>
+        <span class="app-mini-chip">Screen Customizer</span>
       </div>
       <div class="ss-scroll-strip" title="Drag or scroll to view screenshots">
-        <img class="app-ss-img" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Everlasting%20Android%20Tweak/Screenshots/1.png" alt="EAT Screenshot 1" loading="lazy"/>
-        <img class="app-ss-img" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Everlasting%20Android%20Tweak/Screenshots/2.png" alt="EAT Screenshot 2" loading="lazy"/>
-        <img class="app-ss-img" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Everlasting%20Android%20Tweak/Screenshots/3.png" alt="EAT Screenshot 3" loading="lazy"/>
-        <img class="app-ss-img" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Everlasting%20Android%20Tweak/Screenshots/4.png" alt="EAT Screenshot 4" loading="lazy"/>
-        <img class="app-ss-img" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Everlasting%20Android%20Tweak/Screenshots/5.png" alt="EAT Screenshot 5" loading="lazy"/>
+        <img class="app-ss-img" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Wall/Screenshots/1.png" alt="Ever Wall Screenshot 1" loading="lazy"/>
+        <img class="app-ss-img" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Wall/Screenshots/2.png" alt="Ever Wall Screenshot 2" loading="lazy"/>
+        <img class="app-ss-img" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Wall/Screenshots/3.png" alt="Ever Wall Screenshot 3" loading="lazy"/>
+        <img class="app-ss-img" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Wall/Screenshots/4.png" alt="Ever Wall Screenshot 4" loading="lazy"/>
+        <img class="app-ss-img" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Wall/Screenshots/5.png" alt="Ever Wall Screenshot 5" loading="lazy"/>
       </div>
       <div class="app-sc-footer">
-        <span class="app-sc-desc">Unlock hidden system capabilities, custom gestures, and deep device power safely without root.</span>
+        <span class="app-sc-desc">Ever wall is a depth wallpaper app which gives you crazy features to customise your screen with a background/clock/subject or even add a music based wallpaper and make your home screen beautiful for FREE !</span>
         <span class="app-sc-cta-btn">Explore App <svg class="icon"><use href="#ico-arrow-ne"/></svg></span>
       </div>
     </a>
@@ -3318,7 +3531,7 @@ footer span{color:var(--gold)}
         </div>
         <div class="about-stat-row">
           <div class="about-stat">
-            <div class="about-stat-n" data-count="4" data-suffix="">0</div>
+            <div class="about-stat-n" data-count="5" data-suffix="">0</div>
             <div class="about-stat-l">Apps</div>
           </div>
           <div class="about-stat">
@@ -3378,12 +3591,6 @@ footer span{color:var(--gold)}
           <div class="banner-fade"></div>
         </div>
         <div class="proj-body">
-          <div class="proj-head">
-            <div class="proj-ico">
-              <img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Everlasting%20Android%20Tweak/Assets/Everlasting%20Android%20Tweak%20Pirate.png" alt="icon"/>
-            </div>
-            <div class="proj-title">Everlasting Android Tweak</div>
-          </div>
           <p class="proj-desc">The true heart of Android — a powerful toolkit to unlock your device's full potential. Advanced gestures, system controls, customization, and smart utilities all in one.</p>
           <div class="proj-foot">
             <div class="tags">
@@ -3403,12 +3610,6 @@ footer span{color:var(--gold)}
           <div class="banner-fade"></div>
         </div>
         <div class="proj-body">
-          <div class="proj-head">
-            <div class="proj-ico">
-              <img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Dialer/Assets/Banner%20and%20Icon/Ever%20Dialer%20icon.png" alt="icon"/>
-            </div>
-            <div class="proj-title">Ever Dialer</div>
-          </div>
           <p class="proj-desc">The best open-source Google Dialer replacement. Material You, dynamic colors, contact notes, and a quick-note popup right during your calls — aesthetic and functional.</p>
           <div class="proj-foot">
             <div class="tags">
@@ -3428,12 +3629,6 @@ footer span{color:var(--gold)}
           <div class="banner-fade"></div>
         </div>
         <div class="proj-body">
-          <div class="proj-head">
-            <div class="proj-ico">
-              <img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Call%20Recorder/Assets/Ever%20Call%20Recorder%20icon.png" alt="icon"/>
-            </div>
-            <div class="proj-title">Ever Call Recorder</div>
-          </div>
           <p class="proj-desc">The best NON-ROOT open-source call recorder. Uses Shizuku to capture both sides of a call cleanly and saves them as audio files. No root. No compromise.</p>
           <div class="proj-foot">
             <div class="tags">
@@ -3453,18 +3648,31 @@ footer span{color:var(--gold)}
           <div class="banner-fade"></div>
         </div>
         <div class="proj-body">
-          <div class="proj-head">
-            <div class="proj-ico">
-              <img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Haptics/Assets/Ever%20Haptics%20Icon.png" alt="icon"/>
-            </div>
-            <div class="proj-title">Ever Haptics</div>
-          </div>
           <p class="proj-desc">Adds haptic feedback across your entire phone — apps, scrolling, buttons, charger connect, notifications, alarms, music and more. Makes your phone feel genuinely premium.</p>
           <div class="proj-foot">
             <div class="tags">
               <span class="tag">Haptics</span>
               <span class="tag">System UI</span>
               <span class="tag">Android</span>
+            </div>
+            <div class="proj-arr"><svg class="icon"><use href="#ico-arrow-ne"/></svg></div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Ever Wall -->
+      <a href="https://hariprabhu.com/Ever-Wall/" target="_blank" class="proj rv-left d5" data-app="wall">
+        <div class="banner-wrap">
+          <img class="proj-banner" src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Wall/Assets/Ever%20Wall%20Banner.png" alt="Banner"/>
+          <div class="banner-fade"></div>
+        </div>
+        <div class="proj-body">
+          <p class="proj-desc">Ever wall is a depth wallpaper app which gives you crazy features to customise your screen with a background/clock/subject or even add a music based wallpaper and make your home screen beautiful for FREE !</p>
+          <div class="proj-foot">
+            <div class="tags">
+              <span class="tag">Wallpapers</span>
+              <span class="tag">Depth Effect</span>
+              <span class="tag">Customization</span>
             </div>
             <div class="proj-arr"><svg class="icon"><use href="#ico-arrow-ne"/></svg></div>
           </div>
