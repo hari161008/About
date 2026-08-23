@@ -5,4 +5,5 @@
 ┈➤ [Ever Dialer](https://hariprabhu.com/Ever-Dialer) <br>
 ┈➤ [Ever Call Recorder](https://hariprabhu.com/Ever-Call-Recorder) <br>
 ┈➤ [Ever Haptics](https://hariprabhu.com/Ever-Haptics) <br>
+┈➤ [Ever Wall](https://hariprabhu.com/Ever-Wall) <br>
 ┈➤ [Everlasting Android Tweak](https://hariprabhu.com/Everlasting-Android-Tweak) <br>
