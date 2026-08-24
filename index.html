@@ -7,8 +7,8 @@
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/hari161008/About/main/Assets/GitHub%20Logo.jpeg"/>
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/hari161008/About/main/Assets/GitHub%20Logo.jpeg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 
 <!-- SVG ICON DEFS -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -196,6 +196,36 @@
     <symbol id="ico-moon" viewBox="0 0 24 24">
       <path fill="currentColor" d="M20.742 13.045a8.088 8.088 0 0 1-2.077.273c-4.508 0-8.165-3.655-8.165-8.163 0-1.04.194-2.033.547-2.95a.5.5 0 0 0-.622-.66A9.998 9.998 0 0 0 4 11c0 5.523 4.477 10 10 10a9.998 9.998 0 0 0 9.455-6.715.5.5 0 0 0-.713-.24z"/>
     </symbol>
+    <!-- Heart -->
+    <symbol id="ico-heart" viewBox="0 0 24 24">
+      <path fill="#EA4335" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </symbol>
+    <!-- Coffee / Buy Me a Coffee Official -->
+    <symbol id="ico-coffee" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.962 1.904.82 1.832 3.011.723 4.31zm8.064-2.178c-.673.79-1.588.948-2.328.986l-.088-3.238c.683.003 1.62.062 2.148.471.603.467.744 1.229.268 1.781z"/>
+    </symbol>
+    <!-- Indian Rupee (₹) Symbol (Official Material Design) -->
+    <symbol id="ico-rupee" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M13.66 7C13.1 5.83 11.9 5 10.5 5H6V3h12v2h-3.27c.66.57 1.14 1.34 1.37 2H18v2h-1.8c-.28 2.37-2.07 4.26-4.45 4.71L17.5 21h-2.83l-5.67-7H6v-2h4.5c1.93 0 3.5-1.57 3.5-3.5 0-.17-.02-.34-.05-.5H6V7h7.66z"/>
+    </symbol>
+    <!-- BHIM / UPI -->
+    <symbol id="ico-bhim" viewBox="0 0 24 24">
+      <path fill="#097939" d="M14.2 3.5L8.6 13.2h5.8l-5.6 7.3 11-12.2h-5.2z"/>
+      <path fill="#F47920" d="M8.8 3.5L3.2 13.2H9l-5.6 7.3 11-12.2H9.2z"/>
+    </symbol>
+    <!-- Copy -->
+    <symbol id="ico-copy" viewBox="0 0 24 24">
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <!-- Check -->
+    <symbol id="ico-check" viewBox="0 0 24 24">
+      <polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <!-- Phone -->
+    <symbol id="ico-phone" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+    </symbol>
   </defs>
 </svg>
 
@@ -302,8 +332,8 @@ svg.icon{display:inline-block;vertical-align:middle;flex-shrink:0}
 body::after{
   content:'';position:fixed;inset:0;
   background-image:
-    linear-gradient(rgba(204,180,59,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(204,180,59,.025) 1px,transparent 1px);
+    linear-gradient(rgba(204,180,59,.012) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(204,180,59,.012) 1px,transparent 1px);
   background-size:48px 48px;
   pointer-events:none;z-index:0
 }
@@ -328,7 +358,7 @@ body::after{
   pointer-events:none;
   filter:blur(90px);
   z-index:0;
-  opacity:.42;
+  opacity:.20;
   transition:opacity .5s ease;
 }
 .amb-a{
@@ -368,13 +398,10 @@ body::after{
   transition:opacity .4s ease;
   will-change:transform;
 }
-@media(hover:none){
-  #cg{display:none!important}
-}
 
 /* ── THEME TOGGLE ── */
 #theme-toggle{
-  position:fixed;
+  position:absolute;
   top:max(18px,env(safe-area-inset-top,18px));
   right:max(18px,env(safe-area-inset-right,18px));
   z-index:300;
@@ -573,31 +600,57 @@ nav a:hover,nav a.active{
 
 .hero-name{
   font-family:'Space Grotesk',sans-serif;
-  font-size:clamp(36px,4vw,68px);
-  font-weight:700;letter-spacing:-.04em;line-height:1;
-  margin-bottom:8px;
-  white-space:nowrap
+  font-size:clamp(38px,4.2vw,70px);
+  font-weight:800;letter-spacing:-.04em;line-height:1;
+  margin-bottom:10px;
+  white-space:nowrap;
+  color:var(--text);
 }
-.hero-name em{font-style:normal;color:var(--gold)}
+.hero-name em{font-style:normal;color:var(--gold);font-weight:800}
 .char{
   display:inline-block;
   opacity:0;
+  font-weight:800;
   transform:translateY(60px) rotate(8deg);
   animation:charIn .6s var(--spring) forwards
 }
 .char-space{display:inline-block;width:.28em}
 .hero-handle{
   font-family:'JetBrains Mono',monospace;
-  font-size:13px;color:rgba(204,180,59,.45);
-  letter-spacing:.08em;margin-bottom:16px;
-  animation:fu .8s var(--ease) .5s both
+  font-size:14.5px;
+  font-weight:700;
+  color:var(--gold);
+  letter-spacing:.08em;
+  margin-bottom:18px;
+  animation:fu .8s var(--ease) .5s both;
+  text-shadow:0 0 14px rgba(234,196,53,.28);
+}
+:root[data-theme="light"] .hero-handle{
+  color:#6e5d00;
+  font-weight:800;
+  text-shadow:none;
 }
 .hero-bio{
-  font-size:clamp(14px,1.5vw,16px);color:var(--text2);
-  max-width:420px;line-height:1.7;margin-bottom:20px;
-  animation:fu .8s var(--ease) .58s both
+  font-size:clamp(15px,1.6vw,17px);
+  font-weight:600;
+  color:var(--text);
+  max-width:490px;
+  line-height:1.75;
+  margin-bottom:24px;
+  animation:fu .8s var(--ease) .58s both;
 }
-.hero-bio strong{color:var(--text);font-weight:800}
+.hero-bio strong{
+  color:var(--gold);
+  font-weight:800;
+}
+:root[data-theme="light"] .hero-bio{
+  color:#1c1b16;
+  font-weight:600;
+}
+:root[data-theme="light"] .hero-bio strong{
+  color:#6e5d00;
+  font-weight:800;
+}
 @keyframes charIn{to{opacity:1;transform:translateY(0) rotate(0deg)}}
 
 .chips{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px;margin-bottom:20px;animation:fu .8s var(--ease) .66s both}
@@ -1199,14 +1252,45 @@ nav a:hover,nav a.active{
   background:var(--s2);border:none;
   border-radius:24px;padding:18px 28px;
   text-decoration:none;color:var(--text);
-  min-width:220px;transition:all .35s var(--spring);
+  min-width:220px;
+  transition:transform .35s var(--spring),box-shadow .35s var(--ease),background .35s var(--ease);
   position:relative;overflow:hidden;
   box-shadow:0 8px 24px var(--sh-6);
+  cursor:pointer;
 }
+.cm::after{
+  content:'';
+  position:absolute;
+  top:-50%;left:-60%;
+  width:40%;height:200%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
+  transform:rotate(25deg);
+  transition:left .75s ease;
+  pointer-events:none;
+}
+.contact-card .cm:hover,
+.cm.in:hover,
 .cm:hover{
-  transform:translateY(-6px) scale(1.02);
-  box-shadow:0 18px 45px var(--sh-8),0 0 24px rgba(234,196,53,.15);
+  transform:translate3d(0,-6px,0) scale(1.03) !important;
+  box-shadow:0 18px 45px var(--sh-8),0 0 24px rgba(234,196,53,.2);
   background:var(--s3);
+}
+.contact-card .cm:hover::after,
+.cm.in:hover::after,
+.cm:hover::after{
+  left:130%;
+}
+.contact-card .cm:active,
+.cm.in:active,
+.cm:active{
+  transform:translate3d(0,-2px,0) scale(0.97) !important;
+  box-shadow:0 6px 18px var(--sh-6);
+}
+:root[data-theme="light"] .contact-card .cm:hover,
+:root[data-theme="light"] .cm.in:hover,
+:root[data-theme="light"] .cm:hover{
+  background:var(--s3);
+  box-shadow:0 18px 45px var(--sh-8),0 0 24px rgba(110,93,0,.18);
 }
 .cm-ico{
   width:50px;height:50px;border-radius:16px;
@@ -1222,6 +1306,488 @@ nav a:hover,nav a.active{
 .cm-info{text-align:left}
 .cm-label{font-size:10.5px;font-weight:800;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
 .cm-val{font-size:14.5px;font-weight:700;color:var(--text)}
+
+/* ── SKILLS EXPAND / COLLAPSE ── */
+.skill-card.is-collapsed{
+  display:none !important;
+}
+.skills-toggle-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:28px;
+}
+.sk-toggle-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 28px;
+  font-size:13.5px;
+  font-weight:800;
+  border-radius:var(--r-pill);
+  cursor:pointer;
+  user-select:none;
+  background:var(--s2);
+  color:var(--gold);
+  border:none;
+  box-shadow:0 4px 16px var(--sh-5);
+  transition:all .35s var(--spring);
+}
+.sk-toggle-btn:hover{
+  background:var(--gold-dim);
+  color:var(--gold);
+  transform:translateY(-3px) scale(1.04);
+  box-shadow:0 8px 24px var(--gold-glow);
+}
+.sk-toggle-btn:active{
+  transform:scale(0.96);
+}
+.sk-toggle-ico{
+  width:15px;
+  height:15px;
+  transition:transform .35s var(--spring);
+}
+.sk-toggle-btn.is-expanded .sk-toggle-ico{
+  transform:rotate(180deg);
+}
+:root[data-theme="light"] .sk-toggle-btn{
+  background:var(--s2);
+  color:var(--gold);
+}
+:root[data-theme="light"] .sk-toggle-btn:hover{
+  background:#faeec2;
+  color:#1c1700;
+}
+
+/* ── DONATE ── */
+.donate-card{
+  background:var(--s1);
+  border:none;
+  border-radius:var(--r-card);
+  padding:52px 40px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 20px 60px var(--sh-8),0 0 30px rgba(234,196,53,.08);
+  transition:transform .25s var(--ease),box-shadow .4s var(--ease);
+}
+.donate-card::before{
+  content:'';
+  position:absolute;
+  top:-140px;
+  left:50%;
+  transform:translateX(-50%);
+  width:560px;
+  height:560px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(234,196,53,.15) 0%,rgba(234,196,53,.02) 45%,transparent 70%);
+  pointer-events:none;
+  animation:beaconPulse 6s ease-in-out infinite alternate;
+}
+.donate-card > *{
+  position:relative;
+  z-index:1;
+}
+.donate-card h2{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(30px,5vw,52px);
+  font-weight:700;
+  letter-spacing:-.03em;
+  margin-bottom:16px;
+}
+.donate-card p.donate-sub{
+  font-size:16px;
+  color:var(--text2);
+  max-width:560px;
+  margin:0 auto 36px;
+  line-height:1.7;
+}
+.donate-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  align-items:stretch;
+  text-align:center;
+}
+@media(max-width:880px){
+  .donate-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .donate-card{
+    padding:32px 18px 26px;
+    border-radius:24px;
+  }
+}
+.donate-box{
+  background:var(--s2);
+  border-radius:24px;
+  padding:34px 26px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 8px 24px var(--sh-6);
+  transition:transform .35s var(--spring),box-shadow .35s var(--ease),background .35s var(--ease);
+  position:relative;
+  overflow:hidden;
+}
+.donate-box::after{
+  content:'';
+  position:absolute;
+  top:-50%;left:-60%;
+  width:40%;height:200%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);
+  transform:rotate(25deg);
+  transition:left .75s ease;
+  pointer-events:none;
+}
+.donate-box:hover{
+  transform:translateY(-6px) scale(1.015);
+  box-shadow:0 18px 45px var(--sh-8),0 0 28px rgba(234,196,53,.18);
+  background:var(--s3);
+}
+.donate-box:hover::after{
+  left:130%;
+}
+.donate-box-title{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:8px;
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  color:var(--text);
+}
+.donate-head-ico{
+  width:36px !important;
+  height:36px !important;
+  flex-shrink:0;
+}
+.bmc-head-ico{
+  width:36px !important;
+  height:36px !important;
+  object-fit:contain;
+  vertical-align:middle;
+  flex-shrink:0;
+  filter:drop-shadow(0 0 6px rgba(255,221,0,.45));
+}
+.donate-box-desc{
+  font-size:14px;
+  color:var(--text2);
+  margin-bottom:18px;
+  max-width:340px;
+  line-height:1.6;
+}
+.upi-qr-wrapper{
+  position:relative;
+  margin:12px 0 20px;
+  padding:12px;
+  background:#ffffff;
+  border:2px solid rgba(234,196,53,.45);
+  border-radius:24px;
+  box-shadow:0 12px 36px var(--sh-8),0 0 28px rgba(234,196,53,.22);
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:220px;
+  height:220px;
+  box-sizing:border-box;
+  transition:transform .35s var(--spring),box-shadow .35s var(--ease),border-color .35s var(--ease);
+}
+.upi-qr-wrapper:hover{
+  transform:scale(1.04);
+  border-color:var(--gold);
+  box-shadow:0 18px 48px var(--sh-8),0 0 36px var(--gold-glow);
+}
+.upi-qr-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:12px;
+  display:block;
+}
+:root[data-theme="light"] .upi-qr-wrapper{
+  background:#ffffff;
+  border-color:rgba(180,140,0,.45);
+  box-shadow:0 12px 36px rgba(0,0,0,.09),0 0 20px rgba(180,140,0,.15);
+}
+.bmc-qr-wrapper{
+  position:relative;
+  margin:12px 0 20px;
+  padding:16px;
+  background:transparent;
+  border:2px solid rgba(255,210,28,.4);
+  border-radius:24px;
+  box-shadow:0 12px 36px var(--sh-8),0 0 32px rgba(255,210,28,.18);
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:220px;
+  height:220px;
+  box-sizing:border-box;
+  transition:transform .35s var(--spring),box-shadow .35s var(--ease),border-color .35s var(--ease);
+}
+.bmc-qr-wrapper:hover{
+  transform:scale(1.04);
+  border-color:#FFD21C;
+  box-shadow:0 18px 48px var(--sh-8),0 0 40px rgba(255,210,28,.35);
+}
+#bmc-qrcode{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:188px;
+  height:188px;
+  background:transparent;
+}
+#bmc-qrcode canvas,
+#bmc-qrcode img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain;
+  border-radius:12px;
+  display:block;
+  background:transparent;
+}
+:root[data-theme="light"] .bmc-qr-wrapper{
+  background:transparent;
+  border-color:rgba(110,82,0,.45);
+  box-shadow:0 12px 36px rgba(0,0,0,.1),0 0 24px rgba(110,82,0,.2);
+}
+.upi-badge-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(234,196,53,.15);
+  color:var(--gold);
+  padding:6px 16px;
+  border-radius:var(--r-pill);
+  font-family:'JetBrains Mono',monospace;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:18px;
+  word-break:break-all;
+  border:1px dashed rgba(234,196,53,.35);
+  text-decoration:none;
+  transition:all .3s var(--spring);
+}
+a.upi-badge-chip{
+  cursor:pointer;
+}
+a.upi-badge-chip:hover{
+  background:var(--gold-dim);
+  border-color:var(--gold);
+  color:var(--gold);
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 6px 18px rgba(234,196,53,.25);
+}
+:root[data-theme="light"] .upi-badge-chip{
+  background:#faeec2;
+  color:#6e5d00;
+  border-color:rgba(110,93,0,.3);
+}
+:root[data-theme="light"] a.upi-badge-chip:hover{
+  background:#faeec2;
+  color:#1c1700;
+  border-color:#6e5d00;
+  box-shadow:0 6px 18px rgba(110,93,0,.25);
+}
+/* Prevent BMC widget popup bubble */
+#bmc-wbtn + div,
+div[style*="Avenir Book"]{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+}
+/* BMC Floating Button & Modal Widget Responsiveness (Matches nav pill size) */
+#bmc-wbtn{
+  width:44px !important;
+  height:44px !important;
+  border-radius:50% !important;
+  bottom:max(20px,env(safe-area-inset-bottom,20px)) !important;
+  right:max(20px,env(safe-area-inset-right,20px)) !important;
+  background:#FFDD00 !important;
+  box-shadow:0 8px 24px var(--sh-8),0 0 20px rgba(255,221,0,.45) !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  z-index:250 !important;
+  border:1.5px solid rgba(255,255,255,0.18) !important;
+  transition:transform .3s var(--spring),box-shadow .3s ease !important;
+}
+#bmc-wbtn:hover{
+  transform:scale(1.1) !important;
+  box-shadow:0 12px 30px var(--sh-8),0 0 26px rgba(255,221,0,.65) !important;
+}
+#bmc-wbtn:active{
+  transform:scale(0.92) !important;
+}
+#bmc-wbtn img,
+#bmc-wbtn svg{
+  width:22px !important;
+  height:22px !important;
+  object-fit:contain !important;
+}
+#bmc-iframe{
+  border-radius:24px !important;
+  box-shadow:0 24px 64px rgba(0,0,0,0.6) !important;
+}
+
+@media(max-width:760px){
+  #bmc-wbtn{
+    width:38px !important;
+    height:38px !important;
+    bottom:max(16px,env(safe-area-inset-bottom,16px)) !important;
+    right:max(12px,env(safe-area-inset-right,12px)) !important;
+    box-shadow:0 6px 18px var(--sh-8),0 0 14px rgba(255,221,0,.4) !important;
+  }
+  #bmc-wbtn img,
+  #bmc-wbtn svg{
+    width:19px !important;
+    height:19px !important;
+  }
+  #bmc-iframe{
+    width:calc(100vw - 28px) !important;
+    max-width:380px !important;
+    height:min(76vh,540px) !important;
+    max-height:76vh !important;
+    min-height:auto !important;
+    left:50% !important;
+    right:auto !important;
+    top:auto !important;
+    bottom:max(16px,env(safe-area-inset-bottom,16px)) !important;
+    transform:translateX(-50%) !important;
+    transform-origin:center bottom !important;
+    border-radius:24px !important;
+    box-shadow:0 18px 50px rgba(0,0,0,0.65) !important;
+  }
+  #bmc-close-btn{
+    top:12px !important;
+    right:12px !important;
+    background:rgba(0,0,0,0.55) !important;
+    backdrop-filter:blur(8px) !important;
+    -webkit-backdrop-filter:blur(8px) !important;
+    border-radius:50% !important;
+    width:34px !important;
+    height:34px !important;
+  }
+}
+@media(max-width:400px){
+  #bmc-wbtn{
+    width:34px !important;
+    height:34px !important;
+    right:8px !important;
+  }
+  #bmc-wbtn img,
+  #bmc-wbtn svg{
+    width:17px !important;
+    height:17px !important;
+  }
+}
+.donate-actions-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:center;
+  align-items:flex-end;
+  width:100%;
+}
+.donate-action-col{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  flex:1 1 150px;
+  max-width:220px;
+}
+.donate-action-col .upi-badge-chip{
+  margin-bottom:0;
+  width:100%;
+  justify-content:center;
+}
+.donate-action-col .copy-upi-btn,
+.donate-action-col .btn{
+  width:100%;
+  justify-content:center;
+}
+.donate-btn-group{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+  width:100%;
+}
+#btn-bmc-page{
+  background:#FFDD00 !important;
+  color:#000000 !important;
+  border:none;
+  font-weight:800;
+  box-shadow:0 8px 24px rgba(255,221,0,.45) !important;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+#btn-bmc-page:hover{
+  background:#ffe433 !important;
+  color:#000000 !important;
+  transform:translateY(-3px) scale(1.04);
+  box-shadow:0 14px 32px rgba(255,221,0,.65) !important;
+}
+.copy-upi-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:11px 22px;
+  border-radius:var(--r-pill);
+  font-family:inherit;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  transition:all .3s var(--spring);
+  border:none;
+  background:var(--s3);
+  color:var(--text);
+  box-shadow:0 4px 14px var(--sh-5);
+  user-select:none;
+}
+.copy-upi-btn:hover{
+  background:var(--gold-dim);
+  color:var(--gold);
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(234,196,53,.2);
+}
+.copy-upi-btn:active{
+  transform:scale(0.96);
+}
+.copy-upi-btn svg.icon{
+  width:15px;
+  height:15px;
+}
+.donate-bmc-hero-ico{
+  width:88px;
+  height:88px;
+  border-radius:26px;
+  background:linear-gradient(135deg,rgba(255,221,0,.25),rgba(234,196,53,.12));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:18px 0 24px;
+  color:var(--gold);
+  box-shadow:0 10px 28px rgba(234,196,53,.2);
+  transition:transform .35s var(--spring);
+}
+.donate-bmc-hero-ico svg.icon{
+  width:44px;
+  height:44px;
+  color:var(--gold);
+}
+.donate-box:hover .donate-bmc-hero-ico{
+  transform:scale(1.12) rotate(6deg);
+}
 
 /* ── FOOTER ── */
 footer{
@@ -1284,6 +1850,11 @@ footer span{color:var(--gold)}
   pointer-events:none;
   overflow:hidden;
   z-index:0;
+  opacity:.50;
+  transition:opacity .4s ease;
+}
+:root[data-theme="light"] .m3-mountain-backdrop{
+  opacity:.40;
 }
 
 /* ── CELESTIAL SUN & MOON (CLEAN SOLID VECTOR — NO GRADIENTS) ── */
@@ -1491,7 +2062,7 @@ footer span{color:var(--gold)}
   pointer-events:none;
   will-change:transform;
   transform:translateZ(0);
-  opacity:.92;
+  opacity:.32;
   overflow:visible !important;
 }
 .cloud-body{
@@ -1513,7 +2084,7 @@ footer span{color:var(--gold)}
   stroke-linecap:round;
 }
 :root[data-theme="light"] .sky-cloud{
-  opacity:1;
+  opacity:.35;
 }
 :root[data-theme="light"] .cloud-body{
   fill:#ffffff;
@@ -2001,6 +2572,11 @@ footer span{color:var(--gold)}
   stroke:rgba(234,196,53,.7);
   stroke-width:1.3;
 }
+.hut-window-frame{
+  fill:var(--s4);
+  stroke:rgba(234,196,53,.85);
+  stroke-width:1.4;
+}
 .hut-window{
   fill:#ffe066;
   opacity:.9;
@@ -2075,6 +2651,25 @@ footer span{color:var(--gold)}
 .fire-ember-spark.s2{ animation-delay:0.8s; animation-duration:2.1s; }
 .fire-ember-spark.s3{ animation-delay:1.7s; animation-duration:2.9s; }
 
+.fire-smoke-group{
+  display:none;
+}
+.fire-smoke-puff{
+  fill:rgba(125,115,100,.45);
+  transform-box:fill-box;
+  transform-origin:center bottom;
+  animation:campfireSmolderSmoke 3.4s ease-out infinite;
+}
+.fire-smoke-puff.s2{ animation-delay:1.1s; animation-duration:3.8s; }
+.fire-smoke-puff.s3{ animation-delay:2.2s; animation-duration:3.1s; }
+
+@keyframes campfireSmolderSmoke{
+  0%{ opacity:0; transform:translate3d(0, 0, 0) scale(0.35); }
+  25%{ opacity:0.65; }
+  75%{ opacity:0.35; transform:translate3d(6px, -20px, 0) scale(1.5); }
+  100%{ opacity:0; transform:translate3d(12px, -38px, 0) scale(2.2); }
+}
+
 @keyframes fireFlameBreathe{
   0%{
     transform:scale(1, 1);
@@ -2103,12 +2698,41 @@ footer span{color:var(--gold)}
   100%{ opacity:0; transform:translate3d(12px, -30px, 0) scale(0.3); }
 }
 
+/* Light Mode Scenic Adjustments: Extinguish Fire (Smoke Only), Hide Meteors & Sunlit Palette */
 :root[data-theme="light"] .hut-roof{ fill:#eae6dc; stroke:#826400; }
 :root[data-theme="light"] .hut-body{ fill:#f4f1e8; stroke:#826400; }
 :root[data-theme="light"] .hut-door{ fill:#dfdbcf; stroke:#826400; }
+:root[data-theme="light"] .hut-window-frame{ fill:#dfdbcf; stroke:#826400; }
 :root[data-theme="light"] .hut-window{ fill:#f2c724; }
 :root[data-theme="light"] .fire-stone{ fill:#eae6dc; stroke:#826400; }
 :root[data-theme="light"] .fire-log-bar{ fill:#dfdbcf; stroke:#826400; }
+:root[data-theme="light"] .fire-flame-group,
+:root[data-theme="light"] .fire-glow-aura,
+:root[data-theme="light"] .fire-ember-spark,
+:root[data-theme="light"] .fire-coal{
+  display:none !important;
+}
+:root[data-theme="light"] .fire-smoke-group{
+  display:block !important;
+}
+:root[data-theme="light"] .sky-meteors-wrap{
+  display:none !important;
+}
+
+@media(prefers-color-scheme:light){
+  :root:not([data-theme="dark"]) .fire-flame-group,
+  :root:not([data-theme="dark"]) .fire-glow-aura,
+  :root:not([data-theme="dark"]) .fire-ember-spark,
+  :root:not([data-theme="dark"]) .fire-coal{
+    display:none !important;
+  }
+  :root:not([data-theme="dark"]) .fire-smoke-group{
+    display:block !important;
+  }
+  :root:not([data-theme="dark"]) .sky-meteors-wrap{
+    display:none !important;
+  }
+}
 
 /* ── PURE FLOATING DEVELOPER CODE GLYPHS (NO BACKGROUND) ── */
 .m3-bg-floaters{
@@ -2136,17 +2760,17 @@ footer span{color:var(--gold)}
   box-shadow:none;
   backdrop-filter:none;
   -webkit-backdrop-filter:none;
-  opacity:.65;
-  text-shadow:0 0 12px var(--gold-glow);
+  opacity:.16;
+  text-shadow:0 0 6px rgba(234,196,53,.14);
   letter-spacing:.05em;
   display:inline-flex;
   align-items:center;
   justify-content:center;
 }
 :root[data-theme="light"] .f-glyph{
-  color:#826400;
-  opacity:.75;
-  text-shadow:0 0 10px rgba(180,140,0,.25);
+  color:#6e5d00;
+  opacity:.14;
+  text-shadow:none;
 }
 .g-curly{top:18%;left:5%}
 .g-square{top:32%;right:7%}
@@ -2164,7 +2788,7 @@ footer span{color:var(--gold)}
   width:420px;height:420px;
   top:45%;left:50%;
   transform:translate(-50%,-50%);
-  background:radial-gradient(circle,rgba(234,196,53,.14) 0%,rgba(234,196,53,.03) 48%,transparent 70%);
+  background:radial-gradient(circle,rgba(234,196,53,.1) 0%,rgba(234,196,53,.02) 48%,transparent 70%);
   animation:ambFloatA 28s ease-in-out infinite alternate;
 }
 
@@ -2850,8 +3474,7 @@ footer span{color:var(--gold)}
   .sky-space-fleet,
   .sky-balloons-wrap,
   .plains-cactus-group,
-  .sc-float-shape,
-  #cg {
+  .sc-float-shape {
     display: none !important;
   }
 
@@ -3297,9 +3920,11 @@ footer span{color:var(--gold)}
       <g class="mtn-group mtn-group-fore">
         <path class="mtn-layer mtn-layer-fore" d="M-120,550 L-120,470 Q140,370 380,430 Q620,360 880,440 Q1120,360 1380,430 Q1580,370 1760,450 L1760,550 Z"/>
 
-        <!-- Left Foothill Wind Turbine (Base sits flush on mountain top, zero underground stick) -->
+        <!-- Left Foothill Wind Turbine (Firmly Anchored to Hill Slope Surface) -->
         <g class="wind-turbine wt-1" transform="translate(310, 412)">
-          <polygon points="-2.5,0 2.5,0 1.2,-75 -1.2,-75" class="turbine-tower"/>
+          <!-- Concrete Foundation Anchor Base Pad -->
+          <polygon points="-6,10 6,10 3.5,0 -3.5,0" class="turbine-base-pad"/>
+          <polygon points="-3,0 3,0 1.2,-75 -1.2,-75" class="turbine-tower"/>
           <rect x="-4" y="-78" width="12" height="6" rx="2.5" class="turbine-nacelle"/>
           <g class="turbine-rotor" style="transform-origin: 0px -75px;">
             <circle cx="0" cy="-75" r="4.5" class="turbine-hub"/>
@@ -3310,9 +3935,11 @@ footer span{color:var(--gold)}
           </g>
         </g>
 
-        <!-- Right Foothill Wind Turbine (Base sits flush on mountain top, zero underground stick) -->
-        <g class="wind-turbine wt-2" transform="translate(1120, 395)">
-          <polygon points="-2.5,0 2.5,0 1.2,-70 -1.2,-70" class="turbine-tower"/>
+        <!-- Right Foothill Wind Turbine (Firmly Anchored to Hill Slope Surface) -->
+        <g class="wind-turbine wt-2" transform="translate(1120, 398)">
+          <!-- Concrete Foundation Anchor Base Pad -->
+          <polygon points="-6,10 6,10 3.5,0 -3.5,0" class="turbine-base-pad"/>
+          <polygon points="-3,0 3,0 1.2,-70 -1.2,-70" class="turbine-tower"/>
           <rect x="-4" y="-73" width="11" height="5.5" rx="2.2" class="turbine-nacelle"/>
           <g class="turbine-rotor" style="transform-origin: 0px -70px;">
             <circle cx="0" cy="-70" r="4" class="turbine-hub"/>
@@ -3339,49 +3966,94 @@ footer span{color:var(--gold)}
           <!-- Cozy Wooden Door -->
           <rect x="12" y="16" width="12" height="22" rx="1.5" class="hut-door"/>
           <circle cx="21" cy="28" r="1" fill="var(--gold)"/>
-          <!-- Warm Glowing Window with Cross Pane -->
-          <rect x="32" y="14" width="14" height="14" rx="1.5" class="hut-window"/>
-          <line x1="39" y1="14" x2="39" y2="28" stroke="var(--s2)" stroke-width="1.2"/>
-          <line x1="32" y1="21" x2="46" y2="21" stroke="var(--s2)" stroke-width="1.2"/>
+          <!-- Warm Glowing Window with Solid Frame & Sill Attached to Wall -->
+          <rect x="30" y="13" width="18" height="18" rx="2" class="hut-window-frame"/>
+          <rect x="32" y="15" width="14" height="14" rx="1.5" class="hut-window"/>
+          <line x1="39" y1="15" x2="39" y2="29" stroke="var(--s2)" stroke-width="1.3"/>
+          <line x1="32" y1="22" x2="46" y2="22" stroke="var(--s2)" stroke-width="1.3"/>
+          <line x1="28" y1="31" x2="50" y2="31" stroke="rgba(234,196,53,.85)" stroke-width="2" stroke-linecap="round"/>
           <!-- Cabin Gable Roof -->
           <polygon points="29,-14 58,8 0,8" class="hut-roof"/>
           <line x1="29" y1="-14" x2="29" y2="8" class="hut-overhang"/>
         </g>
 
-        <!-- Crackling Redesigned Campfire (Positioned with ample clearance at x: 735, y: 412) -->
-        <g class="landscape-campfire" transform="translate(735, 412)">
-          <!-- Ambient Seamless Glow Gradient Aura (Zero hard circular edges) -->
+        <!-- Left Campfire (Positioned on the Left Plain at x: 230, y: 436) -->
+        <g class="landscape-campfire cp-left" transform="translate(230, 436)">
+          <circle cx="0" cy="-10" r="28" fill="url(#fire-ambient-glow)" class="fire-glow-aura"/>
+          <ellipse cx="-14" cy="3" rx="3.5" ry="2.4" class="fire-stone"/>
+          <ellipse cx="-7" cy="4.5" rx="4" ry="2.5" class="fire-stone"/>
+          <ellipse cx="0" cy="5.5" rx="4.5" ry="2.7" class="fire-stone"/>
+          <ellipse cx="7" cy="4.5" rx="4" ry="2.5" class="fire-stone"/>
+          <ellipse cx="14" cy="3" rx="3.5" ry="2.4" class="fire-stone"/>
+          <ellipse cx="0" cy="1" rx="8" ry="3" class="fire-coal"/>
+          <polygon points="-14,3 -11,5 12,-2 10,-4" class="fire-log-bar"/>
+          <polygon points="14,3 11,5 -12,-2 -10,-4" class="fire-log-bar"/>
+          <polygon points="-9,4 -7,6 9,4 11,2" class="fire-log-bar"/>
+          <g class="fire-flame-group">
+            <path class="flame-layer-outer" d="M0,-24 Q-6,-12 -8,-2 Q-8,2 0,2 Q8,2 8,-2 Q6,-12 0,-24 Z"/>
+            <path class="flame-layer-mid" d="M0,-18 Q-4,-8 -5,-1 Q-5,1 0,1 Q5,1 5,-1 Q4,-8 0,-18 Z"/>
+            <path class="flame-layer-core" d="M0,-11 Q-2,-4 -2,-1 Q-2,0 0,0 Q2,0 2,-1 Q2,-4 0,-11 Z"/>
+          </g>
+          <circle cx="2" cy="-14" r="1.1" class="fire-ember-spark"/>
+          <circle cx="-3" cy="-19" r="1.2" class="fire-ember-spark s2"/>
+          <g class="fire-smoke-group">
+            <circle cx="0" cy="-4" r="2.5" class="fire-smoke-puff"/>
+            <circle cx="2" cy="-8" r="3.2" class="fire-smoke-puff s2"/>
+            <circle cx="-2" cy="-12" r="3.8" class="fire-smoke-puff s3"/>
+          </g>
+        </g>
+
+        <!-- Center Campfire (Positioned near Cabin at x: 735, y: 412) -->
+        <g class="landscape-campfire cp-center" transform="translate(735, 412)">
           <circle cx="0" cy="-10" r="32" fill="url(#fire-ambient-glow)" class="fire-glow-aura"/>
-          
-          <!-- Campfire Stone Hearth Base -->
           <ellipse cx="-16" cy="3" rx="4" ry="2.6" class="fire-stone"/>
           <ellipse cx="-9" cy="5" rx="4.5" ry="2.8" class="fire-stone"/>
           <ellipse cx="0" cy="6" rx="5" ry="3" class="fire-stone"/>
           <ellipse cx="9" cy="5" rx="4.5" ry="2.8" class="fire-stone"/>
           <ellipse cx="16" cy="3" rx="4" ry="2.6" class="fire-stone"/>
-          
-          <!-- Hot Glowing Coal Bed Beneath Logs -->
           <ellipse cx="0" cy="1" rx="10" ry="3.5" class="fire-coal"/>
-          
-          <!-- Criss-Crossed Campfire Wood Logs -->
           <polygon points="-16,4 -13,6 14,-3 12,-5" class="fire-log-bar"/>
           <polygon points="16,4 13,6 -14,-3 -12,-5" class="fire-log-bar"/>
           <polygon points="-11,5 -9,7 11,5 13,3" class="fire-log-bar"/>
-
-          <!-- Multi-Layered Stylized Animated Fire Flames -->
           <g class="fire-flame-group">
-            <!-- Outer Amber Flame -->
             <path class="flame-layer-outer" d="M0,-28 Q-7,-14 -9,-3 Q-9,2 0,2 Q9,2 9,-3 Q7,-14 0,-28 Z"/>
-            <!-- Mid Golden Flame -->
             <path class="flame-layer-mid" d="M0,-21 Q-5,-10 -6,-2 Q-6,1 0,1 Q6,1 6,-2 Q5,-10 0,-21 Z"/>
-            <!-- Core Brilliant Flame -->
             <path class="flame-layer-core" d="M0,-13 Q-3,-5 -3,-1 Q-3,0 0,0 Q3,0 3,-1 Q3,-5 0,-13 Z"/>
           </g>
-
-          <!-- Floating Cozy Ember Sparks -->
           <circle cx="2" cy="-16" r="1.2" class="fire-ember-spark"/>
           <circle cx="-4" cy="-22" r="1.4" class="fire-ember-spark s2"/>
           <circle cx="5" cy="-28" r="1.1" class="fire-ember-spark s3"/>
+          <g class="fire-smoke-group">
+            <circle cx="0" cy="-4" r="3" class="fire-smoke-puff"/>
+            <circle cx="3" cy="-10" r="3.8" class="fire-smoke-puff s2"/>
+            <circle cx="-2" cy="-15" r="4.2" class="fire-smoke-puff s3"/>
+          </g>
+        </g>
+
+        <!-- Right Campfire (Positioned on the Right Plain at x: 1350, y: 428) -->
+        <g class="landscape-campfire cp-right" transform="translate(1350, 428)">
+          <circle cx="0" cy="-10" r="28" fill="url(#fire-ambient-glow)" class="fire-glow-aura"/>
+          <ellipse cx="-14" cy="3" rx="3.5" ry="2.4" class="fire-stone"/>
+          <ellipse cx="-7" cy="4.5" rx="4" ry="2.5" class="fire-stone"/>
+          <ellipse cx="0" cy="5.5" rx="4.5" ry="2.7" class="fire-stone"/>
+          <ellipse cx="7" cy="4.5" rx="4" ry="2.5" class="fire-stone"/>
+          <ellipse cx="14" cy="3" rx="3.5" ry="2.4" class="fire-stone"/>
+          <ellipse cx="0" cy="1" rx="8" ry="3" class="fire-coal"/>
+          <polygon points="-14,3 -11,5 12,-2 10,-4" class="fire-log-bar"/>
+          <polygon points="14,3 11,5 -12,-2 -10,-4" class="fire-log-bar"/>
+          <polygon points="-9,4 -7,6 9,4 11,2" class="fire-log-bar"/>
+          <g class="fire-flame-group">
+            <path class="flame-layer-outer" d="M0,-24 Q-6,-12 -8,-2 Q-8,2 0,2 Q8,2 8,-2 Q6,-12 0,-24 Z"/>
+            <path class="flame-layer-mid" d="M0,-18 Q-4,-8 -5,-1 Q-5,1 0,1 Q5,1 5,-1 Q4,-8 0,-18 Z"/>
+            <path class="flame-layer-core" d="M0,-11 Q-2,-4 -2,-1 Q-2,0 0,0 Q2,0 2,-1 Q2,-4 0,-11 Z"/>
+          </g>
+          <circle cx="-2" cy="-14" r="1.1" class="fire-ember-spark"/>
+          <circle cx="3" cy="-20" r="1.3" class="fire-ember-spark s2"/>
+          <g class="fire-smoke-group">
+            <circle cx="0" cy="-4" r="2.5" class="fire-smoke-puff"/>
+            <circle cx="-2" cy="-8" r="3.4" class="fire-smoke-puff s2"/>
+            <circle cx="2" cy="-13" r="3.9" class="fire-smoke-puff s3"/>
+          </g>
         </g>
 
         <!-- Plains Cactus Plants (Iconic Desert & Plains Saguaro Silhouettes) -->
@@ -3442,12 +4114,11 @@ footer span{color:var(--gold)}
 <!-- NAV -->
 <div id="nav-shell">
 <nav>
-  <span class="nav-brand">SVHP</span>
-  <div class="nav-sep"></div>
   <a href="#about">About</a>
   <a href="#projects">Apps</a>
   <a href="#skills">Skills</a>
   <a href="#contact">Contact</a>
+  <a href="#donate">Donate</a>
 </nav>
 </div>
 
@@ -3468,8 +4139,7 @@ footer span{color:var(--gold)}
     <h1 class="hero-name" id="hero-name-el">Hari Prabhu</h1>
     <p class="hero-handle">@SVHP · Android Developer</p>
     <p class="hero-bio">
-      I make <strong>cool apps</strong> that actually solve real-life problems —
-      and things so unique, you didn't know you needed them until now.
+      I build <strong>cool, high-impact Android apps &amp; tools</strong> that solve real-life problems with clean architecture, fluid animations, and rich tactile haptics — crafting unique experiences you didn't know you needed until now.
     </p>
     <div class="chips">
       <a href="#skills" class="chip" data-filter="core" title="Filter Android SDK">
@@ -4130,6 +4800,14 @@ footer span{color:var(--gold)}
       </a>
 
     </div>
+
+    <!-- Skills Expand / Collapse Toggle Button -->
+    <div class="skills-toggle-wrap rv d2">
+      <button type="button" class="sk-toggle-btn" id="skills-toggle-btn" aria-expanded="false">
+        <span class="sk-toggle-text">View More</span>
+        <svg class="icon sk-toggle-ico"><use href="#ico-chevron-down"/></svg>
+      </button>
+    </div>
   </div>
 </section>
 
@@ -4185,6 +4863,97 @@ footer span{color:var(--gold)}
           </div>
         </a>
       </div>
+      <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="hariprabhu" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FFDD00" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section class="section" id="donate" style="padding-top:0">
+  <div class="wrap">
+    <div class="donate-card rv-scale">
+      <div class="connect-live-badge">
+        <span class="pulse-beacon"></span>
+        Support Independent Open Source
+      </div>
+      <div class="eyebrow" style="margin-bottom:22px">
+        <svg class="icon"><use href="#ico-heart"/></svg>
+        Donate & Support
+      </div>
+      <h2>Fuel the Craft</h2>
+      <p class="donate-sub">If you love my open-source apps, developer tools, or customizations, consider supporting via Buy Me a Coffee or donating via UPI / BHIM to support continuous development.</p>
+
+      <div class="donate-grid">
+        <!-- UPI / Direct Payment Card -->
+        <div class="donate-box rv d1">
+          <div>
+            <div class="donate-box-title">
+              <svg class="icon donate-head-ico" style="color:var(--gold)"><use href="#ico-rupee"/></svg>
+              UPI / Direct Payment
+            </div>
+            <p class="donate-box-desc">Scan the QR code with any UPI app (GPay, PhonePe, Paytm, BHIM) or copy the details below.</p>
+          </div>
+
+          <div class="upi-qr-wrapper">
+            <img src="bhim_upi_qr.png" alt="UPI QR Code - 8446443108@upi" class="upi-qr-img" width="196" height="196" loading="lazy" />
+          </div>
+
+          <div class="donate-actions-grid">
+            <div class="donate-action-col">
+              <div class="upi-badge-chip">
+                <svg class="icon" style="width:14px;height:14px;color:var(--gold)"><use href="#ico-rupee"/></svg>
+                <span>8446443108@upi</span>
+              </div>
+              <button type="button" class="copy-upi-btn" id="copy-upi-btn" data-upi="8446443108@upi" title="Copy UPI ID">
+                <svg class="icon"><use href="#ico-copy"/></svg>
+                <span class="copy-btn-text">Copy UPI ID</span>
+              </button>
+            </div>
+            <div class="donate-action-col">
+              <div class="upi-badge-chip">
+                <svg class="icon" style="width:14px;height:14px;color:var(--gold)"><use href="#ico-phone"/></svg>
+                <span>8446443108</span>
+              </div>
+              <button type="button" class="btn btn-gold copy-upi-btn" data-upi="8446443108" title="Copy Phone Number">
+                <svg class="icon"><use href="#ico-copy"/></svg>
+                <span class="copy-btn-text">Copy Phone Number</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buy Me a Coffee Card -->
+        <div class="donate-box rv d2">
+          <div>
+            <div class="donate-box-title">
+              <img src="https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg" alt="Buy Me a Coffee" class="bmc-head-ico" />
+              Buy Me a Coffee
+            </div>
+            <p class="donate-box-desc">Scan to visit my Buy Me a Coffee page or tap below to donate via Cards, Apple Pay, GPay &amp; PayPal.</p>
+          </div>
+
+          <div class="bmc-qr-wrapper">
+            <div id="bmc-qrcode"></div>
+          </div>
+
+          <a href="https://buymeacoffee.com/hariprabhu" target="_blank" rel="noopener noreferrer" class="upi-badge-chip" style="margin-bottom:18px" title="Visit Buy Me a Coffee Profile">
+            <img src="https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg" alt="Buy Me a Coffee" style="width:14px;height:14px;object-fit:contain;vertical-align:middle;" />
+            <span>buymeacoffee.com/hariprabhu</span>
+            <svg class="icon" style="width:12px;height:12px;opacity:0.75;"><use href="#ico-arrow-ne"/></svg>
+          </a>
+
+          <div class="donate-btn-group">
+            <a href="https://buymeacoffee.com/hariprabhu" target="_blank" rel="noopener noreferrer" class="btn btn-gold" id="btn-bmc-page">
+              <img src="https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg" alt="Buy Me a Coffee" style="width:18px;height:18px;vertical-align:middle;object-fit:contain;" />
+              <span>Buy Me a Coffee</span>
+            </a>
+            <button type="button" class="copy-upi-btn" id="copy-bmc-btn" data-url="https://buymeacoffee.com/hariprabhu" title="Copy Link">
+              <svg class="icon"><use href="#ico-copy"/></svg>
+              <span class="copy-btn-text">Copy Link</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -4201,6 +4970,7 @@ footer span{color:var(--gold)}
         <a href="#projects">Apps</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
+        <a href="#donate">Donate</a>
       </div>
       <div class="footer-social">
         <a href="https://github.com/hari161008" target="_blank" title="GitHub" class="footer-social-btn">
@@ -4232,26 +5002,42 @@ footer span{color:var(--gold)}
   if(max > 0) bar.style.width = ((window.scrollY / max) * 100) + '%';
 })();
 
-// Cursor spotlight tracker with dynamic chromatic reaction
+// Cursor spotlight tracker with dynamic chromatic reaction (Works with touch & connected mouse on mobile/desktop)
 (function(){
   const cg = document.getElementById('cg');
-  if(!cg || window.matchMedia('(hover:none)').matches) return;
+  if(!cg) return;
   let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
   let curX = mouseX, curY = mouseY;
   let isVisible = false;
 
-  window.addEventListener('mousemove', e => {
+  function onPointerMove(e){
+    if(e.pointerType === 'touch'){
+      isVisible = false;
+      cg.style.opacity = '0';
+      return;
+    }
     mouseX = e.clientX;
     mouseY = e.clientY;
     if(!isVisible){
       isVisible = true;
       cg.style.opacity = '1';
     }
+  }
+
+  window.addEventListener('pointermove', onPointerMove, { passive: true });
+  window.addEventListener('mousemove', onPointerMove, { passive: true });
+  window.addEventListener('pointerleave', () => {
+    isVisible = false;
+    cg.style.opacity = '0';
   });
   window.addEventListener('mouseleave', () => {
     isVisible = false;
     cg.style.opacity = '0';
   });
+  window.addEventListener('touchstart', () => {
+    isVisible = false;
+    cg.style.opacity = '0';
+  }, { passive: true });
 
   function renderCursor(){
     curX += (mouseX - curX) * 0.14;
@@ -4323,7 +5109,7 @@ footer span{color:var(--gold)}
       const cat = chip.dataset.filter;
       const skillsSec = document.getElementById('skills');
       if(skillsSec){
-        skillsSec.scrollIntoView({behavior:'smooth'});
+        scrollToCenter(skillsSec);
         const filterBtn = document.querySelector(`.sk-filter-btn[data-filter="${cat}"]`);
         if(filterBtn){
           setTimeout(() => filterBtn.click(), 450);
@@ -4380,7 +5166,12 @@ footer span{color:var(--gold)}
   var vv=window.visualViewport;
   function sync(){
     var shift=Math.max(0,window.innerHeight-vv.offsetTop-vv.height);
-    shell.style.transform=shift?'translateY('+(-shift)+'px)':'';
+    var t=shift?'translateY('+(-shift)+'px)':'';
+    shell.style.transform=t;
+    var bmcBtn=document.getElementById('bmc-wbtn');
+    if(bmcBtn){
+      bmcBtn.style.transform=t;
+    }
   }
   vv.addEventListener('resize',sync,{passive:true});
   vv.addEventListener('scroll',sync,{passive:true});
@@ -4404,36 +5195,73 @@ const io = new IntersectionObserver((entries) => {
 }, {threshold: 0.08, rootMargin: '-10px 0px -10px 0px'});
 rvAll.forEach(el => io.observe(el));
 
-// Nav active — scroll-position based with cached section offsets (zero layout thrashing)
+// Nav active — scroll-position based with accurate runtime viewport intersection
 const secs = [...document.querySelectorAll('section[id]')];
 const links = [...document.querySelectorAll('nav a[href^="#"]')];
-let secOffsets = [];
-function measureSecs(){
-  secOffsets = secs.map(s => ({ el: s, id: s.id, top: s.offsetTop }));
-}
-measureSecs();
-window.addEventListener('resize', measureSecs, { passive: true });
 
 const setActive = id => {
+  if(!id) return;
   links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
 };
+
 function updateActive(){
+  if(!secs.length) return;
   const scrollY = window.scrollY;
-  const mid = scrollY + window.innerHeight * 0.4;
-  let cur = secOffsets[0] ? secOffsets[0].id : '';
-  for(let i = 0; i < secOffsets.length; i++){
-    if(secOffsets[i].top <= mid) cur = secOffsets[i].id;
+  const viewportHeight = window.innerHeight;
+  const docHeight = document.documentElement.scrollHeight;
+
+  // Near bottom of document: always activate the final section (Donate)
+  if((viewportHeight + scrollY) >= (docHeight - 90)){
+    setActive(secs[secs.length - 1].id);
+    return;
   }
-  if((window.innerHeight + scrollY) >= document.documentElement.scrollHeight - 60){
-    if(secOffsets.length) cur = secOffsets[secOffsets.length - 1].id;
+
+  const triggerPoint = viewportHeight * 0.42;
+  let cur = secs[0].id;
+  for(let i = 0; i < secs.length; i++){
+    const rect = secs[i].getBoundingClientRect();
+    if(rect.top <= triggerPoint){
+      cur = secs[i].id;
+    }
   }
   setActive(cur);
 }
+
+function scrollToCenter(targetEl){
+  if(!targetEl) return;
+  const rect = targetEl.getBoundingClientRect();
+  const elHeight = Math.min(rect.height, window.innerHeight * 0.85);
+  const targetY = window.scrollY + rect.top - (window.innerHeight / 2) + (elHeight / 2);
+  window.scrollTo({
+    top: Math.max(0, targetY),
+    behavior: 'smooth'
+  });
+}
+
+document.querySelectorAll('nav a[href^="#"], .footer-links a[href^="#"], a.btn[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e){
+    const href = this.getAttribute('href');
+    if(href && href.startsWith('#')){
+      const targetId = href.slice(1);
+      const targetEl = document.getElementById(targetId);
+      if(targetEl){
+        e.preventDefault();
+        scrollToCenter(targetEl);
+        setActive(targetId);
+        if(history.pushState){
+          history.pushState(null, '', href);
+        }
+      }
+    }
+  });
+});
+
 window.addEventListener('scroll', updateActive, { passive: true });
+window.addEventListener('resize', updateActive, { passive: true });
 updateActive();
 
-// 3D tilt & reactive spotlight on project cards, about section, skill cards, and contact card (Optimized - Zero Mousemove Reflow)
-document.querySelectorAll('.proj,.about-wrap,.skill-card,.contact-card').forEach(c=>{
+// 3D tilt & reactive spotlight on project cards, about section, skill cards, contact card, and donate card (Optimized - Zero Mousemove Reflow)
+document.querySelectorAll('.proj,.about-wrap,.skill-card,.contact-card,.donate-card').forEach(c=>{
   let rafId=null;
   let isHovered=false;
   let r=null;
@@ -4446,7 +5274,7 @@ document.querySelectorAll('.proj,.about-wrap,.skill-card,.contact-card').forEach
     if(!isHovered || !r)return;
     const px = e.clientX - r.left;
     const py = e.clientY - r.top;
-    if(c.classList.contains('contact-card')){
+    if(c.classList.contains('contact-card') || c.classList.contains('donate-card')){
       c.style.setProperty('--cmx', `${(px / r.width) * 100}%`);
       c.style.setProperty('--cmy', `${(py / r.height) * 100}%`);
     }
@@ -4454,9 +5282,9 @@ document.querySelectorAll('.proj,.about-wrap,.skill-card,.contact-card').forEach
     rafId=requestAnimationFrame(()=>{
       const x=px/r.width-.5;
       const y=py/r.height-.5;
-      const degX = c.classList.contains('contact-card') ? 4 : 6;
-      const degY = c.classList.contains('contact-card') ? 3.5 : 5;
-      const ty = c.classList.contains('contact-card') ? -4 : -6;
+      const degX = (c.classList.contains('contact-card') || c.classList.contains('donate-card')) ? 4 : 6;
+      const degY = (c.classList.contains('contact-card') || c.classList.contains('donate-card')) ? 3.5 : 5;
+      const ty = (c.classList.contains('contact-card') || c.classList.contains('donate-card')) ? -4 : -6;
       c.style.transform=`perspective(900px) rotateY(${x*degX}deg) rotateX(${-y*degY}deg) translateY(${ty}px) scale(1.015)`;
     });
   });
@@ -4469,35 +5297,571 @@ document.querySelectorAll('.proj,.about-wrap,.skill-card,.contact-card').forEach
   });
 });
 
-// Category filtering for Tools of the trade (Skills)
+// Category filtering & Expand / Collapse ("View More") for Tools of the trade (Skills)
 (function(){
   const filterBtns = document.querySelectorAll('.sk-filter-btn');
   const skillCards = document.querySelectorAll('.skill-card');
-  if(!filterBtns.length || !skillCards.length) return;
+  const toggleBtn = document.getElementById('skills-toggle-btn');
+  const toggleText = toggleBtn ? toggleBtn.querySelector('.sk-toggle-text') : null;
+  const toggleWrap = document.querySelector('.skills-toggle-wrap');
+  if(!skillCards.length) return;
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', function(){
-      const cat = this.dataset.filter;
-      filterBtns.forEach(b => b.classList.toggle('active', b === this));
+  let currentCategory = 'all';
+  let isExpanded = false;
 
-      skillCards.forEach((card, idx) => {
-        const cardCats = (card.dataset.cat || '').split(' ');
-        const matches = (cat === 'all' || cardCats.includes(cat));
-        if(matches){
-          card.classList.remove('is-hidden');
+  function getLimit() {
+    return window.innerWidth > 768 ? 4 : 2;
+  }
+
+  function updateSkillsDisplay(animate) {
+    const limit = getLimit();
+    let matchingCards = [];
+
+    skillCards.forEach(card => {
+      const cardCats = (card.dataset.cat || '').split(' ');
+      const matches = (currentCategory === 'all' || cardCats.includes(currentCategory));
+      if (matches) {
+        matchingCards.push(card);
+        card.classList.remove('is-hidden');
+      } else {
+        card.classList.add('is-hidden');
+        card.classList.remove('is-collapsed');
+      }
+    });
+
+    const totalMatching = matchingCards.length;
+    const shouldCollapse = !isExpanded && totalMatching > limit;
+
+    matchingCards.forEach((card, idx) => {
+      if (shouldCollapse && idx >= limit) {
+        card.classList.add('is-collapsed');
+      } else {
+        card.classList.remove('is-collapsed');
+        if (animate) {
           card.style.opacity = '0';
-          card.style.transform = 'translateY(16px) scale(0.96)';
+          card.style.transform = 'translateY(14px) scale(0.96)';
           setTimeout(() => {
-            card.style.transition = 'opacity .35s var(--ease), transform .35s var(--spring)';
+            card.style.transition = 'opacity .32s var(--ease), transform .32s var(--spring)';
             card.style.opacity = '1';
             card.style.transform = 'translateY(0) scale(1)';
           }, idx * 25);
         } else {
-          card.classList.add('is-hidden');
+          card.style.opacity = '1';
+          card.style.transform = '';
+        }
+      }
+    });
+
+    if (toggleWrap && toggleBtn && toggleText) {
+      if (totalMatching <= limit) {
+        toggleWrap.style.display = 'none';
+      } else {
+        toggleWrap.style.display = 'flex';
+        toggleBtn.classList.toggle('is-expanded', isExpanded);
+        toggleBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        toggleText.textContent = isExpanded ? 'Show Less' : `View More (${totalMatching - limit})`;
+      }
+    }
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function(){
+      currentCategory = this.dataset.filter;
+      filterBtns.forEach(b => b.classList.toggle('active', b === this));
+      updateSkillsDisplay(true);
+    });
+  });
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function(){
+      isExpanded = !isExpanded;
+      updateSkillsDisplay(true);
+      if (!isExpanded) {
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+          scrollToCenter(skillsSection);
+        }
+      }
+    });
+  }
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => updateSkillsDisplay(false), 150);
+  }, { passive: true });
+
+  updateSkillsDisplay(false);
+})();
+
+// Inbuilt Modern Vector QR Code Generator for BHIM / UPI & Copy UPI ID Handler
+(function(){
+  // Minimal self-contained QR vector generator
+  var QRCodeGen = (function() {
+    function QR8BitByte(data) { this.mode = 4; this.data = data; }
+    QR8BitByte.prototype = {
+      getLength: function() { return this.data.length; },
+      write: function(buf) {
+        for (var i = 0; i < this.data.length; i++) buf.put(this.data.charCodeAt(i), 8);
+      }
+    };
+    function QRCode(typeNumber, errorCorrectionLevel) {
+      this.typeNumber = typeNumber; this.errorCorrectionLevel = errorCorrectionLevel;
+      this.modules = null; this.moduleCount = 0; this.dataList = [];
+    }
+    QRCode.prototype = {
+      addData: function(d) { this.dataList.push(new QR8BitByte(d)); },
+      isDark: function(r, c) { return this.modules[r][c]; },
+      getModuleCount: function() { return this.moduleCount; },
+      make: function() {
+        var typeNumber = 1;
+        for (typeNumber = 1; typeNumber < 40; typeNumber++) {
+          var rs = QRRSBlock.getRSBlocks(typeNumber, this.errorCorrectionLevel);
+          var buf = new QRBitBuffer(), total = 0;
+          for (var i = 0; i < rs.length; i++) total += rs[i].dataCount;
+          for (var i = 0; i < this.dataList.length; i++) {
+            var d = this.dataList[i];
+            buf.put(d.mode, 4);
+            buf.put(d.getLength(), QRUtil.getLengthInBits(d.mode, typeNumber));
+            d.write(buf);
+          }
+          if (buf.getLengthInBits() <= total * 8) break;
+        }
+        this.typeNumber = typeNumber;
+        this.makeImpl(false, this.getBestMaskPattern());
+      },
+      makeImpl: function(test, maskPattern) {
+        this.moduleCount = this.typeNumber * 4 + 17;
+        this.modules = new Array(this.moduleCount);
+        for (var r = 0; r < this.moduleCount; r++) {
+          this.modules[r] = new Array(this.moduleCount);
+          for (var c = 0; c < this.moduleCount; c++) this.modules[r][c] = null;
+        }
+        this.setupPositionProbePattern(0, 0);
+        this.setupPositionProbePattern(this.moduleCount - 7, 0);
+        this.setupPositionProbePattern(0, this.moduleCount - 7);
+        this.setupPositionAdjustPattern();
+        this.setupTimingPattern();
+        this.setupTypeInfo(test, maskPattern);
+        if (this.typeNumber >= 7) this.setupTypeNumber(test);
+        var data = QRCode.createData(this.typeNumber, this.errorCorrectionLevel, this.dataList);
+        this.mapData(data, maskPattern);
+      },
+      setupPositionProbePattern: function(row, col) {
+        for (var r = -1; r <= 7; r++) {
+          if (row + r <= -1 || this.moduleCount <= row + r) continue;
+          for (var c = -1; c <= 7; c++) {
+            if (col + c <= -1 || this.moduleCount <= col + c) continue;
+            if ((0 <= r && r <= 6 && (c == 0 || c == 6)) || (0 <= c && c <= 6 && (r == 0 || r == 6)) || (2 <= r && r <= 4 && 2 <= c && c <= 4)) {
+              this.modules[row + r][col + c] = true;
+            } else {
+              this.modules[row + r][col + c] = false;
+            }
+          }
+        }
+      },
+      getBestMaskPattern: function() {
+        var minLost = 0, pat = 0;
+        for (var i = 0; i < 8; i++) {
+          this.makeImpl(true, i);
+          var lost = QRUtil.getLostPoint(this);
+          if (i == 0 || minLost > lost) { minLost = lost; pat = i; }
+        }
+        return pat;
+      },
+      setupTimingPattern: function() {
+        for (var r = 8; r < this.moduleCount - 8; r++) { if (this.modules[r][6] == null) this.modules[r][6] = (r % 2 == 0); }
+        for (var c = 8; c < this.moduleCount - 8; c++) { if (this.modules[6][c] == null) this.modules[6][c] = (c % 2 == 0); }
+      },
+      setupPositionAdjustPattern: function() {
+        var pos = QRUtil.getPatternPosition(this.typeNumber);
+        for (var i = 0; i < pos.length; i++) {
+          for (var j = 0; j < pos.length; j++) {
+            var row = pos[i], col = pos[j];
+            if (this.modules[row][col] != null) continue;
+            for (var r = -2; r <= 2; r++) {
+              for (var c = -2; c <= 2; c++) {
+                this.modules[row + r][col + c] = (r == -2 || r == 2 || c == -2 || c == 2 || (r == 0 && c == 0));
+              }
+            }
+          }
+        }
+      },
+      setupTypeNumber: function(test) {
+        var bits = QRUtil.getBCHTypeNumber(this.typeNumber);
+        for (var i = 0; i < 18; i++) {
+          var mod = (!test && ((bits >> i) & 1) == 1);
+          this.modules[Math.floor(i / 3)][i % 3 + this.moduleCount - 8 - 3] = mod;
+          this.modules[i % 3 + this.moduleCount - 8 - 3][Math.floor(i / 3)] = mod;
+        }
+      },
+      setupTypeInfo: function(test, maskPattern) {
+        var data = (this.errorCorrectionLevel << 3) | maskPattern;
+        var bits = QRUtil.getBCHTypeInfo(data);
+        for (var i = 0; i < 15; i++) {
+          var mod = (!test && ((bits >> i) & 1) == 1);
+          if (i < 6) this.modules[i][8] = mod;
+          else if (i < 8) this.modules[i + 1][8] = mod;
+          else this.modules[this.moduleCount - 15 + i][8] = mod;
+          if (i < 8) this.modules[8][this.moduleCount - i - 1] = mod;
+          else if (i < 9) this.modules[8][15 - i - 1 + 1] = mod;
+          else this.modules[8][15 - i - 1] = mod;
+        }
+        this.modules[this.moduleCount - 8][8] = !test;
+      },
+      mapData: function(data, maskPattern) {
+        var inc = -1, row = this.moduleCount - 1, bitIndex = 7, byteIndex = 0;
+        for (var col = this.moduleCount - 1; col > 0; col -= 2) {
+          if (col == 6) col--;
+          while (true) {
+            for (var c = 0; c < 2; c++) {
+              if (this.modules[row][col - c] == null) {
+                var dark = false;
+                if (byteIndex < data.length) dark = (((data[byteIndex] >>> bitIndex) & 1) == 1);
+                if (QRUtil.getMask(maskPattern, row, col - c)) dark = !dark;
+                this.modules[row][col - c] = dark;
+                bitIndex--;
+                if (bitIndex == -1) { byteIndex++; bitIndex = 7; }
+              }
+            }
+            row += inc;
+            if (row < 0 || this.moduleCount <= row) { row -= inc; inc = -inc; break; }
+          }
+        }
+      }
+    };
+    QRCode.createData = function(typeNumber, errorCorrectionLevel, dataList) {
+      var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, errorCorrectionLevel);
+      var buffer = new QRBitBuffer();
+      for (var i = 0; i < dataList.length; i++) {
+        var d = dataList[i];
+        buffer.put(d.mode, 4);
+        buffer.put(d.getLength(), QRUtil.getLengthInBits(d.mode, typeNumber));
+        d.write(buffer);
+      }
+      var totalDataCount = 0;
+      for (var i = 0; i < rsBlocks.length; i++) totalDataCount += rsBlocks[i].dataCount;
+      if (buffer.getLengthInBits() > totalDataCount * 8) throw new Error("code length overflow");
+      if (buffer.getLengthInBits() + 4 <= totalDataCount * 8) buffer.put(0, 4);
+      while (buffer.getLengthInBits() % 8 != 0) buffer.putBit(false);
+      while (true) {
+        if (buffer.getLengthInBits() >= totalDataCount * 8) break;
+        buffer.put(0xEC, 8);
+        if (buffer.getLengthInBits() >= totalDataCount * 8) break;
+        buffer.put(0x11, 8);
+      }
+      return QRCode.createBytes(buffer, rsBlocks);
+    };
+    QRCode.createBytes = function(buffer, rsBlocks) {
+      var offset = 0, maxDc = 0, maxEc = 0;
+      var dc = new Array(rsBlocks.length), ec = new Array(rsBlocks.length);
+      for (var r = 0; r < rsBlocks.length; r++) {
+        var dcCount = rsBlocks[r].dataCount, ecCount = rsBlocks[r].totalCount - dcCount;
+        maxDc = Math.max(maxDc, dcCount); maxEc = Math.max(maxEc, ecCount);
+        dc[r] = new Array(dcCount);
+        for (var i = 0; i < dc[r].length; i++) dc[r][i] = 0xff & buffer.buffer[i + offset];
+        offset += dcCount;
+        var rsPoly = QRUtil.getErrorCorrectPolynomial(ecCount);
+        var rawPoly = new QRPolynomial(dc[r], rsPoly.getLength() - 1);
+        var modPoly = rawPoly.mod(rsPoly);
+        ec[r] = new Array(rsPoly.getLength() - 1);
+        for (var i = 0; i < ec[r].length; i++) {
+          var modIndex = i + modPoly.getLength() - ec[r].length;
+          ec[r][i] = (modIndex >= 0) ? modPoly.get(modIndex) : 0;
+        }
+      }
+      var total = 0;
+      for (var i = 0; i < rsBlocks.length; i++) total += rsBlocks[i].totalCount;
+      var data = new Array(total), index = 0;
+      for (var i = 0; i < maxDc; i++) {
+        for (var r = 0; r < rsBlocks.length; r++) { if (i < dc[r].length) data[index++] = dc[r][i]; }
+      }
+      for (var i = 0; i < maxEc; i++) {
+        for (var r = 0; r < rsBlocks.length; r++) { if (i < ec[r].length) data[index++] = ec[r][i]; }
+      }
+      return data;
+    };
+    var QRUtil = {
+      PATTERN_POSITION_TABLE: [
+        [], [6, 18], [6, 22], [6, 26], [6, 30], [6, 34], [6, 22, 38], [6, 24, 42], [6, 26, 46], [6, 28, 50],
+        [6, 30, 54], [6, 32, 58], [6, 34, 62], [6, 26, 46, 66], [6, 26, 48, 70], [6, 26, 50, 74], [6, 30, 54, 78],
+        [6, 30, 56, 82], [6, 30, 58, 86], [6, 34, 62, 90], [6, 28, 50, 72, 94], [6, 26, 50, 74, 98], [6, 30, 54, 78, 102],
+        [6, 28, 54, 80, 106], [6, 32, 58, 84, 110], [6, 30, 58, 86, 114], [6, 34, 62, 90, 118], [6, 26, 50, 74, 98, 122],
+        [6, 30, 54, 78, 102, 126], [6, 26, 52, 78, 104, 130], [6, 30, 56, 82, 108, 134], [6, 34, 60, 86, 112, 138],
+        [6, 30, 58, 86, 114, 142], [6, 34, 62, 90, 118, 146], [6, 30, 54, 78, 102, 126, 150], [6, 24, 50, 76, 102, 128, 154],
+        [6, 28, 54, 80, 106, 132, 158], [6, 32, 58, 84, 110, 136, 162], [6, 26, 54, 82, 110, 138, 166], [6, 30, 58, 86, 114, 142, 170]
+      ],
+      G15: (1 << 10) | (1 << 8) | (1 << 5) | (1 << 4) | (1 << 2) | (1 << 1) | (1 << 0),
+      G18: (1 << 12) | (1 << 11) | (1 << 10) | (1 << 9) | (1 << 8) | (1 << 5) | (1 << 2) | (1 << 0),
+      G15_MASK: (1 << 14) | (1 << 12) | (1 << 10) | (1 << 4) | (1 << 1),
+      getBCHTypeInfo: function(d) {
+        var val = d << 10;
+        while (QRUtil.getBCHDigit(val) - QRUtil.getBCHDigit(QRUtil.G15) >= 0) {
+          val ^= (QRUtil.G15 << (QRUtil.getBCHDigit(val) - QRUtil.getBCHDigit(QRUtil.G15)));
+        }
+        return ((d << 10) | val) ^ QRUtil.G15_MASK;
+      },
+      getBCHTypeNumber: function(d) {
+        var val = d << 12;
+        while (QRUtil.getBCHDigit(val) - QRUtil.getBCHDigit(QRUtil.G18) >= 0) {
+          val ^= (QRUtil.G18 << (QRUtil.getBCHDigit(val) - QRUtil.getBCHDigit(QRUtil.G18)));
+        }
+        return (d << 12) | val;
+      },
+      getBCHDigit: function(d) { var digit = 0; while (d != 0) { digit++; d >>>= 1; } return digit; },
+      getPatternPosition: function(typeNumber) { return QRUtil.PATTERN_POSITION_TABLE[typeNumber - 1]; },
+      getMask: function(maskPattern, i, j) {
+        switch (maskPattern) {
+          case 0: return (i + j) % 2 == 0;
+          case 1: return i % 2 == 0;
+          case 2: return j % 3 == 0;
+          case 3: return (i + j) % 3 == 0;
+          case 4: return (Math.floor(i / 2) + Math.floor(j / 3)) % 2 == 0;
+          case 5: return (i * j) % 2 + (i * j) % 3 == 0;
+          case 6: return ((i * j) % 2 + (i * j) % 3) % 2 == 0;
+          case 7: return ((i * j) % 3 + (i + j) % 2) % 2 == 0;
+          default: return false;
+        }
+      },
+      getErrorCorrectPolynomial: function(len) {
+        var a = new QRPolynomial([1], 0);
+        for (var i = 0; i < len; i++) a = a.multiply(new QRPolynomial([1, QRMath.gexp(i)], 0));
+        return a;
+      },
+      getLengthInBits: function(mode, type) {
+        if (1 <= type && type < 10) return (mode == 4) ? 8 : 10;
+        else if (type < 27) return (mode == 4) ? 16 : 12;
+        else return (mode == 4) ? 16 : 14;
+      },
+      getLostPoint: function(qr) {
+        var count = qr.getModuleCount(), lost = 0;
+        for (var r = 0; r < count; r++) {
+          for (var c = 0; c < count; c++) {
+            var same = 0, dark = qr.isDark(r, c);
+            for (var dr = -1; dr <= 1; dr++) {
+              if (r + dr < 0 || count <= r + dr) continue;
+              for (var dc = -1; dc <= 1; dc++) {
+                if (c + dc < 0 || count <= c + dc || (dr == 0 && dc == 0)) continue;
+                if (dark == qr.isDark(r + dr, c + dc)) same++;
+              }
+            }
+            if (same > 5) lost += (3 + same - 5);
+          }
+        }
+        return lost;
+      }
+    };
+    var QRMath = {
+      glog: function(n) { return QRMath.LOG_TABLE[n]; },
+      gexp: function(n) { while (n < 0) n += 255; while (n >= 256) n -= 255; return QRMath.EXP_TABLE[n]; },
+      EXP_TABLE: new Array(256), LOG_TABLE: new Array(256)
+    };
+    for (var i = 0; i < 8; i++) QRMath.EXP_TABLE[i] = 1 << i;
+    for (var i = 8; i < 256; i++) QRMath.EXP_TABLE[i] = QRMath.EXP_TABLE[i - 4] ^ QRMath.EXP_TABLE[i - 5] ^ QRMath.EXP_TABLE[i - 6] ^ QRMath.EXP_TABLE[i - 8];
+    for (var i = 0; i < 255; i++) QRMath.LOG_TABLE[QRMath.EXP_TABLE[i]] = i;
+
+    function QRPolynomial(num, shift) {
+      var offset = 0;
+      while (offset < num.length && num[offset] == 0) offset++;
+      this.num = new Array(num.length - offset + shift);
+      for (var i = 0; i < num.length - offset; i++) this.num[i] = num[i + offset];
+    }
+    QRPolynomial.prototype = {
+      get: function(idx) { return this.num[idx]; },
+      getLength: function() { return this.num.length; },
+      multiply: function(e) {
+        var num = new Array(this.getLength() + e.getLength() - 1);
+        for (var i = 0; i < this.getLength(); i++) {
+          for (var j = 0; j < e.getLength(); j++) {
+            num[i + j] ^= QRMath.gexp(QRMath.glog(this.get(i)) + QRMath.glog(e.get(j)));
+          }
+        }
+        return new QRPolynomial(num, 0);
+      },
+      mod: function(e) {
+        if (this.getLength() - e.getLength() < 0) return this;
+        var ratio = QRMath.glog(this.get(0)) - QRMath.glog(e.get(0));
+        var num = new Array(this.getLength());
+        for (var i = 0; i < this.getLength(); i++) num[i] = this.get(i);
+        for (var i = 0; i < e.getLength(); i++) num[i] ^= QRMath.gexp(QRMath.glog(e.get(i)) + ratio);
+        return new QRPolynomial(num, 0).mod(e);
+      }
+    };
+    function QRRSBlock(totalCount, dataCount) { this.totalCount = totalCount; this.dataCount = dataCount; }
+    QRRSBlock.RS_TABLE = [
+      // 1
+      [1, 26, 19], [1, 26, 16], [1, 26, 13], [1, 26, 9],
+      // 2
+      [1, 44, 34], [1, 44, 28], [1, 44, 22], [1, 44, 16],
+      // 3
+      [1, 70, 55], [1, 70, 44], [2, 35, 17], [2, 35, 13],
+      // 4
+      [1, 100, 80], [2, 50, 32], [2, 50, 24], [4, 25, 9],
+      // 5
+      [1, 134, 108], [2, 67, 43], [2, 33, 15, 2, 34, 16], [2, 33, 11, 2, 34, 12],
+      // 6
+      [2, 86, 68], [4, 43, 27], [4, 43, 19], [4, 43, 15],
+      // 7
+      [2, 98, 78], [4, 49, 31], [2, 32, 14, 4, 33, 15], [4, 39, 13, 1, 40, 14],
+      // 8
+      [2, 121, 97], [2, 60, 38, 2, 61, 39], [4, 40, 18, 2, 41, 19], [4, 40, 14, 2, 41, 15],
+      // 9
+      [2, 146, 116], [3, 58, 36, 2, 59, 37], [4, 36, 16, 4, 37, 17], [4, 36, 12, 4, 37, 13],
+      // 10
+      [2, 86, 68, 2, 87, 69], [4, 69, 43, 1, 70, 44], [6, 43, 19, 2, 44, 20], [6, 43, 15, 2, 44, 16]
+    ];
+    QRRSBlock.getRSBlocks = function(type, ecc) {
+      var row = QRRSBlock.RS_TABLE[(type - 1) * 4 + ecc];
+      var list = [];
+      for (var i = 0; i < row.length; i += 3) {
+        var count = row[i], total = row[i + 1], data = row[i + 2];
+        for (var j = 0; j < count; j++) list.push(new QRRSBlock(total, data));
+      }
+      return list;
+    };
+    function QRBitBuffer() { this.buffer = []; this.length = 0; }
+    QRBitBuffer.prototype = {
+      put: function(num, length) {
+        for (var i = 0; i < length; i++) this.putBit(((num >>> (length - i - 1)) & 1) == 1);
+      },
+      getLengthInBits: function() { return this.length; },
+      putBit: function(bit) {
+        var idx = Math.floor(this.length / 8);
+        if (this.buffer.length <= idx) this.buffer.push(0);
+        if (bit) this.buffer[idx] |= (0x80 >>> (this.length % 8));
+        this.length++;
+      }
+    };
+
+    return {
+      generateSVG: function(text, opts) {
+        opts = opts || {};
+        // Standard Level H (ecc=3) for 30% Reed-Solomon error correction
+        var qr = new QRCode(0, 3);
+        qr.addData(text);
+        qr.make();
+        var count = qr.getModuleCount();
+        var margin = opts.margin !== undefined ? opts.margin : 2;
+        var totalSize = count + margin * 2;
+        var centerCut = opts.centerCutout || 2.2;
+        var minC = Math.floor(count / 2) - Math.floor(centerCut);
+        var maxC = Math.floor(count / 2) + Math.floor(centerCut);
+
+        var pathData = [];
+        for (var r = 0; r < count; r++) {
+          for (var c = 0; c < count; c++) {
+            if (qr.isDark(r, c)) {
+              if (r >= minC && r <= maxC && c >= minC && c <= maxC) continue;
+              var x = c + margin, y = r + margin;
+              pathData.push("M" + x + " " + y + "h1v1h-1z");
+            }
+          }
+        }
+
+        return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + totalSize + ' ' + totalSize + '" class="upi-qr-svg" shape-rendering="crispEdges">' +
+               '<rect width="' + totalSize + '" height="' + totalSize + '" fill="#ffffff"/>' +
+               '<path d="' + pathData.join('') + '" fill="#14120c"/>' +
+               '</svg>';
+      }
+    };
+  })();
+
+  // Render Vector QRs for BHIM / UPI and Buy Me a Coffee
+  // Initialize Buy Me a Coffee QRCode using qrcodejs
+  const bmcQrEl = document.getElementById("bmc-qrcode");
+  if (bmcQrEl) {
+    function initBmcQr() {
+      if (typeof QRCode !== 'undefined') {
+        bmcQrEl.innerHTML = '';
+        const root = document.documentElement;
+        const explicit = root.getAttribute('data-theme');
+        const isDark = explicit === 'dark' || (!explicit && !window.matchMedia('(prefers-color-scheme: light)').matches);
+        new QRCode(bmcQrEl, {
+          text: "https://buymeacoffee.com/hariprabhu",
+          width: 240,
+          height: 240,
+          colorDark: isDark ? "#FFD21C" : "#6e5200",
+          colorLight: "rgba(0,0,0,0)",
+          correctLevel: QRCode.CorrectLevel.H
+        });
+      } else {
+        setTimeout(initBmcQr, 80);
+      }
+    }
+    initBmcQr();
+
+    const themeObserver = new MutationObserver(mutations => {
+      mutations.forEach(m => {
+        if (m.attributeName === 'data-theme') {
+          initBmcQr();
         }
       });
     });
+    themeObserver.observe(document.documentElement, { attributes: true });
+
+    const sysLightMq = window.matchMedia('(prefers-color-scheme: light)');
+    if (sysLightMq.addEventListener) {
+      sysLightMq.addEventListener('change', () => {
+        if (!document.documentElement.getAttribute('data-theme')) {
+          initBmcQr();
+        }
+      });
+    }
+  }
+
+  // Copy Buttons handler (supports both UPI ID and BMC link)
+  document.querySelectorAll('.copy-upi-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const textToCopy = this.dataset.upi || this.dataset.url || '';
+      if(!textToCopy) return;
+      const originalHTML = this.innerHTML;
+      
+      function showSuccess(b) {
+        b.innerHTML = '<svg class="icon" style="color:#3DDC84"><use href="#ico-check"/></svg> <span>Copied!</span>';
+        b.style.background = 'var(--gold-dim)';
+        b.style.color = 'var(--gold)';
+        setTimeout(() => {
+          b.innerHTML = originalHTML;
+          b.style.background = '';
+          b.style.color = '';
+        }, 2200);
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textToCopy).then(() => showSuccess(this)).catch(() => {
+          fallbackCopy(textToCopy, this);
+        });
+      } else {
+        fallbackCopy(textToCopy, this);
+      }
+
+      function fallbackCopy(text, b) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+          showSuccess(b);
+        } catch(err) {
+          alert('Copied: ' + text);
+        }
+        ta.remove();
+      }
+    });
   });
+
+  // BMC Donate button trigger widget
+  const bmcPageBtn = document.getElementById("btn-bmc-page");
+  if(bmcPageBtn) {
+    bmcPageBtn.addEventListener("click", function(e) {
+      const bmcWbtn = document.getElementById("bmc-wbtn");
+      if(bmcWbtn) {
+        e.preventDefault();
+        bmcWbtn.click();
+      }
+    });
+  }
 })();
 
 // Screenshot strip drag-scroll for desktop
@@ -4647,12 +6011,13 @@ document.querySelectorAll('.app-showcase-card').forEach(c=>{
     baseY: parseFloat(c.dataset.baseY) || (8 + i * 6)
   }));
 
-  if(!window.matchMedia('(hover:none)').matches){
-    window.addEventListener('mousemove', e => {
-      mouseX = e.clientX / window.innerWidth;
-      mouseY = e.clientY / window.innerHeight;
-    }, { passive: true });
+  function onParallaxMove(e){
+    if(e.pointerType === 'touch') return;
+    mouseX = e.clientX / window.innerWidth;
+    mouseY = e.clientY / window.innerHeight;
   }
+  window.addEventListener('pointermove', onParallaxMove, { passive: true });
+  window.addEventListener('mousemove', onParallaxMove, { passive: true });
 
   let lastTime = performance.now();
   let maxScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -4721,7 +6086,7 @@ document.querySelectorAll('.app-showcase-card').forEach(c=>{
     const dy = (curMY - 0.5);
 
     // 1. Floating Developer Code Glyphs (High-Response Parallax)
-    if(shapeData.length && !window.matchMedia('(hover:none)').matches){
+    if(shapeData.length){
       shapeData.forEach(s => {
         const sx = dx * s.sp * 80;
         const sy = dy * s.sp * 55 - (scrollY * s.sp * 0.12);
@@ -4983,6 +6348,7 @@ document.querySelectorAll('.app-showcase-card').forEach(c=>{
   }
 
   function spawnMeteor(customX, customY, customAngle){
+    if(!isNightMode()) return;
     const isMobile = width < 760;
     const maxActive = isMobile ? 2 : 5;
     if(meteors.length < maxActive){
@@ -4990,16 +6356,16 @@ document.querySelectorAll('.app-showcase-card').forEach(c=>{
     }
   }
 
-  // Interactive Easter Egg: Clicking anywhere triggers a golden star to fall down past that position!
+  // Interactive Easter Egg: Clicking anywhere triggers a golden star to fall down (Night mode only)
   window.addEventListener('click', e => {
-    if(e.clientY < window.innerHeight * 0.7 && !e.target.closest('a, button, input, .chip, .proj, .social-btn')){
+    if(isNightMode() && e.clientY < window.innerHeight * 0.7 && !e.target.closest('a, button, input, .chip, .proj, .social-btn')){
       spawnMeteor(e.clientX + (Math.random() * 40 - 20), -20);
     }
   }, { passive: true });
 
-  // Initial immediate meteors upon load
-  setTimeout(() => spawnMeteor(), 80);
-  setTimeout(() => spawnMeteor(), 400);
+  // Initial immediate meteors upon load if in night mode
+  setTimeout(() => { if(isNightMode()) spawnMeteor(); }, 80);
+  setTimeout(() => { if(isNightMode()) spawnMeteor(); }, 400);
 
   function meteorLoop(now){
     const dt = Math.min((now - lastTime) / 1000, 0.1);
@@ -5008,6 +6374,15 @@ document.querySelectorAll('.app-showcase-card').forEach(c=>{
     if(!document.hidden){
       ctx.clearRect(0, 0, width, height);
       const dark = isNightMode();
+
+      // In light mode, strictly disable all meteors & ablation sparks
+      if(!dark){
+        if(meteors.length) meteors.length = 0;
+        if(sparks.length) sparks.length = 0;
+        requestAnimationFrame(meteorLoop);
+        return;
+      }
+
       const isMobile = width < 760;
 
       // Natural spawn scheduler (gentle cosmic intervals, fewer on mobile)
@@ -5035,7 +6410,7 @@ document.querySelectorAll('.app-showcase-card').forEach(c=>{
 
         ctx.beginPath();
         ctx.arc(sp.x, sp.y, sp.size * (1 - spT * 0.5), 0, Math.PI * 2);
-        ctx.fillStyle = dark ? `rgba(215, 162, 22, ${spAlpha})` : `rgba(175, 118, 0, ${spAlpha})`;
+        ctx.fillStyle = `rgba(215, 162, 22, ${spAlpha})`;
         ctx.fill();
       }
 
