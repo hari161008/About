@@ -914,7 +914,7 @@ nav a:hover,nav a.active{
 
 /* ── ABOUT ── */
 .about-wrap{
-  display:grid;grid-template-columns:240px 1fr;gap:0;
+  display:grid;grid-template-columns:280px 1fr;gap:0;
   background:var(--s1);border:none;
   border-radius:var(--r-card);overflow:hidden;
   box-shadow:0 16px 48px var(--sh-6);
@@ -924,19 +924,24 @@ nav a:hover,nav a.active{
 .about-left{
   background:var(--s2);
   display:flex;flex-direction:column;align-items:center;
-  padding:44px 32px;gap:18px;
+  padding:44px 32px;gap:20px;
   border:none;
 }
 .about-avatar{
-  width:120px;height:120px;border-radius:24px;
+  width:145px;height:145px;border-radius:28px;
   object-fit:cover;
-  box-shadow:0 8px 32px var(--sh-6);
+  box-shadow:0 10px 32px var(--sh-6);
   border:none;
 }
-.about-name{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;letter-spacing:-.02em;text-align:center}
-.about-role{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:.04em;text-align:center}
-.about-stat-row{display:flex;gap:20px;margin-top:6px}
-.about-stat{text-align:center}
+.about-details{
+  display:flex;flex-direction:column;align-items:center;
+  gap:16px;width:100%;
+}
+.about-meta{text-align:center}
+.about-name{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.02em;text-align:center}
+.about-role{font-size:12.5px;color:var(--gold);font-weight:700;letter-spacing:.04em;text-align:center;margin-top:2px}
+.about-stat-row{display:flex;gap:16px;margin-top:4px;width:100%;justify-content:center}
+.about-stat{text-align:center;padding:6px 14px;border-radius:14px;background:var(--s3)}
 .about-stat-n{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:var(--gold)}
 .about-stat-l{font-size:10px;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 .about-social{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
@@ -1715,35 +1720,42 @@ div[style*="Avenir Book"]{
 .donate-actions-grid{
   display:flex;
   flex-wrap:wrap;
-  gap:12px;
+  gap:16px;
   justify-content:center;
   align-items:flex-end;
   width:100%;
+  margin-top:10px;
+  margin-bottom:6px;
 }
 .donate-action-col{
   display:flex;
   flex-direction:column;
   align-items:center;
   gap:8px;
-  flex:1 1 150px;
-  max-width:220px;
+  flex:0 1 auto;
 }
 .donate-action-col .upi-badge-chip{
   margin-bottom:0;
-  width:100%;
+  width:auto;
+  max-width:100%;
   justify-content:center;
+  padding:6px 16px;
 }
 .donate-action-col .copy-upi-btn,
 .donate-action-col .btn{
-  width:100%;
+  width:auto;
+  max-width:100%;
   justify-content:center;
+  padding:8px 18px;
 }
 .donate-btn-group{
   display:flex;
   flex-wrap:wrap;
-  gap:10px;
+  gap:12px;
   justify-content:center;
   width:100%;
+  margin-top:10px;
+  margin-bottom:6px;
 }
 #btn-bmc-page{
   background:#FFDD00 !important;
@@ -3187,14 +3199,14 @@ footer span{color:var(--gold)}
     margin-bottom:6px;
   }
   .hero-pfp-container{
-    width:min(65vw, 260px);
-    height:min(65vw, 260px);
+    width:min(76vw, 310px);
+    height:min(76vw, 310px);
     aspect-ratio:1/1;
     margin:0 auto;
   }
   .hero-pfp-wrap{
-    border-radius:36px;
-    box-shadow:0 16px 42px var(--sh-8);
+    border-radius:40px;
+    box-shadow:0 18px 48px var(--sh-8);
   }
   .hero-right{
     align-items:center;
@@ -3343,70 +3355,97 @@ footer span{color:var(--gold)}
 
   .about-wrap{
     grid-template-columns:1fr;
-    border-radius:22px;
+    border-radius:24px;
     box-shadow:0 8px 28px var(--sh-6);
+    overflow:hidden;
   }
   .about-left{
     border:none;
-    padding:24px 18px 18px;
-    gap:12px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-start;
+    padding:20px 18px;
+    gap:18px;
     border-bottom:1px solid rgba(255,255,255,.06);
+    background:var(--s2);
   }
   :root[data-theme="light"] .about-left{
     border-bottom:1px solid rgba(0,0,0,.06);
   }
   .about-avatar{
-    width:76px;
-    height:76px;
-    border-radius:18px;
-    box-shadow:0 6px 18px var(--sh-5);
+    width:min(34vw, 120px);
+    height:min(34vw, 120px);
+    border-radius:24px;
+    box-shadow:0 8px 24px var(--sh-6);
+    flex-shrink:0;
+  }
+  .about-details{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    text-align:left;
+    gap:8px;
+    flex:1;
+    min-width:0;
+  }
+  .about-meta{
+    text-align:left;
   }
   .about-name{
-    font-size:17px;
-    font-weight:700;
+    font-size:18px;
+    font-weight:800;
+    text-align:left;
   }
   .about-role{
-    font-size:11.5px;
-    margin-top:2px;
+    font-size:12px;
+    text-align:left;
+    margin-top:1px;
   }
   .about-stat-row{
     gap:8px;
     width:100%;
-    max-width:240px;
+    max-width:none;
+    margin-top:0;
+    justify-content:flex-start;
   }
   .about-stat{
-    padding:6px 14px;
-    border-radius:14px;
+    padding:5px 12px;
+    border-radius:12px;
+    background:var(--s3);
     flex:1;
+    text-align:center;
   }
   .about-stat-n{
-    font-size:17px;
+    font-size:16px;
+    font-weight:800;
   }
   .about-stat-l{
     font-size:9.5px;
   }
   .about-social{
-    gap:8px;
+    gap:6px;
     margin-top:2px;
+    justify-content:flex-start;
   }
   .about-social .social-btn{
-    width:34px;
-    height:34px;
+    width:32px;
+    height:32px;
   }
   .about-social .social-btn svg.icon{
-    width:15px;
-    height:15px;
+    width:14px;
+    height:14px;
   }
   .about-right{
     padding:20px 18px 24px;
     text-align:left;
   }
   .about-right h3{
-    font-size:19px;
+    font-size:18px;
     margin-bottom:2px;
   }
   .about-right .sub{
-    font-size:11px;
+    font-size:11.5px;
     margin-bottom:12px;
   }
   .about-right p{
@@ -3535,13 +3574,13 @@ footer span{color:var(--gold)}
     gap:14px;
   }
   .donate-box{
-    padding:18px 12px 16px;
-    border-radius:18px;
+    padding:28px 18px 22px;
+    border-radius:22px;
   }
   .donate-box-title{
-    font-size:16px;
+    font-size:18px;
     gap:8px;
-    margin-bottom:4px;
+    margin-bottom:6px;
   }
   .donate-head-ico,
   .bmc-head-ico{
@@ -3549,45 +3588,81 @@ footer span{color:var(--gold)}
     height:24px !important;
   }
   .donate-box-desc{
-    font-size:12px;
-    margin-bottom:10px;
-    line-height:1.45;
-    max-width:270px;
+    font-size:13px;
+    margin-bottom:16px;
+    line-height:1.5;
+    max-width:300px;
   }
   .upi-qr-wrapper,
   .bmc-qr-wrapper{
-    width:140px;
-    height:140px;
-    padding:8px;
-    margin:6px auto 10px;
-    border-radius:14px;
+    width:min(58vw, 205px);
+    height:min(58vw, 205px);
+    padding:12px;
+    margin:18px auto 22px;
+    border-radius:20px;
   }
   #bmc-qrcode{
-    width:124px;
-    height:124px;
+    width:calc(100% - 4px);
+    height:calc(100% - 4px);
   }
   .upi-badge-chip{
-    font-size:10.5px;
-    padding:4px 9px;
-    margin-bottom:8px;
-    gap:4px;
+    font-size:11px;
+    padding:5px 12px;
+    margin-bottom:14px;
+    gap:5px;
   }
   .donate-actions-grid{
-    gap:6px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
     width:100%;
+    justify-content:center;
+    align-items:flex-start;
+    margin-top:14px;
+    margin-bottom:8px;
   }
   .donate-action-col{
-    gap:5px;
-    flex:1 1 110px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    flex:0 1 auto;
     max-width:100%;
   }
-  .donate-btn-group{
-    gap:6px;
-    width:100%;
+  .donate-action-col .upi-badge-chip{
+    width:auto;
+    max-width:100%;
+    font-size:11px;
+    padding:5px 14px;
+    margin-bottom:0;
+    gap:5px;
+    justify-content:center;
+    display:inline-flex;
   }
-  .copy-upi-btn,
-  .donate-btn-group .btn{
-    padding:7px 12px;
+  .donate-action-col .copy-upi-btn{
+    width:auto;
+    max-width:100%;
+    padding:7px 16px;
+    font-size:11px;
+    border-radius:var(--r-pill);
+    gap:5px;
+    justify-content:center;
+    display:inline-flex;
+    white-space:nowrap;
+  }
+  .donate-btn-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    width:100%;
+    justify-content:center;
+    margin-top:14px;
+    margin-bottom:8px;
+  }
+  .donate-btn-group .btn,
+  .donate-btn-group .copy-upi-btn{
+    width:auto;
+    padding:7px 16px;
     font-size:11px;
     border-radius:var(--r-pill);
     gap:5px;
@@ -3756,11 +3831,11 @@ footer span{color:var(--gold)}
     gap:8px;
   }
   .hero-pfp-container{
-    width:min(58vw, 220px);
-    height:min(58vw, 220px);
+    width:min(72vw, 260px);
+    height:min(72vw, 260px);
   }
   .hero-pfp-wrap{
-    border-radius:30px;
+    border-radius:34px;
   }
   .hero-name{
     font-size:26px;
@@ -3782,6 +3857,74 @@ footer span{color:var(--gold)}
   .chip-ico{
     width:18px;
     height:18px;
+  }
+  .about-left{
+    padding:16px 14px;
+    gap:14px;
+  }
+  .about-avatar{
+    width:min(32vw, 105px);
+    height:min(32vw, 105px);
+    border-radius:20px;
+  }
+  .about-name{
+    font-size:16.5px;
+  }
+  .about-role{
+    font-size:11px;
+  }
+  .about-stat{
+    padding:4px 8px;
+  }
+  .about-stat-n{
+    font-size:15px;
+  }
+  .about-stat-l{
+    font-size:9px;
+  }
+  .about-social .social-btn{
+    width:30px;
+    height:30px;
+  }
+  .donate-box{
+    padding:22px 14px 18px;
+  }
+  .donate-box-desc{
+    margin-bottom:12px;
+  }
+  .upi-qr-wrapper,
+  .bmc-qr-wrapper{
+    width:min(56vw, 185px);
+    height:min(56vw, 185px);
+    padding:10px;
+    margin:14px auto 18px;
+    border-radius:18px;
+  }
+  .donate-actions-grid{
+    gap:10px;
+    margin-top:12px;
+    margin-bottom:6px;
+  }
+  .donate-action-col{
+    gap:6px;
+  }
+  .donate-action-col .upi-badge-chip{
+    font-size:10.5px;
+    padding:4px 10px;
+  }
+  .donate-action-col .copy-upi-btn{
+    font-size:10.5px;
+    padding:6px 12px;
+  }
+  .donate-btn-group{
+    gap:8px;
+    margin-top:12px;
+    margin-bottom:6px;
+  }
+  .donate-btn-group .btn,
+  .donate-btn-group .copy-upi-btn{
+    font-size:10.5px;
+    padding:6px 12px;
   }
   #bmc-wbtn{
     width:46px !important;
@@ -4562,33 +4705,35 @@ footer span{color:var(--gold)}
     <div class="about-wrap rv-scale d2 scroll-fx">
       <div class="about-left">
         <img class="about-avatar" src="https://raw.githubusercontent.com/hari161008/About/main/Assets/Profile%20Picture%201.jpg" alt="Hari Prabhu"/>
-        <div>
-          <div class="about-name">Hari Prabhu</div>
-          <div class="about-role" style="margin-top:4px">Independent Android Dev</div>
-        </div>
-        <div class="about-stat-row">
-          <div class="about-stat">
-            <div class="about-stat-n" data-count="5" data-suffix="">0</div>
-            <div class="about-stat-l">Apps</div>
+        <div class="about-details">
+          <div class="about-meta">
+            <div class="about-name">Hari Prabhu</div>
+            <div class="about-role" style="margin-top:4px">Independent Android Dev</div>
           </div>
-          <div class="about-stat">
-            <div class="about-stat-n" data-count="100" data-suffix="%">0%</div>
-            <div class="about-stat-l">OSS</div>
+          <div class="about-stat-row">
+            <div class="about-stat">
+              <div class="about-stat-n" data-count="5" data-suffix="">0</div>
+              <div class="about-stat-l">Apps</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-n" data-count="100" data-suffix="%">0%</div>
+              <div class="about-stat-l">OSS</div>
+            </div>
           </div>
-        </div>
-        <div class="about-social">
-          <a href="https://github.com/hari161008" target="_blank" class="social-btn" title="GitHub">
-            <svg class="icon"><use href="#ico-github"/></svg>
-          </a>
-          <a href="mailto:hariprabhu1008@gmail.com" class="social-btn" title="Gmail">
-            <svg class="icon"><use href="#ico-gmail"/></svg>
-          </a>
-          <a href="https://t.me/hariprabhu1008" target="_blank" class="social-btn" title="Telegram">
-            <svg class="icon"><use href="#ico-telegram"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/hari-prabhu-280919411?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" class="social-btn" title="LinkedIn">
-            <svg class="icon"><use href="#ico-linkedin"/></svg>
-          </a>
+          <div class="about-social">
+            <a href="https://github.com/hari161008" target="_blank" class="social-btn" title="GitHub">
+              <svg class="icon"><use href="#ico-github"/></svg>
+            </a>
+            <a href="mailto:hariprabhu1008@gmail.com" class="social-btn" title="Gmail">
+              <svg class="icon"><use href="#ico-gmail"/></svg>
+            </a>
+            <a href="https://t.me/hariprabhu1008" target="_blank" class="social-btn" title="Telegram">
+              <svg class="icon"><use href="#ico-telegram"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/hari-prabhu-280919411?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" class="social-btn" title="LinkedIn">
+              <svg class="icon"><use href="#ico-linkedin"/></svg>
+            </a>
+          </div>
         </div>
       </div>
       <div class="about-right">
