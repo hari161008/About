@@ -593,51 +593,80 @@ nav a:hover,nav a.active{
 @keyframes avatarIn{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
 
 .hero-eyebrow{
-  font-size:11px;font-weight:800;color:var(--gold);
-  letter-spacing:.14em;text-transform:uppercase;
-  margin-bottom:10px;
+  font-size:12px;font-weight:800;color:var(--gold);
+  letter-spacing:.12em;text-transform:uppercase;
+  margin-bottom:12px;
   display:inline-flex;align-items:center;gap:8px;
+  padding:5px 14px 5px 10px;
+  background:var(--gold-dim);
+  border:1px solid rgba(234,196,53,.22);
+  border-radius:var(--r-pill);
   animation:fu .8s var(--ease) .35s both
 }
-.hero-eyebrow span{display:inline-block;width:24px;height:1.5px;background:var(--gold);opacity:.5;border-radius:99px}
+.hero-eyebrow span{display:inline-block;width:18px;height:2px;background:var(--gold);opacity:.6;border-radius:99px}
+.hero-eyebrow svg.icon{width:14px;height:14px}
 
 .hero-name{
   font-family:'Space Grotesk',sans-serif;
-  font-size:clamp(36px,4vw,68px);
-  font-weight:700;letter-spacing:-.04em;line-height:1;
-  margin-bottom:8px;
-  white-space:nowrap
+  font-size:clamp(38px,4.5vw,72px);
+  font-weight:800;letter-spacing:-.04em;line-height:1.05;
+  margin-bottom:10px;
+  white-space:nowrap;
+  color:var(--text)
 }
 .hero-name em{font-style:normal;color:var(--gold)}
 .char{
   display:inline-block;
   opacity:0;
   transform:translateY(60px) rotate(8deg);
-  animation:charIn .6s var(--spring) forwards
+  animation:charIn .6s var(--spring) forwards;
+  font-weight:800
 }
 .char-space{display:inline-block;width:.28em}
 .hero-handle{
   font-family:'JetBrains Mono',monospace;
-  font-size:13px;color:rgba(204,180,59,.45);
-  letter-spacing:.08em;margin-bottom:16px;
+  font-size:13.5px;font-weight:700;color:var(--gold);
+  letter-spacing:.04em;margin-bottom:18px;
+  display:inline-flex;align-items:center;gap:10px;
   animation:fu .8s var(--ease) .5s both
 }
+.hero-handle-tag{
+  padding:3px 11px;
+  border-radius:var(--r-pill);
+  background:rgba(234,196,53,.15);
+  border:1px solid rgba(234,196,53,.32);
+  color:var(--gold);
+  font-weight:800;
+  letter-spacing:.05em
+}
+.hero-handle-sep{
+  opacity:.45;
+  color:var(--text);
+  font-weight:800
+}
+.hero-handle-role{
+  color:var(--text2);
+  font-weight:500;
+  font-family:'Space Grotesk','Nunito',sans-serif;
+  font-size:14px
+}
 .hero-bio{
-  font-size:clamp(14px,1.5vw,16px);color:var(--text2);
-  max-width:420px;line-height:1.7;margin-bottom:20px;
+  font-size:clamp(15px,1.55vw,17px);color:var(--text2);
+  font-weight:400;
+  max-width:490px;line-height:1.75;margin-bottom:22px;
   animation:fu .8s var(--ease) .58s both
 }
-.hero-bio strong{color:var(--text);font-weight:800}
+.hero-bio strong{color:var(--text);font-weight:600}
 @keyframes charIn{to{opacity:1;transform:translateY(0) rotate(0deg)}}
 
-.chips{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px;margin-bottom:20px;animation:fu .8s var(--ease) .66s both}
+.chips{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px;margin-bottom:22px;animation:fu .8s var(--ease) .66s both}
 .chip{
   display:inline-flex;align-items:center;gap:8px;
-  padding:7px 16px 7px 8px;
+  padding:8px 16px 8px 10px;
   background:var(--s2);
-  border:none;
+  border:1px solid rgba(255,255,255,.07);
   border-radius:var(--r-pill);
-  font-size:12px;font-weight:700;color:var(--text2);
+  font-size:12.5px;font-weight:800;color:var(--text);
   text-decoration:none;
   transition:all .3s var(--spring);
   cursor:pointer;
@@ -648,8 +677,9 @@ nav a:hover,nav a.active{
 .chip:hover{
   color:var(--gold);
   background:var(--gold-dim);
+  border-color:rgba(234,196,53,.35);
   transform:translateY(-3px) scale(1.04);
-  box-shadow:0 8px 20px rgba(204,180,59,.18);
+  box-shadow:0 8px 20px rgba(234,196,53,.18);
 }
 .chip:active{
   transform:scale(.96);
@@ -664,11 +694,11 @@ nav a:hover,nav a.active{
 }
 .chip-ico svg.icon{width:14px;height:14px}
 
-.ctas{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:10px;animation:fu .8s var(--ease) .74s both}
+.ctas{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:12px;animation:fu .8s var(--ease) .74s both}
 .btn{
   display:inline-flex;align-items:center;gap:8px;
   padding:11px 22px;border-radius:var(--r-pill);
-  font-family:inherit;font-size:13px;font-weight:800;
+  font-family:inherit;font-size:13.5px;font-weight:800;
   text-decoration:none;cursor:pointer;border:none;
   transition:all .35s var(--spring);position:relative;overflow:hidden;
 }
@@ -676,15 +706,17 @@ nav a:hover,nav a.active{
 .btn::after{
   content:'';
   position:absolute;
-  top:-50%;left:-60%;
+  top:-50%;left:-100%;
   width:40%;height:200%;
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
   transform:rotate(25deg);
-  transition:left .75s ease;
+  opacity:0;
+  transition:left .75s ease,opacity .35s ease;
   pointer-events:none;
 }
 .btn:hover::after{
   left:130%;
+  opacity:1;
 }
 .btn-gold{
   background:#eac435;
@@ -699,19 +731,63 @@ nav a:hover,nav a.active{
   box-shadow:0 14px 36px rgba(234,196,53,.5);
 }
 .btn-ghost{
-  background:rgba(28,26,20,.62);
+  background:rgba(28,26,20,.72);
   backdrop-filter:blur(16px) saturate(1.8);
   -webkit-backdrop-filter:blur(16px) saturate(1.8);
-  border:none;
-  color:var(--gold);
+  border:1px solid rgba(255,255,255,.09);
+  color:var(--text);
   box-shadow:0 4px 16px var(--sh-5);
+  font-weight:800;
 }
 .btn-ghost:hover{
   background:rgba(234,196,53,.2);
+  border-color:rgba(234,196,53,.45);
   backdrop-filter:blur(24px) saturate(2);
   -webkit-backdrop-filter:blur(24px) saturate(2);
+  color:var(--gold);
   transform:translateY(-3px) scale(1.04);
   box-shadow:0 8px 28px var(--gold-glow);
+}
+:root[data-theme="light"] .hero-eyebrow{
+  color:#594900;
+  background:#faeec2;
+  border-color:rgba(110,93,0,.25);
+}
+:root[data-theme="light"] .hero-eyebrow span{
+  background:#594900;
+}
+:root[data-theme="light"] .hero-handle-tag{
+  background:#faeec2;
+  border-color:rgba(110,93,0,.3);
+  color:#594900;
+}
+:root[data-theme="light"] .hero-handle-sep{
+  color:#1c1b16;
+  opacity:.4;
+}
+:root[data-theme="light"] .hero-handle-role{
+  color:rgba(28,27,22,.8);
+  font-weight:500;
+}
+:root[data-theme="light"] .hero-bio{
+  color:rgba(28,27,22,.78);
+  font-weight:400;
+}
+:root[data-theme="light"] .hero-bio strong{
+  color:#1c1b16;
+  font-weight:600;
+}
+:root[data-theme="light"] .chip{
+  background:#ffffff;
+  border:1px solid rgba(0,0,0,.1);
+  color:#1c1b16;
+  box-shadow:0 4px 14px rgba(0,0,0,.06);
+}
+:root[data-theme="light"] .chip:hover{
+  background:#faeec2;
+  color:#4f4300;
+  border-color:rgba(110,93,0,.35);
+  box-shadow:0 8px 20px rgba(110,93,0,.15);
 }
 :root[data-theme="light"] .btn-gold{
   background:#f2c724;
@@ -725,21 +801,63 @@ nav a:hover,nav a.active{
   box-shadow:0 14px 36px rgba(212,167,19,.55);
 }
 :root[data-theme="light"] .btn-ghost{
-  background:var(--s1);
+  background:#ffffff;
   backdrop-filter:blur(16px) saturate(1.8);
   -webkit-backdrop-filter:blur(16px) saturate(1.8);
-  border:none;
-  color:#6e5d00;
-  box-shadow:0 4px 16px var(--sh-5);
+  border:1px solid rgba(0,0,0,.12);
+  color:#1c1b16;
+  box-shadow:0 4px 16px rgba(0,0,0,.06);
 }
 :root[data-theme="light"] .btn-ghost:hover{
   background:#faeec2;
   backdrop-filter:blur(24px) saturate(2);
   -webkit-backdrop-filter:blur(24px) saturate(2);
-  color:#1c1700;
-  box-shadow:0 8px 24px rgba(180,140,0,.28);
+  border-color:rgba(110,93,0,.35);
+  color:#3b3200;
+  box-shadow:0 8px 24px rgba(180,140,0,.24);
 }
 @media(prefers-color-scheme:light){
+  :root:not([data-theme="dark"]) .hero-eyebrow{
+    color:#594900;
+    background:#faeec2;
+    border-color:rgba(110,93,0,.25);
+  }
+  :root:not([data-theme="dark"]) .hero-eyebrow span{
+    background:#594900;
+  }
+  :root:not([data-theme="dark"]) .hero-handle-tag{
+    background:#faeec2;
+    border-color:rgba(110,93,0,.3);
+    color:#594900;
+  }
+  :root:not([data-theme="dark"]) .hero-handle-sep{
+    color:#1c1b16;
+    opacity:.4;
+  }
+  :root:not([data-theme="dark"]) .hero-handle-role{
+    color:rgba(28,27,22,.8);
+    font-weight:500;
+  }
+  :root:not([data-theme="dark"]) .hero-bio{
+    color:rgba(28,27,22,.78);
+    font-weight:400;
+  }
+  :root:not([data-theme="dark"]) .hero-bio strong{
+    color:#1c1b16;
+    font-weight:600;
+  }
+  :root:not([data-theme="dark"]) .chip{
+    background:#ffffff;
+    border:1px solid rgba(0,0,0,.1);
+    color:#1c1b16;
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+  }
+  :root:not([data-theme="dark"]) .chip:hover{
+    background:#faeec2;
+    color:#4f4300;
+    border-color:rgba(110,93,0,.35);
+    box-shadow:0 8px 20px rgba(110,93,0,.15);
+  }
   :root:not([data-theme="dark"]) .btn-gold{
     background:#f2c724;
     color:#161300;
@@ -752,19 +870,20 @@ nav a:hover,nav a.active{
     box-shadow:0 14px 36px rgba(212,167,19,.55);
   }
   :root:not([data-theme="dark"]) .btn-ghost{
-    background:var(--s1);
+    background:#ffffff;
     backdrop-filter:blur(16px) saturate(1.8);
     -webkit-backdrop-filter:blur(16px) saturate(1.8);
-    border:none;
-    color:#6e5d00;
-    box-shadow:0 4px 16px var(--sh-5);
+    border:1px solid rgba(0,0,0,.12);
+    color:#1c1b16;
+    box-shadow:0 4px 16px rgba(0,0,0,.06);
   }
   :root:not([data-theme="dark"]) .btn-ghost:hover{
     background:#faeec2;
     backdrop-filter:blur(24px) saturate(2);
     -webkit-backdrop-filter:blur(24px) saturate(2);
-    color:#1c1700;
-    box-shadow:0 8px 24px rgba(180,140,0,.28);
+    border-color:rgba(110,93,0,.35);
+    color:#3b3200;
+    box-shadow:0 8px 24px rgba(180,140,0,.24);
   }
 }
 .btn:active{transform:scale(.96)}
@@ -1238,11 +1357,12 @@ nav a:hover,nav a.active{
 .cm::after{
   content:'';
   position:absolute;
-  top:-50%;left:-60%;
+  top:-50%;left:-100%;
   width:40%;height:200%;
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
   transform:rotate(25deg);
-  transition:left .75s ease;
+  opacity:0;
+  transition:left .75s ease,opacity .35s ease;
   pointer-events:none;
 }
 .contact-card .cm:hover,
@@ -1256,6 +1376,7 @@ nav a:hover,nav a.active{
 .cm.in:hover::after,
 .cm:hover::after{
   left:130%;
+  opacity:1;
 }
 .contact-card .cm:active,
 .cm.in:active,
@@ -1411,11 +1532,12 @@ nav a:hover,nav a.active{
 .donate-box::after{
   content:'';
   position:absolute;
-  top:-50%;left:-60%;
-  width:40%;height:200%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);
+  top:-60%;left:-140%;
+  width:50%;height:220%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);
   transform:rotate(25deg);
-  transition:left .75s ease;
+  opacity:0;
+  transition:left .75s ease,opacity .4s ease;
   pointer-events:none;
 }
 .donate-box:hover{
@@ -1424,7 +1546,8 @@ nav a:hover,nav a.active{
   background:var(--s3);
 }
 .donate-box:hover::after{
-  left:130%;
+  left:140%;
+  opacity:1;
 }
 .donate-box-title{
   font-family:'Space Grotesk',sans-serif;
@@ -1572,13 +1695,22 @@ a.upi-badge-chip:hover{
   border-color:#6e5d00;
   box-shadow:0 6px 18px rgba(110,93,0,.25);
 }
-/* Prevent BMC widget popup bubble */
+/* Prevent BMC widget popup text bubble */
 #bmc-wbtn + div,
 div[style*="Avenir Book"]{
   display:none !important;
   visibility:hidden !important;
   opacity:0 !important;
   pointer-events:none !important;
+}
+#bmc-wbtn{
+  display:flex !important;
+  box-shadow:0 6px 20px rgba(0,0,0,.25) !important;
+  transition:transform .25s var(--spring),box-shadow .25s var(--ease) !important;
+}
+#bmc-wbtn:hover{
+  transform:scale(1.08) !important;
+  box-shadow:0 8px 28px rgba(255,221,0,.45) !important;
 }
 .donate-actions-grid{
   display:flex;
@@ -1640,7 +1772,7 @@ div[style*="Avenir Book"]{
   font-weight:800;
   cursor:pointer;
   transition:all .3s var(--spring);
-  border:none;
+  border:1px solid rgba(255,255,255,.08);
   background:var(--s3);
   color:var(--text);
   box-shadow:0 4px 14px var(--sh-5);
@@ -1648,6 +1780,7 @@ div[style*="Avenir Book"]{
 }
 .copy-upi-btn:hover{
   background:var(--gold-dim);
+  border-color:rgba(234,196,53,.35);
   color:var(--gold);
   transform:translateY(-2px);
   box-shadow:0 6px 18px rgba(234,196,53,.2);
@@ -1658,6 +1791,32 @@ div[style*="Avenir Book"]{
 .copy-upi-btn svg.icon{
   width:15px;
   height:15px;
+}
+:root[data-theme="light"] .copy-upi-btn{
+  background:#ffffff;
+  color:#1c1b16;
+  border:1px solid rgba(0,0,0,.12);
+  box-shadow:0 4px 14px rgba(0,0,0,.06);
+}
+:root[data-theme="light"] .copy-upi-btn:hover{
+  background:#faeec2;
+  border-color:rgba(110,93,0,.35);
+  color:#4f4300;
+  box-shadow:0 6px 18px rgba(110,93,0,.18);
+}
+@media(prefers-color-scheme:light){
+  :root:not([data-theme="dark"]) .copy-upi-btn{
+    background:#ffffff;
+    color:#1c1b16;
+    border:1px solid rgba(0,0,0,.12);
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+  }
+  :root:not([data-theme="dark"]) .copy-upi-btn:hover{
+    background:#faeec2;
+    border-color:rgba(110,93,0,.35);
+    color:#4f4300;
+    box-shadow:0 6px 18px rgba(110,93,0,.18);
+  }
 }
 .donate-bmc-hero-ico{
   width:88px;
@@ -3011,9 +3170,16 @@ footer span{color:var(--gold)}
   #hero{
     grid-template-columns:1fr;
     text-align:center;
-    padding:max(48px,calc(32px + env(safe-area-inset-top,0px))) 16px 44px;
-    min-height:auto;
-    gap:18px;
+    padding:max(20px,calc(14px + env(safe-area-inset-top,0px))) 16px 32px;
+    min-height:calc(100svh - 40px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    box-sizing:border-box;
+    position:relative;
+    z-index:1;
   }
   .hero-left{
     padding:0;
@@ -3021,48 +3187,52 @@ footer span{color:var(--gold)}
     margin-bottom:6px;
   }
   .hero-pfp-container{
-    width:min(72vw,285px);
+    width:min(65vw, 260px);
+    height:min(65vw, 260px);
     aspect-ratio:1/1;
     margin:0 auto;
   }
   .hero-pfp-wrap{
     border-radius:36px;
+    box-shadow:0 16px 42px var(--sh-8);
   }
   .hero-right{
     align-items:center;
     text-align:center;
     padding:0;
     width:100%;
-  }
-  .hero-eyebrow{
-    justify-content:center;
-    font-size:10.5px;
-    margin-bottom:8px;
+    max-width:440px;
+    margin:0 auto;
   }
   .hero-name{
-    font-size:clamp(30px,8.5vw,46px);
+    font-size:clamp(28px,7.5vw,38px);
     white-space:normal;
-    line-height:1.15;
+    line-height:1.1;
     margin-bottom:6px;
   }
-  .hero-handle{
-    font-size:12px;
-    margin-bottom:12px;
-  }
   .hero-bio{
-    font-size:14.5px;
+    font-size:clamp(12.5px,3.2vw,14px);
     max-width:380px;
-    margin:0 auto 18px;
-    line-height:1.65;
+    margin:0 auto 12px;
+    line-height:1.55;
   }
   .chips{
     justify-content:center;
-    gap:6px;
-    margin-bottom:18px;
+    gap:5px;
+    margin-bottom:12px;
   }
   .chip{
-    padding:6px 12px 6px 7px;
-    font-size:11.5px;
+    padding:5px 11px 5px 6px;
+    font-size:10.5px;
+    gap:5px;
+  }
+  .chip-ico{
+    width:20px;
+    height:20px;
+  }
+  .chip-ico svg.icon{
+    width:11px;
+    height:11px;
   }
   .ctas{
     justify-content:center;
@@ -3070,12 +3240,16 @@ footer span{color:var(--gold)}
     width:100%;
   }
   .btn{
-    padding:10px 18px;
-    font-size:12.5px;
+    padding:8px 16px;
+    font-size:12px;
+    gap:6px;
   }
 
   .showcase-section{
-    padding:12px 12px 32px;
+    padding:36px 12px 36px;
+    margin-top:0;
+    position:relative;
+    z-index:2;
   }
   .showcase-header{
     margin-bottom:20px;
@@ -3351,6 +3525,114 @@ footer span{color:var(--gold)}
     border-radius:18px;
   }
 
+  /* ── MOBILE DONATE / BUY ME A COFFEE COMPACT UI ── */
+  .donate-card{
+    padding:24px 14px 20px;
+    border-radius:20px;
+  }
+  .donate-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .donate-box{
+    padding:18px 12px 16px;
+    border-radius:18px;
+  }
+  .donate-box-title{
+    font-size:16px;
+    gap:8px;
+    margin-bottom:4px;
+  }
+  .donate-head-ico,
+  .bmc-head-ico{
+    width:24px !important;
+    height:24px !important;
+  }
+  .donate-box-desc{
+    font-size:12px;
+    margin-bottom:10px;
+    line-height:1.45;
+    max-width:270px;
+  }
+  .upi-qr-wrapper,
+  .bmc-qr-wrapper{
+    width:140px;
+    height:140px;
+    padding:8px;
+    margin:6px auto 10px;
+    border-radius:14px;
+  }
+  #bmc-qrcode{
+    width:124px;
+    height:124px;
+  }
+  .upi-badge-chip{
+    font-size:10.5px;
+    padding:4px 9px;
+    margin-bottom:8px;
+    gap:4px;
+  }
+  .donate-actions-grid{
+    gap:6px;
+    width:100%;
+  }
+  .donate-action-col{
+    gap:5px;
+    flex:1 1 110px;
+    max-width:100%;
+  }
+  .donate-btn-group{
+    gap:6px;
+    width:100%;
+  }
+  .copy-upi-btn,
+  .donate-btn-group .btn{
+    padding:7px 12px;
+    font-size:11px;
+    border-radius:var(--r-pill);
+    gap:5px;
+  }
+  #btn-bmc-page img{
+    width:14px !important;
+    height:14px !important;
+  }
+
+  /* ── REDUCE SCALING OF BUY ME A COFFEE WIDGET SCREEN & BUTTON (MOBILE) ── */
+  #bmc-wbtn{
+    width:52px !important;
+    height:52px !important;
+    border-radius:26px !important;
+    right:16px !important;
+    bottom:calc(18px + env(safe-area-inset-bottom, 18px)) !important;
+    box-shadow:0 6px 20px rgba(0,0,0,.3) !important;
+  }
+  #bmc-wbtn img{
+    width:28px !important;
+    height:28px !important;
+  }
+  #bmc-iframe{
+    width:calc(100vw - 32px) !important;
+    max-width:360px !important;
+    height:calc(100svh - 130px) !important;
+    max-height:540px !important;
+    min-height:unset !important;
+    right:16px !important;
+    bottom:calc(76px + env(safe-area-inset-bottom, 76px)) !important;
+    left:auto !important;
+    top:auto !important;
+    border-radius:20px !important;
+    box-shadow:0 16px 48px rgba(0,0,0,.35) !important;
+    transform-origin:bottom right !important;
+  }
+  #bmc-close-btn{
+    top:14px !important;
+    right:14px !important;
+    width:34px !important;
+    height:34px !important;
+    background:rgba(255,255,255,.9) !important;
+    box-shadow:0 4px 12px rgba(0,0,0,.15) !important;
+  }
+
   /* ── MOBILE BACKDROP: AIRY, EXPANSIVE SCENERY (MOUNT FUJI, DRIFTING CLOUDS, CELESTIAL SKY & METEORS) ── */
   .amb,
   .amb-a,
@@ -3468,8 +3750,59 @@ footer span{color:var(--gold)}
 @media(max-width:400px){
   nav a{padding:5px 8px;font-size:11px}
   .nav-brand{font-size:11.5px}
-  .btn{padding:9px 15px;font-size:12px}
-  .hero-name{font-size:28px}
+  .btn{padding:7px 13px;font-size:11px}
+  #hero{
+    padding:max(16px,calc(10px + env(safe-area-inset-top,0px))) 12px 24px;
+    gap:8px;
+  }
+  .hero-pfp-container{
+    width:min(58vw, 220px);
+    height:min(58vw, 220px);
+  }
+  .hero-pfp-wrap{
+    border-radius:30px;
+  }
+  .hero-name{
+    font-size:26px;
+    margin-bottom:4px;
+  }
+  .hero-bio{
+    font-size:12px;
+    line-height:1.45;
+    margin-bottom:10px;
+  }
+  .chips{
+    gap:4px;
+    margin-bottom:10px;
+  }
+  .chip{
+    padding:4px 8px 4px 5px;
+    font-size:9.5px;
+  }
+  .chip-ico{
+    width:18px;
+    height:18px;
+  }
+  #bmc-wbtn{
+    width:46px !important;
+    height:46px !important;
+    border-radius:23px !important;
+    right:12px !important;
+    bottom:calc(14px + env(safe-area-inset-bottom, 14px)) !important;
+  }
+  #bmc-wbtn img{
+    width:24px !important;
+    height:24px !important;
+  }
+  #bmc-iframe{
+    width:calc(100vw - 20px) !important;
+    max-width:330px !important;
+    height:calc(100svh - 100px) !important;
+    max-height:480px !important;
+    right:10px !important;
+    bottom:calc(66px + env(safe-area-inset-bottom, 66px)) !important;
+    border-radius:16px !important;
+  }
 }
 </style>
 </head>
@@ -4025,10 +4358,8 @@ footer span{color:var(--gold)}
   </div>
   <div class="hero-right">
     <h1 class="hero-name" id="hero-name-el">Hari Prabhu</h1>
-    <p class="hero-handle">@SVHP · Android Developer</p>
     <p class="hero-bio">
-      I make <strong>cool apps</strong> that actually solve real-life problems —
-      and things so unique, you didn't know you needed them until now.
+      Crafting high-performance, open-source Android apps and system utilities that solve real everyday problems. Powered by modern Kotlin, reactive Jetpack Compose, and expressive Material You design — engineered for speed, fluid haptics, and delightful utility.
     </p>
     <div class="chips">
       <a href="#skills" class="chip" data-filter="core" title="Filter Android SDK">
@@ -4803,7 +5134,7 @@ footer span{color:var(--gold)}
                 <svg class="icon" style="width:14px;height:14px;color:var(--gold)"><use href="#ico-phone"/></svg>
                 <span>8446443108</span>
               </div>
-              <button type="button" class="btn btn-gold copy-upi-btn" data-upi="8446443108" title="Copy Phone Number">
+              <button type="button" class="copy-upi-btn" id="copy-phone-btn" data-upi="8446443108" title="Copy Phone Number">
                 <svg class="icon"><use href="#ico-copy"/></svg>
                 <span class="copy-btn-text">Copy Phone Number</span>
               </button>
