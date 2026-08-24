@@ -680,18 +680,47 @@ nav a:hover,nav a.active{
   box-shadow:0 14px 36px rgba(212,167,19,.55);
 }
 :root[data-theme="light"] .btn-ghost{
-  background:rgba(255,255,255,.65);
+  background:var(--s1);
   backdrop-filter:blur(16px) saturate(1.8);
   -webkit-backdrop-filter:blur(16px) saturate(1.8);
   border:none;
   color:#6e5d00;
+  box-shadow:0 4px 16px var(--sh-5);
 }
 :root[data-theme="light"] .btn-ghost:hover{
-  background:rgba(250,238,194,.85);
+  background:#faeec2;
   backdrop-filter:blur(24px) saturate(2);
   -webkit-backdrop-filter:blur(24px) saturate(2);
-  color:#3a3100;
+  color:#1c1700;
   box-shadow:0 8px 24px rgba(180,140,0,.28);
+}
+@media(prefers-color-scheme:light){
+  :root:not([data-theme="dark"]) .btn-gold{
+    background:#f2c724;
+    color:#161300;
+    border:none;
+    box-shadow:0 8px 24px rgba(212,167,19,.4);
+  }
+  :root:not([data-theme="dark"]) .btn-gold:hover{
+    background:#ffd83b;
+    color:#000000;
+    box-shadow:0 14px 36px rgba(212,167,19,.55);
+  }
+  :root:not([data-theme="dark"]) .btn-ghost{
+    background:var(--s1);
+    backdrop-filter:blur(16px) saturate(1.8);
+    -webkit-backdrop-filter:blur(16px) saturate(1.8);
+    border:none;
+    color:#6e5d00;
+    box-shadow:0 4px 16px var(--sh-5);
+  }
+  :root:not([data-theme="dark"]) .btn-ghost:hover{
+    background:#faeec2;
+    backdrop-filter:blur(24px) saturate(2);
+    -webkit-backdrop-filter:blur(24px) saturate(2);
+    color:#1c1700;
+    box-shadow:0 8px 24px rgba(180,140,0,.28);
+  }
 }
 .btn:active{transform:scale(.96)}
 
@@ -3457,11 +3486,11 @@ footer span{color:var(--gold)}
         GitHub
       </a>
       <a href="#projects" class="btn btn-ghost">
-        <svg class="icon" style="color:var(--gold)"><use href="#ico-apps"/></svg>
+        <svg class="icon"><use href="#ico-apps"/></svg>
         My Apps
       </a>
       <a href="#contact" class="btn btn-ghost">
-        <svg class="icon" style="color:var(--gold)"><use href="#ico-send"/></svg>
+        <svg class="icon"><use href="#ico-send"/></svg>
         Say Hi
       </a>
     </div>
