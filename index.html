@@ -1700,7 +1700,7 @@ a.upi-badge-chip:hover{
   border-color:#6e5d00;
   box-shadow:0 6px 18px rgba(110,93,0,.25);
 }
-/* Prevent BMC widget popup text bubble */
+/* ── BUY ME A COFFEE FLOATING WIDGET (RESPONSIVE DESKTOP & BASE) ── */
 #bmc-wbtn + div,
 div[style*="Avenir Book"]{
   display:none !important;
@@ -1710,12 +1710,157 @@ div[style*="Avenir Book"]{
 }
 #bmc-wbtn{
   display:flex !important;
-  box-shadow:0 6px 20px rgba(0,0,0,.25) !important;
-  transition:transform .25s var(--spring),box-shadow .25s var(--ease) !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:clamp(50px, 3.8vw, 60px) !important;
+  height:clamp(50px, 3.8vw, 60px) !important;
+  border-radius:50% !important;
+  right:clamp(16px, 1.8vw, 24px) !important;
+  bottom:clamp(16px, 1.8vw, 24px) !important;
+  box-shadow:0 8px 24px rgba(0,0,0,.28), 0 0 16px var(--gold-glow) !important;
+  transition:transform .25s var(--spring),box-shadow .25s var(--ease),width .3s var(--ease),height .3s var(--ease),bottom .3s var(--ease),right .3s var(--ease) !important;
+  z-index:9999 !important;
 }
 #bmc-wbtn:hover{
   transform:scale(1.08) !important;
-  box-shadow:0 8px 28px rgba(255,221,0,.45) !important;
+  box-shadow:0 12px 32px rgba(255,221,0,.5), 0 0 24px var(--gold-glow) !important;
+}
+#bmc-wbtn:active{
+  transform:scale(.94) !important;
+}
+#bmc-wbtn img,
+#bmc-wbtn svg{
+  width:clamp(26px, 2.1vw, 34px) !important;
+  height:clamp(26px, 2.1vw, 34px) !important;
+  margin:0 !important;
+  padding:0 !important;
+  object-fit:contain !important;
+  display:block !important;
+}
+#bmc-iframe{
+  position:fixed !important;
+  width:min(420px, calc(100vw - 40px)) !important;
+  max-width:420px !important;
+  height:min(640px, calc(100svh - 105px)) !important;
+  max-height:calc(100svh - 105px) !important;
+  min-height:unset !important;
+  right:clamp(16px, 1.8vw, 24px) !important;
+  bottom:calc(clamp(16px, 1.8vw, 24px) + clamp(50px, 3.8vw, 60px) + 12px) !important;
+  left:auto !important;
+  top:auto !important;
+  border-radius:22px !important;
+  box-shadow:0 24px 64px var(--sh-8), 0 0 36px var(--gold-glow) !important;
+  transform-origin:bottom right !important;
+  transition:all .3s var(--spring) !important;
+  z-index:999999 !important;
+}
+#bmc-close-btn{
+  top:16px !important;
+  right:16px !important;
+  width:38px !important;
+  height:38px !important;
+  border-radius:50% !important;
+  background:rgba(255,255,255,.92) !important;
+  box-shadow:0 6px 18px rgba(0,0,0,.25) !important;
+  transition:transform .25s var(--spring), background .2s var(--ease) !important;
+}
+#bmc-close-btn:hover{
+  transform:scale(1.1) !important;
+  background:#ffffff !important;
+}
+
+/* Desktop mode (smaller screens, laptops, split-screen / narrow desktop windows) */
+@media(max-width: 1200px) and (min-width: 761px){
+  #bmc-wbtn{
+    width:54px !important;
+    height:54px !important;
+    border-radius:27px !important;
+    right:18px !important;
+    bottom:18px !important;
+  }
+  #bmc-wbtn img,
+  #bmc-wbtn svg{
+    width:28px !important;
+    height:28px !important;
+  }
+  #bmc-iframe{
+    width:min(390px, calc(100vw - 36px)) !important;
+    max-width:390px !important;
+    height:min(580px, calc(100svh - 96px)) !important;
+    max-height:calc(100svh - 96px) !important;
+    right:18px !important;
+    bottom:80px !important;
+    border-radius:20px !important;
+  }
+}
+@media(max-width: 960px) and (min-width: 761px){
+  #bmc-wbtn{
+    width:50px !important;
+    height:50px !important;
+    border-radius:25px !important;
+    right:16px !important;
+    bottom:16px !important;
+  }
+  #bmc-wbtn img,
+  #bmc-wbtn svg{
+    width:26px !important;
+    height:26px !important;
+  }
+  #bmc-iframe{
+    width:min(365px, calc(100vw - 32px)) !important;
+    max-width:365px !important;
+    height:min(540px, calc(100svh - 86px)) !important;
+    max-height:calc(100svh - 86px) !important;
+    right:16px !important;
+    bottom:74px !important;
+    border-radius:18px !important;
+  }
+}
+
+/* Height-constrained desktop / laptop screens */
+@media(max-height: 800px) and (min-width: 761px){
+  #bmc-wbtn{
+    width:48px !important;
+    height:48px !important;
+    border-radius:24px !important;
+    bottom:14px !important;
+    right:16px !important;
+  }
+  #bmc-wbtn img,
+  #bmc-wbtn svg{
+    width:25px !important;
+    height:25px !important;
+  }
+  #bmc-iframe{
+    height:calc(100svh - 78px) !important;
+    max-height:calc(100svh - 78px) !important;
+    bottom:68px !important;
+    right:16px !important;
+    border-radius:18px !important;
+  }
+}
+@media(max-height: 650px) and (min-width: 761px){
+  #bmc-wbtn{
+    width:44px !important;
+    height:44px !important;
+    border-radius:22px !important;
+    bottom:12px !important;
+    right:14px !important;
+  }
+  #bmc-wbtn img,
+  #bmc-wbtn svg{
+    width:23px !important;
+    height:23px !important;
+  }
+  #bmc-iframe{
+    height:calc(100svh - 64px) !important;
+    max-height:calc(100svh - 64px) !important;
+    bottom:60px !important;
+    right:14px !important;
+    width:min(350px, calc(100vw - 28px)) !important;
+    max-width:350px !important;
+    border-radius:16px !important;
+  }
 }
 .donate-actions-grid{
   display:flex;
