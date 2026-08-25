@@ -1490,6 +1490,55 @@ nav a:hover,nav a.active{
   position:relative;
   z-index:1;
 }
+.donate-badge-bar{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:6px 8px 6px 16px;
+  border-radius:var(--r-pill);
+  background:var(--gold-dim);
+  border:1px solid rgba(234,196,53,.25);
+  margin-bottom:24px;
+  box-shadow:0 4px 16px rgba(0,0,0,.15);
+  max-width:100%;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.donate-badge-bar .live-text{
+  font-size:12.5px;
+  font-weight:700;
+  color:var(--gold);
+  letter-spacing:.02em;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.donate-badge-bar .badge-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 12px;
+  border-radius:var(--r-pill);
+  background:rgba(234,196,53,.22);
+  color:var(--text1);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.donate-badge-bar .badge-tag svg.icon{
+  width:12px;
+  height:12px;
+  color:#EA4335;
+}
+:root[data-theme="light"] .donate-badge-bar{
+  background:rgba(180,135,0,.12);
+  border-color:rgba(180,135,0,.25);
+}
+:root[data-theme="light"] .donate-badge-bar .badge-tag{
+  background:rgba(180,135,0,.18);
+  color:#1c1700;
+}
 .donate-card h2{
   font-family:'Space Grotesk',sans-serif;
   font-size:clamp(30px,5vw,52px);
@@ -5382,13 +5431,10 @@ footer span{color:var(--gold)}
 <section class="section" id="donate" style="padding-top:0">
   <div class="wrap">
     <div class="donate-card rv-scale">
-      <div class="connect-live-badge">
+      <div class="donate-badge-bar">
         <span class="pulse-beacon"></span>
-        Support Independent Open Source
-      </div>
-      <div class="eyebrow" style="margin-bottom:22px">
-        <svg class="icon"><use href="#ico-heart"/></svg>
-        Donate & Support
+        <span class="live-text">Support Independent Open Source</span>
+        <span class="badge-tag"><svg class="icon"><use href="#ico-heart"/></svg> Donate &amp; Support</span>
       </div>
       <h2>Fuel the Craft</h2>
       <p class="donate-sub">If you love my open-source apps, developer tools, or customizations, consider supporting via Buy Me a Coffee or donating via UPI / BHIM to support continuous development.</p>
@@ -5439,7 +5485,7 @@ footer span{color:var(--gold)}
               <img src="https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg" alt="Buy Me a Coffee" class="bmc-head-ico" />
               Buy Me a Coffee
             </div>
-            <p class="donate-box-desc">Scan to visit my Buy Me a Coffee page or tap below to donate via Cards, Apple Pay, GPay &amp; PayPal.</p>
+            <p class="donate-box-desc">Scan to visit my Buy Me a Coffee page or tap below to donate via Card.</p>
           </div>
 
           <div class="bmc-qr-wrapper">
