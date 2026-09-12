@@ -556,7 +556,7 @@ nav a:hover,nav a.active{
 .hero-pfp-blur{
   position:absolute;
   inset:-24px;
-  background-image:url('https://raw.githubusercontent.com/hari161008/About/main/Assets/Profile%20Picture%201.jpg');
+  background-image:url('Assets/Profile%20Picture%201.jpg');
   background-size:cover;
   background-position:center;
   filter:var(--pfp-blur-filter);
@@ -4687,8 +4687,8 @@ footer span{color:var(--gold)}
       <div class="hero-pfp-wrap">
         <div class="hero-pfp-blur"></div>
         <div class="hero-pfp-frame">
-          <img class="hero-pfp hero-pfp-layer-a" src="https://raw.githubusercontent.com/hari161008/About/main/Assets/Profile%20Picture%201.jpg" alt="Hari Prabhu"/>
-          <img class="hero-pfp hero-pfp-layer-b" src="https://raw.githubusercontent.com/hari161008/About/main/Assets/Profile%20Picture%201.jpg" alt="Hari Prabhu"/>
+          <img class="hero-pfp hero-pfp-layer-a" src="Assets/Profile%20Picture%201.jpg" alt="Hari Prabhu" onerror="if(this.src.indexOf('raw.githubusercontent.com')===-1)this.src='https://raw.githubusercontent.com/hari161008/About/main/Assets/Profile%20Picture%201.jpg'"/>
+          <img class="hero-pfp hero-pfp-layer-b" src="Assets/Profile%20Picture%201.jpg" alt="Hari Prabhu" onerror="if(this.src.indexOf('raw.githubusercontent.com')===-1)this.src='https://raw.githubusercontent.com/hari161008/About/main/Assets/Profile%20Picture%201.jpg'"/>
         </div>
       </div>
     </div>
@@ -4898,7 +4898,7 @@ footer span{color:var(--gold)}
     </div>
     <div class="about-wrap rv-scale d2 scroll-fx">
       <div class="about-left">
-        <img class="about-avatar" src="https://raw.githubusercontent.com/hari161008/About/main/Assets/Profile%20Picture%201.jpg" alt="Hari Prabhu"/>
+        <img class="about-avatar" src="Assets/Profile%20Picture%201.jpg" alt="Hari Prabhu" onerror="if(this.src.indexOf('raw.githubusercontent.com')===-1)this.src='https://raw.githubusercontent.com/hari161008/About/main/Assets/Profile%20Picture%201.jpg'"/>
         <div class="about-details">
           <div class="about-meta">
             <div class="about-name">Hari Prabhu</div>
@@ -6965,19 +6965,35 @@ document.querySelectorAll('.app-showcase-card').forEach(c=>{
   requestAnimationFrame(meteorLoop);
 })();
 
-// ── HERO PFP SLIDESHOW (Smooth Crossfade + GitHub Rate-Limit Protected) ──
+// ── HERO PFP SLIDESHOW (Auto-Discovery of "Profile Picture X.png/.jpg" in Assets) ──
 (function(){
   const frame = document.querySelector('.hero-pfp-frame');
   const blurBg = document.querySelector('.hero-pfp-blur');
   const container = document.querySelector('.hero-pfp-container');
   if(!frame || !container) return;
 
+  const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/hari161008/About/main/Assets/';
   const DEFAULT_PFPS = [
-    'https://raw.githubusercontent.com/hari161008/About/main/Assets/Profile%20Picture%201.jpg',
-    'https://raw.githubusercontent.com/hari161008/About/main/Assets/Profile%20Picture%202.jpg'
+    'Assets/Profile%20Picture%201.jpg',
+    'Assets/Profile%20Picture%202.jpg',
+    'Assets/Profile%20Picture%203.jpg',
+    'Assets/Profile%20Picture%204.jpg'
   ];
 
+  const CACHE_KEY = 'svhp_pfp_assets_v2';
   let pfpList = DEFAULT_PFPS.slice();
+
+  // Load from local storage for instantaneous render
+  try {
+    const cached = localStorage.getItem(CACHE_KEY);
+    if(cached){
+      const parsed = JSON.parse(cached);
+      if(Array.isArray(parsed) && parsed.length > 0){
+        pfpList = parsed;
+      }
+    }
+  } catch(_){}
+
   let currentIndex = 0;
   let timer = null;
   let isHovered = false;
@@ -6988,10 +7004,35 @@ document.querySelectorAll('.app-showcase-card').forEach(c=>{
   if(!layerB){
     layerB = document.createElement('img');
     layerB.className = 'hero-pfp hero-pfp-layer-b';
-    layerB.src = DEFAULT_PFPS[0];
+    layerB.src = pfpList[0] || DEFAULT_PFPS[0];
     layerB.alt = 'Hari Prabhu';
     frame.appendChild(layerB);
   }
+
+  // Graceful fallback for layers if an asset fails to load
+  function attachFallback(imgEl){
+    if(!imgEl) return;
+    imgEl.addEventListener('error', function(){
+      const src = this.src || '';
+      if(!this.dataset.fallbackTried && !src.includes('raw.githubusercontent.com')){
+        this.dataset.fallbackTried = '1';
+        const filename = decodeURIComponent(src).split('/').pop();
+        if(filename){
+          this.src = GITHUB_RAW_BASE + encodeURIComponent(filename);
+          return;
+        }
+      }
+      this.dataset.fallbackTried = '';
+      if(pfpList.length > 1){
+        setTimeout(nextSlide, 150);
+      }
+    });
+    imgEl.addEventListener('load', function(){
+      this.dataset.fallbackTried = '';
+    });
+  }
+  attachFallback(layerA);
+  attachFallback(layerB);
 
   let activeLayer = 'a';
 
@@ -7001,59 +7042,214 @@ document.querySelectorAll('.app-showcase-card').forEach(c=>{
       img.src = url;
     });
   }
-  preloadImages(DEFAULT_PFPS);
+  preloadImages(pfpList);
 
-  // GitHub Rate-Limit Safe discovery with 24-hour localStorage caching
-  const CACHE_KEY = 'svhp_pfp_assets_v1';
-  const CACHE_TIME_KEY = 'svhp_pfp_assets_time';
-  const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
-
-  async function discoverPfps(){
-    try {
-      const cached = localStorage.getItem(CACHE_KEY);
-      const cachedTime = localStorage.getItem(CACHE_TIME_KEY);
-      if(cached && cachedTime && (Date.now() - parseInt(cachedTime, 10) < CACHE_TTL)){
-        const list = JSON.parse(cached);
-        if(Array.isArray(list) && list.length > 0){
-          pfpList = list;
-          preloadImages(pfpList);
-          return;
+  // Probe single image existence using Image object
+  function checkImage(url){
+    return new Promise((resolve) => {
+      const img = new Image();
+      let settled = false;
+      img.onload = () => {
+        if(!settled){
+          settled = true;
+          resolve(true);
         }
-      }
-
-      const res = await fetch('https://api.github.com/repos/hari161008/About/contents/Assets');
-      if(!res.ok) throw new Error('API status: ' + res.status);
-      const data = await res.json();
-      if(Array.isArray(data)){
-        const matching = data
-          .filter(item => item.type === 'file' && /^profile\s*picture/i.test(item.name))
-          .sort((a, b) => {
-            const numA = parseInt((a.name.match(/\d+/) || [0])[0], 10);
-            const numB = parseInt((b.name.match(/\d+/) || [0])[0], 10);
-            return numA - numB;
-          })
-          .map(item => item.download_url || `https://raw.githubusercontent.com/hari161008/About/main/Assets/${encodeURIComponent(item.name)}`);
-
-        if(matching.length > 0){
-          pfpList = matching;
-          localStorage.setItem(CACHE_KEY, JSON.stringify(matching));
-          localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
-          preloadImages(pfpList);
+      };
+      img.onerror = () => {
+        if(!settled){
+          settled = true;
+          resolve(false);
         }
-      }
-    } catch(e){
-      const cached = localStorage.getItem(CACHE_KEY);
-      if(cached){
-        try{
-          const list = JSON.parse(cached);
-          if(Array.isArray(list) && list.length > 0){
-            pfpList = list;
-          }
-        }catch(_){}
+      };
+      img.src = url;
+      setTimeout(() => {
+        if(!settled){
+          settled = true;
+          resolve(false);
+        }
+      }, 2500);
+    });
+  }
+
+  // Probe number X for candidate extensions, prioritizing .png
+  const CANDIDATE_EXTS = ['png', 'jpg', 'jpeg', 'webp'];
+  async function probeNumber(num){
+    for(const ext of CANDIDATE_EXTS){
+      const filename = `Profile Picture ${num}.${ext}`;
+      const url = `Assets/${encodeURIComponent(filename)}`;
+      const exists = await checkImage(url);
+      if(exists){
+        return {
+          num,
+          ext,
+          name: filename,
+          url,
+          fallbackUrl: `${GITHUB_RAW_BASE}${encodeURIComponent(filename)}`
+        };
       }
     }
+    return null;
   }
+
+  // Discover from GitHub API
+  async function discoverFromGitHub(){
+    try {
+      const res = await fetch('https://api.github.com/repos/hari161008/About/contents/Assets', {
+        headers: { 'Accept': 'application/vnd.github.v3+json' },
+        cache: 'no-cache'
+      });
+      if(!res.ok) return [];
+      const data = await res.json();
+      if(!Array.isArray(data)) return [];
+      const results = [];
+      const regex = /^profile\s*picture\s*(\d+)\.(png|jpe?g|webp)$/i;
+      for(const item of data){
+        if(item.type === 'file'){
+          const match = item.name.match(regex);
+          if(match){
+            results.push({
+              num: parseInt(match[1], 10),
+              ext: match[2].toLowerCase(),
+              name: item.name,
+              url: `Assets/${encodeURIComponent(item.name)}`,
+              fallbackUrl: item.download_url || `${GITHUB_RAW_BASE}${encodeURIComponent(item.name)}`
+            });
+          }
+        }
+      }
+      return results;
+    } catch(_){
+      return [];
+    }
+  }
+
+  // Discover from local server directory listing (e.g. live-server / python http.server)
+  async function discoverFromDirectory(){
+    try {
+      const res = await fetch('Assets/', { method: 'GET', cache: 'no-cache' });
+      if(!res.ok) return [];
+      const text = await res.text();
+      const regex = /href=["']([^"']*(?:Profile%20Picture|Profile\s*Picture)[^"']*\.(?:png|jpe?g|webp))["']/gi;
+      const results = [];
+      let match;
+      while((match = regex.exec(text)) !== null){
+        const rawName = decodeURIComponent(match[1]).replace(/^.*[\\\/]/, '');
+        const numMatch = rawName.match(/^profile\s*picture\s*(\d+)\.(png|jpe?g|webp)$/i);
+        if(numMatch){
+          results.push({
+            num: parseInt(numMatch[1], 10),
+            ext: numMatch[2].toLowerCase(),
+            name: rawName,
+            url: `Assets/${encodeURIComponent(rawName)}`,
+            fallbackUrl: `${GITHUB_RAW_BASE}${encodeURIComponent(rawName)}`
+          });
+        }
+      }
+      return results;
+    } catch(_){
+      return [];
+    }
+  }
+
+  let isDiscovering = false;
+  async function discoverPfps(){
+    if(isDiscovering) return;
+    isDiscovering = true;
+
+    try {
+      const foundMap = new Map();
+
+      function addFound(item){
+        if(!item || item.num === undefined) return;
+        const existing = foundMap.get(item.num);
+        // Prioritize .png if both exist for the same number
+        if(!existing || item.ext === 'png'){
+          foundMap.set(item.num, item);
+        }
+      }
+
+      // 1. Fetch from GitHub API and Directory listing in parallel
+      const [ghItems, dirItems] = await Promise.all([
+        discoverFromGitHub(),
+        discoverFromDirectory()
+      ]);
+      (dirItems || []).forEach(addFound);
+      (ghItems || []).forEach(addFound);
+
+      // 2. Probe local Assets folder for zero-config newly added pictures
+      // Check 0 first
+      const zeroItem = await probeNumber(0);
+      if(zeroItem) addFound(zeroItem);
+
+      // Probe batches of numbers 1..50
+      const BATCH_SIZE = 5;
+      const MAX_NUMBER = 50;
+      let consecutiveEmpty = 0;
+      let startNum = 1;
+
+      while(startNum <= MAX_NUMBER){
+        const batchNums = [];
+        for(let n = startNum; n < startNum + BATCH_SIZE && n <= MAX_NUMBER; n++){
+          batchNums.push(n);
+        }
+        const batchResults = await Promise.all(batchNums.map(probeNumber));
+        let foundAny = false;
+        for(const r of batchResults){
+          if(r){
+            foundAny = true;
+            addFound(r);
+          }
+        }
+
+        if(foundAny){
+          consecutiveEmpty = 0;
+        } else {
+          consecutiveEmpty++;
+          if(foundMap.size > 0 && consecutiveEmpty >= 2){
+            break;
+          }
+        }
+        startNum += BATCH_SIZE;
+      }
+
+      // Sort found items numerically
+      const sortedItems = Array.from(foundMap.values()).sort((a, b) => a.num - b.num);
+      if(sortedItems.length > 0){
+        const newUrls = sortedItems.map(i => i.url);
+        pfpList = newUrls;
+        try {
+          localStorage.setItem(CACHE_KEY, JSON.stringify(newUrls));
+        } catch(_){}
+        preloadImages(newUrls);
+
+        // If the first image was updated (e.g., Profile Picture 1.png added to replace .jpg)
+        if(layerA && activeLayer === 'a' && currentIndex === 0){
+          if(layerA.src && !layerA.src.endsWith(newUrls[0])){
+            layerA.src = newUrls[0];
+            if(blurBg) blurBg.style.backgroundImage = `url('${newUrls[0]}')`;
+          }
+        }
+      }
+    } catch(err){
+      console.warn('PFP discovery error:', err);
+    } finally {
+      isDiscovering = false;
+    }
+  }
+
+  // Initial discovery
   discoverPfps();
+
+  // Re-discover when user returns to tab (e.g. after adding a new picture)
+  window.addEventListener('focus', () => {
+    discoverPfps();
+  });
+  document.addEventListener('visibilitychange', () => {
+    if(!document.hidden) discoverPfps();
+  });
+
+  // Periodic poll every 30s to pick up hot additions
+  setInterval(discoverPfps, 30000);
 
   function nextSlide(){
     if(pfpList.length <= 1) return;
