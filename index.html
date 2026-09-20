@@ -48,6 +48,10 @@
     <symbol id="ico-linkedin" viewBox="0 0 24 24">
       <path fill="#0A66C2" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
     </symbol>
+    <!-- Reddit -->
+    <symbol id="ico-reddit" viewBox="0 0 24 24">
+      <path fill="#FF4500" d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+    </symbol>
     <!-- Shizuku -->
     <symbol id="ico-shizuku" viewBox="0 0 24 24">
       <circle cx="12" cy="12" r="10" fill="#FF6E40"/>
@@ -198,7 +202,7 @@
     </symbol>
     <!-- Heart -->
     <symbol id="ico-heart" viewBox="0 0 24 24">
-      <path fill="#EA4335" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      <path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
     </symbol>
     <!-- Coffee / Buy Me a Coffee Official -->
     <symbol id="ico-coffee" viewBox="0 0 24 24">
@@ -1555,12 +1559,12 @@ nav a:hover,nav a.active{
 }
 .donate-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(3, 1fr);
   gap:24px;
   align-items:stretch;
   text-align:center;
 }
-@media(max-width:880px){
+@media(max-width:960px){
   .donate-grid{
     grid-template-columns:1fr;
     gap:20px;
@@ -1710,6 +1714,118 @@ nav a:hover,nav a.active{
   background:transparent;
   border-color:rgba(110,82,0,.45);
   box-shadow:0 12px 36px rgba(0,0,0,.1),0 0 24px rgba(110,82,0,.2);
+}
+.gh-qr-wrapper{
+  position:relative;
+  margin:12px 0 20px;
+  padding:16px;
+  background:transparent;
+  border:2px solid rgba(234,74,170,.4);
+  border-radius:24px;
+  box-shadow:0 12px 36px var(--sh-8),0 0 32px rgba(234,74,170,.18);
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:220px;
+  height:220px;
+  box-sizing:border-box;
+  transition:transform .35s var(--spring),box-shadow .35s var(--ease),border-color .35s var(--ease);
+}
+.gh-qr-wrapper:hover{
+  transform:scale(1.04);
+  border-color:#ea4aaa;
+  box-shadow:0 18px 48px var(--sh-8),0 0 40px rgba(234,74,170,.35);
+}
+#gh-qrcode{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:188px;
+  height:188px;
+  background:transparent;
+}
+#gh-qrcode canvas,
+#gh-qrcode img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain;
+  border-radius:12px;
+  display:block;
+  background:transparent;
+}
+:root[data-theme="light"] .gh-qr-wrapper{
+  background:transparent;
+  border-color:rgba(191,18,93,.45);
+  box-shadow:0 12px 36px rgba(0,0,0,.1),0 0 24px rgba(191,18,93,.2);
+}
+.gh-badge-chip,
+a.gh-badge-chip,
+.upi-badge-chip.gh-badge-chip,
+a.upi-badge-chip.gh-badge-chip{
+  background:rgba(234,74,170,.15) !important;
+  color:#ea4aaa !important;
+  border:1.5px solid rgba(234,74,170,.5) !important;
+  box-shadow:0 2px 14px rgba(234,74,170,.25) !important;
+}
+.gh-badge-chip:hover,
+a.gh-badge-chip:hover,
+.upi-badge-chip.gh-badge-chip:hover,
+a.upi-badge-chip.gh-badge-chip:hover{
+  background:rgba(234,74,170,.28) !important;
+  border-color:#ea4aaa !important;
+  color:#ffffff !important;
+  box-shadow:0 6px 22px rgba(234,74,170,.45) !important;
+  transform:translateY(-2px) scale(1.02);
+}
+:root[data-theme="light"] .gh-badge-chip,
+:root[data-theme="light"] a.gh-badge-chip,
+:root[data-theme="light"] .upi-badge-chip.gh-badge-chip,
+:root[data-theme="light"] a.upi-badge-chip.gh-badge-chip{
+  background:rgba(219,39,119,.12) !important;
+  color:#be185d !important;
+  border:1.5px solid rgba(219,39,119,.45) !important;
+  box-shadow:0 2px 14px rgba(219,39,119,.2) !important;
+}
+:root[data-theme="light"] .gh-badge-chip:hover,
+:root[data-theme="light"] a.gh-badge-chip:hover,
+:root[data-theme="light"] .upi-badge-chip.gh-badge-chip:hover,
+:root[data-theme="light"] a.upi-badge-chip.gh-badge-chip:hover{
+  background:rgba(219,39,119,.22) !important;
+  color:#9d174d !important;
+  border-color:#be185d !important;
+  box-shadow:0 6px 20px rgba(219,39,119,.35) !important;
+}
+.gh-heart-emoji{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  line-height:1;
+  vertical-align:middle;
+  filter:drop-shadow(0 0 6px rgba(234,74,170,.7));
+}
+.btn-gh-sponsor{
+  background:linear-gradient(135deg,#EA4AAA 0%,#db2777 100%);
+  color:#ffffff !important;
+  border:none;
+  box-shadow:0 8px 24px rgba(234,74,170,.35);
+}
+.btn-gh-sponsor:hover{
+  background:linear-gradient(135deg,#f472b6 0%,#ec4899 100%);
+  color:#ffffff !important;
+  transform:translateY(-3px) scale(1.04);
+  box-shadow:0 14px 36px rgba(234,74,170,.5);
+}
+:root[data-theme="light"] .btn-gh-sponsor{
+  background:linear-gradient(135deg,#db2777 0%,#be185d 100%);
+  color:#ffffff !important;
+  box-shadow:0 8px 24px rgba(219,39,119,.3);
+}
+:root[data-theme="light"] .btn-gh-sponsor:hover{
+  background:linear-gradient(135deg,#be185d 0%,#9d174d 100%);
+  color:#ffffff !important;
+  box-shadow:0 14px 36px rgba(219,39,119,.45);
 }
 .upi-badge-chip{
   display:inline-flex;
@@ -1966,6 +2082,36 @@ div[style*="Avenir Book"]{
   color:#000000 !important;
   transform:translateY(-3px) scale(1.04);
   box-shadow:0 14px 32px rgba(255,221,0,.65) !important;
+}
+#btn-gh-page{
+  background:linear-gradient(135deg,#EA4AAA 0%,#db2777 100%) !important;
+  background-color:#EA4AAA !important;
+  color:#ffffff !important;
+  border:none !important;
+  font-weight:800 !important;
+  box-shadow:0 8px 24px rgba(234,74,170,.45) !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:8px !important;
+}
+#btn-gh-page:hover{
+  background:linear-gradient(135deg,#f05db5 0%,#ec4899 100%) !important;
+  background-color:#f05db5 !important;
+  color:#ffffff !important;
+  transform:translateY(-3px) scale(1.04) !important;
+  box-shadow:0 14px 32px rgba(234,74,170,.65) !important;
+}
+:root[data-theme="light"] #btn-gh-page{
+  background:linear-gradient(135deg,#db2777 0%,#be185d 100%) !important;
+  background-color:#db2777 !important;
+  color:#ffffff !important;
+  box-shadow:0 8px 24px rgba(219,39,119,.4) !important;
+}
+:root[data-theme="light"] #btn-gh-page:hover{
+  background:linear-gradient(135deg,#be185d 0%,#9d174d 100%) !important;
+  background-color:#be185d !important;
+  color:#ffffff !important;
+  box-shadow:0 14px 32px rgba(219,39,119,.55) !important;
 }
 .copy-upi-btn{
   display:inline-flex;
@@ -3788,14 +3934,16 @@ footer span{color:var(--gold)}
     max-width:300px;
   }
   .upi-qr-wrapper,
-  .bmc-qr-wrapper{
+  .bmc-qr-wrapper,
+  .gh-qr-wrapper{
     width:min(58vw, 205px);
     height:min(58vw, 205px);
     padding:12px;
     margin:18px auto 22px;
     border-radius:20px;
   }
-  #bmc-qrcode{
+  #bmc-qrcode,
+  #gh-qrcode{
     width:calc(100% - 4px);
     height:calc(100% - 4px);
   }
@@ -4924,7 +5072,7 @@ footer span{color:var(--gold)}
             <a href="https://t.me/hariprabhu1008" target="_blank" class="social-btn" title="Telegram">
               <svg class="icon"><use href="#ico-telegram"/></svg>
             </a>
-            <a href="https://www.linkedin.com/in/hari-prabhu-280919411?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" class="social-btn" title="LinkedIn">
+            <a href="https://www.linkedin.com/in/hari-prabhu-280919411/" target="_blank" class="social-btn" title="LinkedIn">
               <svg class="icon"><use href="#ico-linkedin"/></svg>
             </a>
           </div>
@@ -5412,13 +5560,22 @@ footer span{color:var(--gold)}
             <div class="cm-val">hari161008</div>
           </div>
         </a>
-        <a href="https://www.linkedin.com/in/hari-prabhu-280919411?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" class="cm rv d4">
+        <a href="https://www.linkedin.com/in/hari-prabhu-280919411/" target="_blank" class="cm rv d4">
           <div class="cm-ico" style="background:rgba(10,102,194,.14)">
             <svg class="icon"><use href="#ico-linkedin"/></svg>
           </div>
           <div class="cm-info">
             <div class="cm-label">LinkedIn</div>
             <div class="cm-val">hari-prabhu</div>
+          </div>
+        </a>
+        <a href="https://www.reddit.com/user/Hari16108/" target="_blank" rel="noopener noreferrer" class="cm rv d5">
+          <div class="cm-ico" style="background:rgba(255,69,0,.14)">
+            <svg class="icon"><use href="#ico-reddit"/></svg>
+          </div>
+          <div class="cm-info">
+            <div class="cm-label">Reddit</div>
+            <div class="cm-val">u/Hari16108</div>
           </div>
         </a>
       </div>
@@ -5437,11 +5594,43 @@ footer span{color:var(--gold)}
         <span class="badge-tag"><svg class="icon"><use href="#ico-heart"/></svg> Donate &amp; Support</span>
       </div>
       <h2>Fuel the Craft</h2>
-      <p class="donate-sub">If you love my open-source apps, developer tools, or customizations, consider supporting via Buy Me a Coffee or donating via UPI / BHIM to support continuous development.</p>
+      <p class="donate-sub">If you love my open-source apps, developer tools, or customizations, consider sponsoring via GitHub Sponsors, donating via UPI / BHIM, or supporting via Buy Me a Coffee to support continuous development.</p>
 
       <div class="donate-grid">
-        <!-- UPI / Direct Payment Card -->
+        <!-- GitHub Sponsors Card -->
         <div class="donate-box rv d1">
+          <div>
+            <div class="donate-box-title">
+              <span class="gh-heart-emoji" style="font-size:24px;filter:drop-shadow(0 0 8px rgba(234,74,170,.6));">💖</span>
+              GitHub Sponsors
+            </div>
+            <p class="donate-box-desc">Scan to sponsor on GitHub or tap below to visit my sponsors profile.</p>
+          </div>
+
+          <div class="gh-qr-wrapper">
+            <div id="gh-qrcode"></div>
+          </div>
+
+          <a href="https://github.com/sponsors/hari161008" target="_blank" rel="noopener noreferrer" class="upi-badge-chip gh-badge-chip" style="margin-bottom:18px" title="Visit GitHub Sponsors Profile">
+            <span class="gh-heart-emoji" style="font-size:14px;margin-right:2px;">💖</span>
+            <span>github.com/sponsors/hari161008</span>
+            <svg class="icon" style="width:12px;height:12px;opacity:0.85;color:#ea4aaa;"><use href="#ico-arrow-ne"/></svg>
+          </a>
+
+          <div class="donate-btn-group">
+            <a href="https://github.com/sponsors/hari161008" target="_blank" rel="noopener noreferrer" class="btn btn-gh-sponsor" id="btn-gh-page">
+              <span class="gh-heart-emoji" style="font-size:16px;">💖</span>
+              <span>GitHub Sponsors</span>
+            </a>
+            <button type="button" class="copy-upi-btn" id="copy-gh-btn" data-url="https://github.com/sponsors/hari161008" title="Copy Link">
+              <svg class="icon"><use href="#ico-copy"/></svg>
+              <span class="copy-btn-text">Copy Link</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- UPI / Direct Payment Card -->
+        <div class="donate-box rv d2">
           <div>
             <div class="donate-box-title">
               <svg class="icon donate-head-ico" style="color:var(--gold)"><use href="#ico-rupee"/></svg>
@@ -5479,7 +5668,7 @@ footer span{color:var(--gold)}
         </div>
 
         <!-- Buy Me a Coffee Card -->
-        <div class="donate-box rv d2">
+        <div class="donate-box rv d3">
           <div>
             <div class="donate-box-title">
               <img src="https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg" alt="Buy Me a Coffee" class="bmc-head-ico" />
@@ -5538,8 +5727,17 @@ footer span{color:var(--gold)}
         <a href="https://t.me/hariprabhu1008" target="_blank" title="Telegram" class="footer-social-btn">
           <svg class="icon"><use href="#ico-telegram"/></svg>
         </a>
-        <a href="https://www.linkedin.com/in/hari-prabhu-280919411?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" title="LinkedIn" class="footer-social-btn">
+        <a href="https://www.linkedin.com/in/hari-prabhu-280919411/" target="_blank" title="LinkedIn" class="footer-social-btn">
           <svg class="icon"><use href="#ico-linkedin"/></svg>
+        </a>
+        <a href="https://www.reddit.com/user/Hari16108/" target="_blank" title="Reddit" class="footer-social-btn">
+          <svg class="icon"><use href="#ico-reddit"/></svg>
+        </a>
+        <a href="https://buymeacoffee.com/hariprabhu" target="_blank" title="Buy Me a Coffee" class="footer-social-btn">
+          <svg class="icon"><use href="#ico-coffee"/></svg>
+        </a>
+        <a href="https://github.com/sponsors/hari161008" target="_blank" title="GitHub Sponsors" class="footer-social-btn">
+          <svg class="icon" style="color:#ea4aaa"><use href="#ico-heart"/></svg>
         </a>
       </div>
       <div class="footer-copy">
@@ -6301,34 +6499,48 @@ document.querySelectorAll('.proj,.about-wrap,.skill-card,.contact-card,.donate-c
     };
   })();
 
-  // Render Vector QRs for BHIM / UPI and Buy Me a Coffee
-  // Initialize Buy Me a Coffee QRCode using qrcodejs
+  // Render Vector QRs for BHIM / UPI, GitHub Sponsors and Buy Me a Coffee
+  // Initialize GitHub Sponsors & Buy Me a Coffee QRCode using qrcodejs
+  const ghQrEl = document.getElementById("gh-qrcode");
   const bmcQrEl = document.getElementById("bmc-qrcode");
-  if (bmcQrEl) {
-    function initBmcQr() {
+  if (ghQrEl || bmcQrEl) {
+    function initDonateQrs() {
       if (typeof QRCode !== 'undefined') {
-        bmcQrEl.innerHTML = '';
         const root = document.documentElement;
         const explicit = root.getAttribute('data-theme');
         const isDark = explicit === 'dark' || (!explicit && !window.matchMedia('(prefers-color-scheme: light)').matches);
-        new QRCode(bmcQrEl, {
-          text: "https://buymeacoffee.com/hariprabhu",
-          width: 240,
-          height: 240,
-          colorDark: isDark ? "#FFD21C" : "#6e5200",
-          colorLight: "rgba(0,0,0,0)",
-          correctLevel: QRCode.CorrectLevel.H
-        });
+        if (ghQrEl) {
+          ghQrEl.innerHTML = '';
+          new QRCode(ghQrEl, {
+            text: "https://github.com/sponsors/hari161008",
+            width: 240,
+            height: 240,
+            colorDark: isDark ? "#EA4AAA" : "#BF125D",
+            colorLight: "rgba(0,0,0,0)",
+            correctLevel: QRCode.CorrectLevel.H
+          });
+        }
+        if (bmcQrEl) {
+          bmcQrEl.innerHTML = '';
+          new QRCode(bmcQrEl, {
+            text: "https://buymeacoffee.com/hariprabhu",
+            width: 240,
+            height: 240,
+            colorDark: isDark ? "#FFD21C" : "#6e5200",
+            colorLight: "rgba(0,0,0,0)",
+            correctLevel: QRCode.CorrectLevel.H
+          });
+        }
       } else {
-        setTimeout(initBmcQr, 80);
+        setTimeout(initDonateQrs, 80);
       }
     }
-    initBmcQr();
+    initDonateQrs();
 
     const themeObserver = new MutationObserver(mutations => {
       mutations.forEach(m => {
         if (m.attributeName === 'data-theme') {
-          initBmcQr();
+          initDonateQrs();
         }
       });
     });
@@ -6338,7 +6550,7 @@ document.querySelectorAll('.proj,.about-wrap,.skill-card,.contact-card,.donate-c
     if (sysLightMq.addEventListener) {
       sysLightMq.addEventListener('change', () => {
         if (!document.documentElement.getAttribute('data-theme')) {
-          initBmcQr();
+          initDonateQrs();
         }
       });
     }
