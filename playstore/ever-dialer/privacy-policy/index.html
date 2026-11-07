@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - Ever Dialer & Ever SMS</title>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+:root{
+  --bg:#18120A;--surface:#231D0F;--surf2:#2D2618;--surf3:#373020;
+  --gold:#C8A830;--gold-dim:rgba(200,168,48,.18);--gold-border:rgba(200,168,48,.22);
+  --on-surf:#EDE8DC;--sub:#9E9880;--divider:rgba(200,180,100,.12);
+  --chip-bg:#373020;--chip-on:#3A2E00;
+  --font:'Google Sans','Segoe UI',sans-serif;
+  --btn-on-gold:#1C1500;
+  --btn-primary-bg:#C8A830;
+  --btn-primary-shadow:rgba(200,168,48,.28);
+  --btn-primary-border:rgba(200,168,48,.4);
+  --green-bg:rgba(76,175,80,.15);
+  --green-text:#81C784;
+  --green-border:rgba(76,175,80,.25);
+  --blue-bg:rgba(33,150,243,.15);
+  --blue-text:#64B5F6;
+  --blue-border:rgba(33,150,243,.25);
+}
+@media(prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --bg:#FFFDF5;--surface:#FFF8E1;--surf2:#FFEDB3;--surf3:#FFE082;
+    --gold:#856404;--gold-dim:rgba(218,165,32,.18);--gold-border:rgba(180,135,0,.30);
+    --on-surf:#241C04;--sub:#75633A;--divider:rgba(180,135,0,.18);
+    --chip-bg:#FFEDB3;--chip-on:#FFD54F;
+    --btn-on-gold:#1C1500;
+    --btn-primary-bg:#FFE082;
+    --btn-primary-shadow:rgba(255,224,130,.35);
+    --btn-primary-border:rgba(180,135,0,.35);
+    --green-bg:rgba(46,125,50,.15);
+    --green-text:#2E7D32;
+    --green-border:rgba(46,125,50,.28);
+    --blue-bg:rgba(21,101,192,.15);
+    --blue-text:#1565C0;
+    --blue-border:rgba(21,101,192,.28);
+  }
+}
+:root[data-theme="light"]{
+  --bg:#FFFDF5;--surface:#FFF8E1;--surf2:#FFEDB3;--surf3:#FFE082;
+  --gold:#856404;--gold-dim:rgba(218,165,32,.18);--gold-border:rgba(180,135,0,.30);
+  --on-surf:#241C04;--sub:#75633A;--divider:rgba(180,135,0,.18);
+  --chip-bg:#FFEDB3;--chip-on:#FFD54F;
+  --btn-on-gold:#1C1500;
+  --btn-primary-bg:#FFE082;
+  --btn-primary-shadow:rgba(255,224,130,.35);
+  --btn-primary-border:rgba(180,135,0,.35);
+  --green-bg:rgba(46,125,50,.15);
+  --green-text:#2E7D32;
+  --green-border:rgba(46,125,50,.28);
+  --blue-bg:rgba(21,101,192,.15);
+  --blue-text:#1565C0;
+  --blue-border:rgba(21,101,192,.28);
+}
+:root[data-theme="dark"]{
+  --bg:#18120A;--surface:#231D0F;--surf2:#2D2618;--surf3:#373020;
+  --gold:#C8A830;--gold-dim:rgba(200,168,48,.18);--gold-border:rgba(200,168,48,.22);
+  --on-surf:#EDE8DC;--sub:#9E9880;--divider:rgba(200,180,100,.12);
+  --chip-bg:#373020;--chip-on:#3A2E00;
+  --btn-on-gold:#1C1500;
+  --btn-primary-bg:#C8A830;
+  --btn-primary-shadow:rgba(200,168,48,.28);
+  --btn-primary-border:rgba(200,168,48,.4);
+  --green-bg:rgba(76,175,80,.15);
+  --green-text:#81C784;
+  --green-border:rgba(76,175,80,.25);
+  --blue-bg:rgba(33,150,243,.15);
+  --blue-text:#64B5F6;
+  --blue-border:rgba(33,150,243,.25);
+}
+:root,body,.left-col,.right-col,.wrap,.card,.highlight-box{
+  transition:background-color .3s ease,color .3s ease,border-color .3s ease;
+}
+html,body{min-height:100%;background:var(--bg);color:var(--on-surf);font-family:var(--font);line-height:1.6;}
+a{color:var(--gold);text-decoration:none;transition:color .15s;}
+a:hover{text-decoration:underline;}
+
+/* ── THEME TOGGLE ── */
+#theme-toggle{
+  position:relative;
+  width:38px;height:38px;
+  border-radius:50%;
+  background:var(--surf2);
+  border:1px solid var(--divider);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  color:var(--gold);
+  transition:background .3s ease,transform .25s cubic-bezier(.34,1.4,.64,1),color .3s ease,box-shadow .3s ease,border-color .3s ease;
+  box-shadow:0 2px 10px rgba(0,0,0,.2);
+  flex-shrink:0;
+}
+#theme-toggle svg{width:18px;height:18px;display:block;}
+#theme-toggle.is-light{color:#856404;background:var(--surf2);}
+#theme-toggle.is-dark{color:#C8A830;background:var(--surf2);}
+#theme-toggle:hover{transform:scale(1.1);box-shadow:0 0 14px rgba(200,168,48,.35);}
+#theme-toggle:active{transform:scale(.92);}
+@media(max-width:959px){
+  #theme-toggle{
+    position:absolute;
+    top:max(14px,env(safe-area-inset-top,14px));
+    right:max(14px,env(safe-area-inset-right,14px));
+    z-index:99;
+  }
+}
+
+/* ── WRAP & GRID ── */
+.wrap{width:100%;min-height:100vh;position:relative;}
+@media(min-width:960px){
+  .wrap{display:flex;flex-direction:column;}
+  .page-grid{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    align-items:start;
+    min-height:100vh;
+  }
+}
+@media(min-width:1200px){
+  .page-grid{grid-template-columns:340px 1fr;}
+}
+
+/* ── LEFT COLUMN (Branding & Navigation) ── */
+.left-col{background:var(--surface);}
+@media(min-width:960px){
+  .left-col{
+    position:sticky;
+    top:0;
+    height:100vh;
+    overflow-y:auto;
+    scrollbar-width:none;
+    border-right:1px solid var(--divider);
+    display:flex;
+    flex-direction:column;
+  }
+  .left-col::-webkit-scrollbar{display:none;}
+}
+.hero-banner{width:100%;overflow:hidden;background:#0d0900;line-height:0;flex-shrink:0;}
+.hero-banner img{width:100%;height:auto;display:block;max-height:200px;object-fit:cover;object-position:center top;}
+@media(min-width:960px){.hero-banner img{max-height:150px;}}
+
+.hero{padding:24px 20px 22px;background:var(--surface);}
+@media(min-width:960px){.hero{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column;}}
+
+.hero-top{display:flex;align-items:center;gap:16px;margin-bottom:14px;}
+.app-icon{
+  width:68px;height:68px;border-radius:20px;flex-shrink:0;
+  background:linear-gradient(145deg,#2d1f00,#5a3e00);
+  border:2px solid rgba(200,168,48,.3);overflow:hidden;
+  box-shadow:0 6px 24px rgba(0,0,0,.5);
+  display:flex;align-items:center;justify-content:center;
+}
+.app-icon img{width:100%;height:100%;object-fit:cover;border-radius:18px;display:block;}
+@media(min-width:960px){
+  .hero-top{flex-direction:column;align-items:center;text-align:center;gap:12px;margin-top:-32px;}
+  .app-icon{width:80px;height:80px;border-radius:22px;}
+}
+
+.hero-info{flex:1;min-width:0;}
+@media(min-width:960px){.hero-info{text-align:center;}}
+.hero-name{font-size:19px;font-weight:700;color:var(--on-surf);line-height:1.2;margin-bottom:3px;}
+.hero-tagline{font-size:12px;color:var(--sub);margin-bottom:8px;}
+.hero-badges{display:flex;flex-wrap:wrap;gap:5px;}
+@media(min-width:960px){.hero-badges{justify-content:center;}}
+.badge{
+  padding:3px 9px;border-radius:20px;font-size:10.5px;font-weight:600;
+  background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold-border);
+  display:inline-flex;align-items:center;gap:4px;
+}
+.badge.green{background:var(--green-bg);color:var(--green-text);border-color:var(--green-border);}
+.badge.blue{background:var(--blue-bg);color:var(--blue-text);border-color:var(--blue-border);}
+
+.hero-desc{font-size:12.5px;color:var(--on-surf);opacity:.85;line-height:1.6;margin-bottom:18px;}
+
+.hero-actions{display:flex;flex-wrap:wrap;gap:8px;}
+@media(min-width:960px){.hero-actions{flex-direction:column;gap:7px;}}
+
+.btn-primary,.btn-secondary{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:8px 16px;border-radius:50px;
+  font-size:12.5px;font-weight:600;cursor:pointer;
+  font-family:var(--font);text-decoration:none !important;
+  transition:all .18s ease;
+}
+.btn-primary{
+  background:var(--btn-primary-bg,#C8A830);color:var(--btn-on-gold,#1C1500);
+  border:1px solid var(--btn-primary-border);box-shadow:0 2px 10px var(--btn-primary-shadow);
+}
+.btn-primary:hover{filter:brightness(1.05);transform:translateY(-1px);}
+.btn-secondary{
+  background:var(--gold-dim);color:var(--gold);
+  border:1px solid var(--gold-border);
+}
+.btn-secondary:hover{background:rgba(200,168,48,.28);}
+.btn-secondary svg,.btn-primary svg{width:15px;height:15px;fill:currentColor;flex-shrink:0;}
+@media(min-width:960px){
+  .btn-primary,.btn-secondary{justify-content:center;width:100%;}
+}
+
+.left-footer{
+  display:none;
+}
+@media(min-width:960px){
+  .left-footer{
+    display:flex;flex-wrap:wrap;gap:6px 12px;
+    padding:14px 22px 18px;border-top:1px solid var(--divider);
+    margin-top:auto;
+  }
+  .left-footer a{font-size:11px;color:var(--sub);text-decoration:none;}
+  .left-footer a:hover{color:var(--gold);}
+}
+
+/* ── RIGHT COLUMN (Policy Content) ── */
+.right-col{background:var(--bg);padding-bottom:60px;}
+@media(min-width:960px){
+  .right-col{min-height:100vh;overflow-y:auto;}
+}
+
+.sec-head{display:flex;align-items:center;justify-content:space-between;padding:22px 20px 14px;}
+@media(min-width:960px){.sec-head{padding:28px 32px 16px;}}
+
+.page-title{font-size:22px;font-weight:700;color:var(--on-surf);display:flex;align-items:center;gap:10px;}
+.page-title::before{content:'';display:inline-block;width:4px;height:22px;border-radius:2px;background:linear-gradient(to bottom,var(--gold),rgba(200,168,48,.4));flex-shrink:0;}
+
+.divider-line{height:1px;background:var(--divider);margin:0 20px;}
+@media(min-width:960px){.divider-line{margin:0 32px;}}
+
+/* ── CHIPS ROW (Quick Jump Links) ── */
+.chips-row{
+  overflow-x:auto;overflow-y:hidden;
+  display:flex;gap:8px;padding:0 20px 14px;scrollbar-width:none;
+}
+.chips-row::-webkit-scrollbar{display:none;}
+@media(min-width:960px){.chips-row{padding:0 32px 18px;}}
+.chip{
+  flex-shrink:0;padding:6px 14px;border-radius:50px;
+  background:var(--chip-bg);border:1px solid var(--divider);
+  font-size:12px;font-weight:500;color:var(--on-surf);
+  cursor:pointer;transition:all .15s;font-family:var(--font);white-space:nowrap;
+  text-decoration:none !important;
+}
+.chip:hover{border-color:var(--gold);color:var(--gold);}
+
+/* ── CONTENT CONTAINER & CARDS ── */
+.content-body{padding:0 20px;}
+@media(min-width:960px){.content-body{padding:0 32px;max-width:920px;}}
+
+.card{
+  margin-bottom:20px;border-radius:18px;
+  background:var(--surf2);border:1px solid var(--divider);
+  padding:20px 22px;
+  box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+.card-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.card-head .material-icons{color:var(--gold);font-size:20px;}
+.card-title{font-size:16px;font-weight:700;color:var(--on-surf);}
+.card-sub{font-size:12px;color:var(--sub);margin-bottom:12px;}
+
+.card p{font-size:13.5px;color:var(--on-surf);opacity:.88;line-height:1.7;margin-bottom:12px;}
+.card p:last-child{margin-bottom:0;}
+.card ul{padding-left:20px;margin-bottom:12px;}
+.card li{font-size:13px;color:var(--on-surf);opacity:.88;line-height:1.65;margin-bottom:8px;}
+.card strong{color:var(--on-surf);opacity:1;font-weight:600;}
+
+/* Highlight Banner Card */
+.highlight-box{
+  border-radius:16px;padding:18px 20px;
+  background:rgba(200,168,48,.08);
+  border:1px solid var(--gold-border);
+  border-left:4px solid var(--gold);
+  margin-bottom:20px;
+}
+.highlight-box-title{font-size:14px;font-weight:700;color:var(--gold);margin-bottom:6px;display:flex;align-items:center;gap:7px;}
+.highlight-box-text{font-size:13px;color:var(--on-surf);opacity:.9;line-height:1.6;}
+
+/* Permission Table */
+.perm-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:12.5px;}
+.perm-table th{
+  text-align:left;padding:10px 12px;
+  background:var(--surf3);color:var(--gold);
+  font-weight:700;border-bottom:1px solid var(--divider);
+  border-radius:6px 6px 0 0;
+}
+.perm-table td{
+  padding:12px;border-bottom:1px solid var(--divider);
+  color:var(--on-surf);opacity:.88;vertical-align:top;
+}
+.perm-table tr:last-child td{border-bottom:none;}
+.perm-code{
+  font-family:'JetBrains Mono',monospace;font-size:11.5px;
+  padding:2px 6px;border-radius:4px;
+  background:var(--surf3);color:var(--gold);
+  display:inline-block;white-space:nowrap;
+}
+
+/* Feature Grid */
+.summary-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0;}
+@media(min-width:680px){.summary-grid{grid-template-columns:1fr 1fr;}}
+.summary-item{
+  padding:14px 16px;border-radius:14px;
+  background:var(--surf3);border:1px solid var(--divider);
+}
+.summary-label{font-size:11.5px;color:var(--sub);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600;}
+.summary-value{font-size:14px;font-weight:700;color:var(--on-surf);display:flex;align-items:center;gap:6px;}
+
+.date-tag{font-size:11.5px;color:var(--sub);font-family:'JetBrains Mono',monospace;}
+</style>
+</head>
+<body>
+
+<!-- SVG SYMBOLS -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <defs>
+    <!-- Sun (light theme) -->
+    <symbol id="ico-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4.6" fill="currentColor"/>
+      <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <line x1="12" y1="1.5" x2="12" y2="4.2"/>
+        <line x1="12" y1="19.8" x2="12" y2="22.5"/>
+        <line x1="1.5" y1="12" x2="4.2" y2="12"/>
+        <line x1="19.8" y1="12" x2="22.5" y2="12"/>
+        <line x1="4.5" y1="4.5" x2="6.5" y2="6.5"/>
+        <line x1="17.5" y1="17.5" x2="19.5" y2="19.5"/>
+        <line x1="4.5" y1="19.5" x2="6.5" y2="17.5"/>
+        <line x1="17.5" y1="6.5" x2="19.5" y2="4.5"/>
+      </g>
+    </symbol>
+    <!-- Moon (dark theme) -->
+    <symbol id="ico-moon" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M20.742 13.045a8.088 8.088 0 0 1-2.077.273c-4.508 0-8.165-3.655-8.165-8.163 0-1.04.194-2.033.547-2.95a.5.5 0 0 0-.622-.66A9.998 9.998 0 0 0 4 11c0 5.523 4.477 10 10 10a9.998 9.998 0 0 0 9.455-6.715.5.5 0 0 0-.713-.24z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <div class="page-grid">
+
+    <!-- ══════════════ LEFT COLUMN ══════════════ -->
+    <div class="left-col">
+      <div class="hero-banner">
+        <img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Dialer/Assets/Banner%20and%20Icon/Ever%20Dialer%20Banner.png" alt="Ever Dialer Banner">
+      </div>
+
+      <div class="hero">
+        <div class="hero-top">
+          <div class="app-icon">
+            <img src="https://raw.githubusercontent.com/hari161008/Website-For-Everlasting-Android-Tweak/main/Ever%20Dialer/Assets/Banner%20and%20Icon/Ever%20Dialer%20icon.png" alt="Ever Dialer Icon"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'material-icons\' style=\'color:var(--gold);font-size:36px\'>call</span>'">
+          </div>
+          <div class="hero-info">
+            <div class="hero-name">Ever Dialer &amp; Ever SMS</div>
+            <div class="hero-tagline">by hari161008 · Privacy Policy · Android</div>
+            <div class="hero-badges">
+              <span class="badge green"><span class="material-icons" style="font-size:12px;">verified_user</span> 100% Offline</span>
+              <span class="badge"><span class="material-icons" style="font-size:12px;">code</span> Open Source</span>
+              <span class="badge blue"><span class="material-icons" style="font-size:12px;">block</span> Zero Trackers</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-desc">
+          Ever Dialer and Ever SMS are designed from the ground up to respect your digital privacy. All call logs, contacts, messages, and configurations stay strictly inside your physical device. We operate with <b>no remote servers, no ads, and no user tracking</b>.
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="Ever_Dialer_v11.html">
+            <svg viewBox="0 0 24 24"><path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Back to App Home
+          </a>
+          <a class="btn-secondary" href="https://github.com/hari161008/Ever-Dialer" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            Audit Source Code
+          </a>
+          <a class="btn-secondary" href="https://t.me/EverlastingAndroidTweak" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+            Telegram Support
+          </a>
+        </div>
+      </div>
+
+      <div class="left-footer">
+        <a href="https://github.com/hari161008/Ever-Dialer" target="_blank">GitHub</a>
+        <a href="https://github.com/hari161008/Ever-Dialer/releases" target="_blank">Releases</a>
+        <a href="https://hariprabhu.com/" target="_blank">Website</a>
+        <a href="https://t.me/EverlastingAndroidTweak" target="_blank">Telegram</a>
+      </div>
+    </div>
+
+    <!-- ══════════════ RIGHT COLUMN ══════════════ -->
+    <div class="right-col">
+      <div class="sec-head">
+        <div>
+          <div class="page-title">Privacy Policy</div>
+          <div class="date-tag" style="margin-top:4px;">Last updated: November 2026 · Version 14.1.0</div>
+        </div>
+        <button id="theme-toggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">
+          <svg><use href="#ico-sun"/></svg>
+        </button>
+      </div>
+
+      <!-- Quick Navigation Chips -->
+      <div class="chips-row">
+        <a class="chip" href="#overview">Overview</a>
+        <a class="chip" href="#data-safety">Data Safety</a>
+        <a class="chip" href="#permissions">Permissions</a>
+        <a class="chip" href="#recording">Call Recording</a>
+        <a class="chip" href="#third-party">Third-Party &amp; Ads</a>
+        <a class="chip" href="#retention">Data Retention</a>
+        <a class="chip" href="#contact">Contact</a>
+      </div>
+
+      <div class="divider-line" style="margin-bottom:22px;"></div>
+
+      <div class="content-body">
+
+        <!-- Highlight Summary -->
+        <div class="highlight-box" id="overview">
+          <div class="highlight-box-title">
+            <span class="material-icons" style="font-size:18px;">lock</span>
+            The Plain English Summary
+          </div>
+          <div class="highlight-box-text">
+            <strong>Ever Dialer &amp; Ever SMS collect ZERO personal data.</strong> Everything you do—phone calls, contact searches, text messages, notes, and preferences—happens entirely on your device. We run no analytical servers, host no user databases, display no advertisements, and never sell or transmit your information to any third party.
+          </div>
+        </div>
+
+        <!-- Google Play Data Safety Card -->
+        <div class="card" id="data-safety">
+          <div class="card-head">
+            <span class="material-icons">shield</span>
+            <div class="card-title">Google Play Data Safety Declaration</div>
+          </div>
+          <p>
+            For compliance with Google Play Developer Policies and transparent verification, here is the official data safety summary for Ever Dialer:
+          </p>
+          <div class="summary-grid">
+            <div class="summary-item">
+              <div class="summary-label">Data Collected</div>
+              <div class="summary-value" style="color:var(--green-text);"><span class="material-icons" style="font-size:18px;">check_circle</span> None</div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-label">Data Shared with 3rd Parties</div>
+              <div class="summary-value" style="color:var(--green-text);"><span class="material-icons" style="font-size:18px;">check_circle</span> None</div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-label">On-Device Processing Only</div>
+              <div class="summary-value" style="color:var(--blue-text);"><span class="material-icons" style="font-size:18px;">phone_android</span> 100% Local</div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-label">Ad Trackers / Analytics SDKs</div>
+              <div class="summary-value" style="color:var(--green-text);"><span class="material-icons" style="font-size:18px;">block</span> None</div>
+            </div>
+          </div>
+          <p>
+            Because Ever Dialer is a default phone and SMS handler, it interacts with sensitive device databases (Contacts, Call Logs, and SMS). However, all access is strictly limited to local presentation and user actions.
+          </p>
+        </div>
+
+        <!-- Android Permissions Card -->
+        <div class="card" id="permissions">
+          <div class="card-head">
+            <span class="material-icons">tune</span>
+            <div class="card-title">Permissions We Request &amp; Why</div>
+          </div>
+          <p>
+            Ever Dialer is a full-featured telephony replacement application. To fulfill this role effectively as your default dialer, the app requests standard Android system permissions:
+          </p>
+
+          <table class="perm-table">
+            <thead>
+              <tr>
+                <th style="width:36%;">Permission</th>
+                <th>Why It Is Required</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="perm-code">READ_CONTACTS</span><br><span class="perm-code">WRITE_CONTACTS</span></td>
+                <td>Used to display caller names on incoming/outgoing calls, search contacts from the T9 dialpad, and allow creating or editing contact details locally.</td>
+              </tr>
+              <tr>
+                <td><span class="perm-code">CALL_PHONE</span><br><span class="perm-code">MANAGE_OWN_CALLS</span></td>
+                <td>Used to place outbound telephone calls when you dial a number or tap a contact.</td>
+              </tr>
+              <tr>
+                <td><span class="perm-code">ANSWER_PHONE_CALLS</span></td>
+                <td>Allows answering incoming phone calls directly using Ever Dialer's custom in-call interface or gesture modes (such as Raise to Answer).</td>
+              </tr>
+              <tr>
+                <td><span class="perm-code">READ_CALL_LOG</span><br><span class="perm-code">WRITE_CALL_LOG</span></td>
+                <td>Enables displaying your recent call history, call duration, missed call counts, and deleting call history entries when requested by you.</td>
+              </tr>
+              <tr>
+                <td><span class="perm-code">READ_SMS</span><br><span class="perm-code">SEND_SMS</span><br><span class="perm-code">RECEIVE_SMS</span></td>
+                <td>Used solely for the dedicated Ever SMS messenger tab to view conversational threads, send texts, and receive incoming messages when configured as an SMS handler.</td>
+              </tr>
+              <tr>
+                <td><span class="perm-code">FOREGROUND_SERVICE</span><br><span class="perm-code">...PHONE_CALL</span></td>
+                <td>Keeps ongoing calls alive reliably in the background, updates the in-call notification controller, and handles call-time gestures (Raise to Answer / Rain Mode).</td>
+              </tr>
+              <tr>
+                <td><span class="perm-code">POST_NOTIFICATIONS</span></td>
+                <td>Displays heads-up notifications for incoming calls, missed calls, and new SMS messages.</td>
+              </tr>
+              <tr>
+                <td><span class="perm-code">SYSTEM_ALERT_WINDOW</span></td>
+                <td>Used optionally to display a floating in-call bubble or mini-overlay when you navigate to other apps while a phone call remains active.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Call Recording Policy -->
+        <div class="card" id="recording">
+          <div class="card-head">
+            <span class="material-icons">mic</span>
+            <div class="card-title">Call Recording Policy</div>
+          </div>
+          <p>
+            <strong>Google Play Flavor:</strong> In full compliance with Google Play Developer Program Policies, audio recording features are <em>completely disabled and excluded</em> from the Google Play Store build of Ever Dialer. The <span class="perm-code">RECORD_AUDIO</span> permission is removed.
+          </p>
+          <p>
+            <strong>Open-Source / GitHub Flavor:</strong> In builds where call recording is available, all audio captures are stored strictly on your local device storage inside the directory specified by you. Recordings are never sent across the network or accessed by anyone other than the device owner.
+          </p>
+          <p style="font-size:12px;color:var(--sub);">
+            <em>Disclaimer:</em> Users are solely responsible for complying with all applicable local, state, and international laws regarding recording telephone conversations without prior consent.
+          </p>
+        </div>
+
+        <!-- Third-Party & Advertising -->
+        <div class="card" id="third-party">
+          <div class="card-head">
+            <span class="material-icons">visibility_off</span>
+            <div class="card-title">Third-Party Services &amp; Advertising</div>
+          </div>
+          <p>
+            Ever Dialer is committed to a clean, non-commercial user experience:
+          </p>
+          <ul>
+            <li><strong>No Ads:</strong> We do not integrate Google AdMob, Unity Ads, AppLovin, or any other mobile advertising networks.</li>
+            <li><strong>No Analytics SDKs:</strong> We do not embed Firebase Analytics, Google Analytics, Flurry, Mixpanel, or Crashlytics.</li>
+            <li><strong>No Tracking:</strong> There are no device fingerprints, advertising IDs (GAID), or hardware serials gathered.</li>
+            <li><strong>External Links:</strong> If you tap voluntary external links (e.g., our GitHub repository, developer website, or Telegram support group), your interaction with those external sites is governed by their respective privacy policies.</li>
+          </ul>
+        </div>
+
+        <!-- Data Retention & Deletion -->
+        <div class="card" id="retention">
+          <div class="card-head">
+            <span class="material-icons">delete_sweep</span>
+            <div class="card-title">Data Retention &amp; User Control</div>
+          </div>
+          <p>
+            Because we do not store any user information on servers:
+          </p>
+          <ul>
+            <li>You retain complete ownership and sovereignty over your device's data at all times.</li>
+            <li>All app settings, dialpad preferences, contact notes, and theme selections are saved in your phone's private app storage.</li>
+            <li>You can immediately wipe all data associated with Ever Dialer at any moment by navigating to <strong>Android Settings &gt; Apps &gt; Ever Dialer &gt; Storage &gt; Clear Storage</strong>, or by uninstalling the app.</li>
+          </ul>
+        </div>
+
+        <!-- Children's Privacy -->
+        <div class="card">
+          <div class="card-head">
+            <span class="material-icons">child_care</span>
+            <div class="card-title">Children's Privacy</div>
+          </div>
+          <p>
+            Ever Dialer is a general-purpose communications tool and is not specifically directed at children under the age of 13. We do not knowingly solicit or collect any personal information from children. Since all operations remain strictly local to the user's handset, no child data is ever transmitted or processed remotely.
+          </p>
+        </div>
+
+        <!-- Open Source & Verification -->
+        <div class="card">
+          <div class="card-head">
+            <span class="material-icons">verified</span>
+            <div class="card-title">Open-Source Auditability</div>
+          </div>
+          <p>
+            Unlike proprietary dialers, Ever Dialer is fully open source. Anyone—including developers, security researchers, and store reviewers—can verify every single line of code and audit network activity to ensure no sensitive information is leaked.
+          </p>
+          <p>
+            View the source code anytime at: <a href="https://github.com/hari161008/Ever-Dialer" target="_blank">github.com/hari161008/Ever-Dialer</a>.
+          </p>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="card" id="contact">
+          <div class="card-head">
+            <span class="material-icons">mail_outline</span>
+            <div class="card-title">Contact &amp; Questions</div>
+          </div>
+          <p>
+            If you have any questions, suggestions, or concerns regarding this Privacy Policy or Ever Dialer's data practices, feel free to reach out:
+          </p>
+          <ul>
+            <li><strong>Developer:</strong> hari161008 (Hari Prabhu)</li>
+            <li><strong>Personal Website:</strong> <a href="https://hariprabhu.com/" target="_blank">https://hariprabhu.com/</a></li>
+            <li><strong>GitHub Issues:</strong> <a href="https://github.com/hari161008/Ever-Dialer/issues" target="_blank">github.com/hari161008/Ever-Dialer/issues</a></li>
+            <li><strong>Telegram Community:</strong> <a href="https://t.me/EverlastingAndroidTweak" target="_blank">t.me/EverlastingAndroidTweak</a></li>
+          </ul>
+        </div>
+
+      </div><!-- /content-body -->
+    </div><!-- /right-col -->
+
+  </div><!-- /page-grid -->
+</div><!-- /wrap -->
+
+<script>
+// Theme toggle implementation with persistence
+(function(){
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+  if(!btn) return;
+  const sysLight = window.matchMedia('(prefers-color-scheme: light)');
+
+  function effectiveTheme(){
+    const explicit = root.getAttribute('data-theme');
+    if(explicit === 'light' || explicit === 'dark') return explicit;
+    return sysLight.matches ? 'light' : 'dark';
+  }
+
+  function paintIcon(){
+    const t = effectiveTheme();
+    const useEl = btn.querySelector('use');
+    if(useEl){
+      useEl.setAttribute('href', t === 'light' ? '#ico-moon' : '#ico-sun');
+    }
+    btn.classList.toggle('is-light', t === 'light');
+    btn.classList.toggle('is-dark', t === 'dark');
+    btn.setAttribute('aria-label', t === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+    btn.setAttribute('title', t === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+  }
+
+  btn.addEventListener('click', function(){
+    const next = effectiveTheme() === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme_preference', next); } catch(e){}
+    paintIcon();
+  });
+
+  if(sysLight.addEventListener){
+    sysLight.addEventListener('change', function(){
+      if(!root.getAttribute('data-theme')) paintIcon();
+    });
+  }
+
+  try {
+    const saved = localStorage.getItem('theme_preference');
+    if(saved === 'light' || saved === 'dark'){
+      root.setAttribute('data-theme', saved);
+    }
+  } catch(e){}
+  paintIcon();
+
+  // Smooth scroll for chip anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e){
+      const href = this.getAttribute('href');
+      if(href && href.startsWith('#') && href.length > 1){
+        const targetEl = document.getElementById(href.slice(1));
+        if(targetEl){
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if(history.pushState) history.pushState(null, '', href);
+        }
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
